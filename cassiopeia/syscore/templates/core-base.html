@@ -1,0 +1,33 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cassiopeia / {{WebPageAttributes.application_name}}</title>
+	<link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+	<!-- Bootstrap: https://github.com/twbs/bootstrap/releases/download/v5.3.8/bootstrap-5.3.8-dist.zip -->
+	<link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'vendor/bootstrap/icons/bootstrap-icons.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/cassiopeia/base.css' %}">
+	<link rel="stylesheet" href="{% static 'css/cassiopeia/body.css' %}">
+</head>
+<body id="myCasiopeiaBody" class="d-flex flex-column min-vh-100">
+
+	<!-- header: core-header.html -->
+	{% include "core-header.html" %}
+
+	{% block content-l1 %}
+	{% endblock %}
+
+	<!-- footer: core-footer.html -->
+	{% include "core-footer.html" %}
+
+    <!-- modal windows: core-modal-windows.html -->
+	{% include "core-modal-windows.html" %}
+
+	<!-- Bootstrap - JavaScript -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

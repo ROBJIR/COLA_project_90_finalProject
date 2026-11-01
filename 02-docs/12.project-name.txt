@@ -1,0 +1,26 @@
+
+Author: Robert.Jiranek@gmail.com
+        2026-10-29 13:00:00
+
+Project name: Cassiopeia
+============================================
+Cassiopeia zatím nemůžu označit za právně volný název pro komunitní portál. Našel jsem konkrétní starší známku v příbuzném oboru, kterou je potřeba došetřit. Neznamená to ale, že název musíš opustit.
+
+Nejdůležitější nález je v oficiálním věstníku WIPO:
+Údaj                Nález
+Označení	        CASSIOPEIA
+Mezinárodní zápis	747406
+Tehdejší vlastník	Cassiopeia AG, Německo
+Datum zápisu	     09. listopadu 2000
+Výrobky a služby	Třída 9: internetový, intranetový a extranetový software. Třída 42: související poradenství a programování.
+Určená území	    Mezi řadou zemí také Česko, Slovensko, Německem sousedící evropské trhy a další země.
+
+Tyto údaje dokládá historický věstník WIPO. Nepodařilo se mi však ověřit dnešní platnost zápisu, případné převody ani aktuální ochranu v jednotlivých zemích. Historický zápis tedy není důkazem současné překážky.
+
+Pro tvůj projekt jsou relevantní především služby sociálních sítí ve třídě 45 a diskusní fóra či chat ve třídě 38. Podle konkrétních funkcí mohou přibýt další služby. Nestačí proto zkontrolovat jen kategorii „software“ — ani odlišné číslo třídy samo o sobě konflikt nevylučuje. Klasifikace WIPO, pokyny k rešerši WIPO
+
+Moje doporučení: pro školní vývoj si Cassiopeia ponech jako pracovní název. Před investicí do veřejné značky nech ověřit zejména zápis 747406 a aktuální shodné i podobné známky v ČR/EU; pro další trhy pak cíleně například Británii a USA. „Zahraničí“ nelze jednou rešerší spolehlivě pokrýt celosvětově.
+
+Dosavadní výsledek je tedy konkrétní důvod k další kontrole, nikoli potvrzený zákaz použití ani potvrzení volnosti názvu. Ani přidání obecného slova typu „Community“ by samo o sobě případný konflikt nevyřešilo.
+
+-- ChatGPT, 2026-10-29 13:00:00

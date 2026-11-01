@@ -1,0 +1,38 @@
+<div class="line-menu-line">
+    <ul class="line-menu">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li class="line-menu-dropdown">
+            <a href="{% url 'exams-page' %}">exams</a>
+
+            <ul class="line-submenu">
+                <li><a href="{% url 'exams-page' %}">exams</a></li>
+            </ul>
+        </li>
+
+        <li class="line-menu-dropdown">
+            <a href="{% url 'home' %}">IMDB</a>
+
+            <ul class="line-submenu">
+                <li><a href="{% url 'home' %}">movies</a></li>
+                <li><a href="{% url 'home' %}">persons</a></li>
+                <li><a href="{% url 'home' %}">genres</a></li>
+            </ul>
+        </li>
+
+        <li class="line-menu-dropdown">
+            <a href="{% url 'home' %}">DAY3/4</a>
+
+            <ul class="line-submenu">
+                <li><a href="{% url 'home' %}">example01</a></li>
+                <li><a href="{% url 'home' %}">example02</a></li>
+                <li><a href="{% url 'home' %}">football</a></li>
+                <li><a href="{% url 'home' %}">sessions</a></li>
+                <li><a href="{% url 'home' %}">cookies</a></li>
+            </ul>
+        </li>
+
+        <li class="line-menu-dropdown">
+            <a href="admin" target="_blank">admin</a>
+        </li>
+    </ul>
+</div>

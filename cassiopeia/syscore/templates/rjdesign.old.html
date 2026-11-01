@@ -1,0 +1,81 @@
+{% load static %}
+
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ web_name }} / {{ page_name }}</title>
+	<link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+	<link rel="stylesheet" href="{% static 'css/rjdesign/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/rjdesign/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/rjdesign/menu.css' %}">
+	<link rel="stylesheet" href="{% static 'css/rjdesign/form.css' %}">
+</head>
+<body>
+	<div id="top"></div>
+    <div class="wrapper">
+	<header>
+			<div class="header-left">
+				<div class="web_name"><a href="{% url 'home' %}">{{ web_name }}</a></div>
+			</div>
+			<div class="header-center">
+				&nbsp;
+			</div>
+			<div class="header-admin">
+				&nbsp;
+			</div>
+			<div class="header-right">
+				<div class="top-menu">
+					<div class="top-menu-2">
+						<button class="menu-btn">&equiv;</button>
+						<div class="menu-content">
+							<ul class="menu-content">
+								{% include "menu_button.html" %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+	</header>
+		<div style="">
+            {% include "menu_line.html" %}
+		</div>
+
+	<main>
+		<div class="breadcrumbs">
+			&nbsp;
+		</div>
+			{% block content %}
+
+				<h1>{{ page_name }}</h1>
+				{{ page_body|safe }}
+
+			{% endblock %}
+	</main>
+
+	<div id="bottom"></div>
+	<footer>
+		<div class="footer-left">
+                <div class="bottom-menu">
+					<div class="bottom-menu-2">
+						<button class="bottom-menu-btn">project</button>
+						<div class="bottom-menu-content">
+                            {% include "menu_bottom.html" %}
+						</div>
+					</div>
+				</div>
+
+		</div>
+		<div class="footer-center">
+			&copy; 2026,&nbsp;<span>robertjiranek.eu<br>created for ONL_PYT_W_6358</span>
+		</div>
+		<div class="footer-right">
+			<a href="#top">top</a>
+		</div>
+	</footer>
+    </div>
+</body>
+</html>

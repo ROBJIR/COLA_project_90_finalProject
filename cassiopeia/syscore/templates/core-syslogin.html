@@ -1,0 +1,17 @@
+{% extends "core-body.html" %}
+{% load static %}
+{% block content-l2 %}
+
+<h1>ahoj {{ user.username }}</h1>
+
+<h2><a href="{% url 'syslogout' %}">Logout</a></h2>
+
+
+<form action="{% url 'syslogin' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="Login">
+</form>
+
+{% endblock %}

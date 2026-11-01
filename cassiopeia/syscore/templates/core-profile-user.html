@@ -1,0 +1,15 @@
+{% extends "core-body.html" %}
+{% load static %}
+{% block content-l2 %}
+
+<h1>Prihlásený ako {{ user.username }}</h1>
+
+<p>Email: {{ user.email }}</p>
+<p>Posledné prihlásenie: {{ user.last_login }}</p>
+
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Odhlásiť sa">
+</form>
+
+{% endblock %}
