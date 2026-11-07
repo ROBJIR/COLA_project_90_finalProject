@@ -10,7 +10,7 @@
             {% if usrs.is_superuser %}
             <i class="bi bi-check-square"></i>
             {% else %}
-            <i class="bi bi-dash-square"></i>
+            <i class="bi bi-x"></i>
             {% endif %}
 
         </td><td>{{ usrs.username }} </td><td> {{ usrs.email }} </td><td>{{usrs.first_name}}</td><td>{{usrs.last_name}}</td><td>{{usrs.last_login}}</td>
@@ -18,14 +18,14 @@
             {% if usrs.is_staff %}
             <i class="bi bi-check-square"></i>
             {% else %}
-            <i class="bi bi-dash-square"></i>
+            <i class="bi bi-x"></i>
             {% endif %}
         </td>
         <td class="text-sm-center">
             {% if usrs.is_active %}
             <i class="bi bi-check-square"></i>
             {% else %}
-            <i class="bi bi-dash-square"></i>
+            <i class="bi bi-x"></i>
             {% endif %}
         </td></tr>
 {% endfor %}

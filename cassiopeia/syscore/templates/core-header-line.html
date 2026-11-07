@@ -8,13 +8,23 @@
                 {{ WebPageAttributes.application_name }}
             </a>
             <div class="d-flex align-items-center gap-3 flex-shrink-0">
-                <a class="icon-link rjd-header-action" href="#about{{WebPageAttributes.application_code}}"
-                   role="button" data-bs-toggle="modal" data-bs-target="#about{{WebPageAttributes.application_code}}">
-                    <i class="bi bi-info-circle fs-4" aria-hidden="true"></i>
-                </a>
-                <a class="icon-link rjd-header-action" href="{% url 'syslogin' %}">
-                    <i class="bi bi-person-circle fs-1" aria-hidden="true"></i>
-                </a>
+                <div>
+                    <a class="icon-link rjd-header-action" href="#about{{WebPageAttributes.application_code}}"
+                       role="button" data-bs-toggle="modal" data-bs-target="#about{{WebPageAttributes.application_code}}">
+                        <i class="bi bi-info-circle fs-4" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div>
+                    <div>
+                        <a class="icon-link rjd-header-action" href="{% url 'syslogin' %}">
+                            <i class="bi bi-person-circle fs-3" aria-hidden="true"></i>
+
+                        </a>
+                    </div>
+                    <div>
+                        {{ user.username }}
+                    <div>
+                </div>
             </div>
         </nav>
     </div>

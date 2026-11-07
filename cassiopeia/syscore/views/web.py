@@ -76,10 +76,14 @@ class WebMachine():
         )
     def web_renderer (self, request, webpageattributes, webdata):
         """
-        print ('=== webmachine ===============================')
-        print (webdata)
-        for key, value in webdata.items():
-            print (key, value)
-        print('==============================================') """
+        print('=== WebMachine / web_render =================')
+        print('--- webpageattributes -----------------------')
+        print(webpageattributes)
+        print('--- webdata ---------------------------------')
+        print(webdata)
+        #for key, value in webdata.items():
+        #    print (key, value)
+        print('==============================================')
+        """
         return render(request, webpageattributes["module_template"]
-                      , context={"WebPageAttributes": webpageattributes,"WebData": webdata })
+                      , context={"WebPageAttributes": webpageattributes, "WebData": webdata})

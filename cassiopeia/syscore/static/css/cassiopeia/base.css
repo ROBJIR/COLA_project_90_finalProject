@@ -42,6 +42,12 @@ h1 {
     font-weight: 500;
     letter-spacing: -2px;
 }
+h2 {
+    font-size: 1.8em;
+    color: #006699;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
 .rjd-project-name {
     color: #55acee;
     letter-spacing: -2px;
