@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import sysLogin, sysLogout, CoreView
+from .views import UserLogin, UserLogout, UserProfile, UserPasswordChange, CoreView, UserProfile
 
 urlpatterns = [
     path ('', CoreView.as_view(), name = 'home'),
@@ -8,6 +8,8 @@ urlpatterns = [
     path('syslogging', include('syslogging.urls')),
     path('whohas',     include('whohas.urls')),
     path('paidyet',     include('paidyet.urls')),
-    path('syslogin', sysLogin.as_view(), name='syslogin'),
-    path('syslogout', sysLogout.as_view(), name='syslogout'),
+    path('userprofile', UserProfile.as_view(), name='userprofile'),
+    path('changepassword', UserPasswordChange.as_view(), name='changepassword'),
+    path('login', UserLogin.as_view(), name='userlogin'),
+    path('logout', UserLogout.as_view(), name='userlogout'),
 ]

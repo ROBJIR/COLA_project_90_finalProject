@@ -12,8 +12,7 @@
             {% else %}
             <i class="bi bi-x"></i>
             {% endif %}
-
-        </td><td>{{ usrs.username }} </td><td> {{ usrs.email }} </td><td>{{usrs.first_name}}</td><td>{{usrs.last_name}}</td><td>{{usrs.last_login}}</td>
+        </td><td>{{ usrs.username }} </td><td> {{ usrs.email }} </td><td>{{usrs.first_name}}</td><td>{{usrs.last_name}}</td><td>{{usrs.last_login  | date:"Y-m-d H:i:s"}}</td>
         <td class="text-sm-center">
             {% if usrs.is_staff %}
             <i class="bi bi-check-square"></i>
@@ -33,5 +32,4 @@
 </div>
 {% endblock %}
 
-{% if request.resolver_match.url_name == 'whohas' %}aria-current="page"{% endif %}>
 

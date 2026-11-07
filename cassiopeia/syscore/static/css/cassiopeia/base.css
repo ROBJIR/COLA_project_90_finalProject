@@ -44,8 +44,8 @@ h1 {
 }
 h2 {
     font-size: 1.8em;
-    color: #006699;
-    font-weight: 400;
+    color: #292f33;
+    font-weight: 800;
     letter-spacing: -1px;
 }
 .rjd-project-name {
@@ -66,15 +66,82 @@ h2 {
 
 .rjd-brand-row {
     padding-block: 0.25rem;
+    gap: 0.25rem;
 }
 
-.rjd-brand-row .rjd-header-action {
+.rjd-brand-row .rjd-project-name {
+    margin-inline-end: 0;
+}
+
+.rjd-brand-row .rjd-header-action {`
     color: #66757f;
 }
 
 .rjd-brand-row .rjd-header-action:hover,
 .rjd-brand-row .rjd-header-action:focus-visible {
+    color: #55acee;
+}
+
+/* Uživatelský účet v pravé části hlavičky. */
+.rjd-account {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    padding: 0.4rem 0.75rem;
+}
+
+.rjd-account-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    gap: 0;
+    min-width: 0;
+    font-size: 1.0rem;
+    line-height: 1.15;
+}
+
+.rjd-account-caption {
     color: #292f33;
+    font-weight: 400;
+    font-size: 0.75rem;
+}
+
+.rjd-account .rjd-account-profile {
+    color: #292f33;
+    font-weight: 600;
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+}
+
+.rjd-account .rjd-account-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0px solid #292f33;
+    border-radius: 0.25rem;
+    color: #292f33;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.rjd-account .rjd-account-profile:hover {
+    color: #66757F;
+}
+
+.rjd-account .rjd-account-action:hover {
+    color: #55acee;
+    text-decoration: none;
+}
+
+.rjd-account a:focus-visible {
+    outline: 2px solid #292f33;
+    outline-offset: 3px;
 }
 
 /* Hlavička stránky. */
@@ -206,3 +273,33 @@ h2 {
     border-top: 1px solid #d5dce5;
     font-size: 0.9rem;
 }
+
+/*
+.btn-primary {
+    --bs-btn-bg: #55acee;
+    --bs-btn-border-color: #55acee;
+    --bs-btn-color: #292f33;
+
+    --bs-btn-hover-bg: #429bdc;
+    --bs-btn-hover-border-color: #429bdc;
+    --bs-btn-hover-color: #292f33;
+
+    --bs-btn-active-bg: #368bc9;
+    --bs-btn-active-border-color: #368bc9;
+    --bs-btn-active-color: #292f33;
+}
+
+.btn-secondary {
+    --bs-btn-bg: #66757f;
+    --bs-btn-border-color: #66757f;
+    --bs-btn-color: #ffffff;
+
+    --bs-btn-hover-bg: #56636c;
+    --bs-btn-hover-border-color: #56636c;
+    --bs-btn-hover-color: #ffffff;
+
+    --bs-btn-active-bg: #465159;
+    --bs-btn-active-border-color: #465159;
+    --bs-btn-active-color: #ffffff;
+} */
+

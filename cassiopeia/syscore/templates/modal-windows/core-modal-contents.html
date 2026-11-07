@@ -1,0 +1,23 @@
+{% load static %}
+
+{% if WebPageAttributes.application_code == 'paidyet' %}
+  {% include "modal-windows/core-modal-content-paidyet.html" %}
+{% endif %}
+{% if WebPageAttributes.application_code == 'whohas' %}
+  {% include "modal-windows/core-modal-content-whohas.html" %}
+{% endif %}
+{% if WebPageAttributes.application_code == 'sysinfo' %}
+  {% include "modal-windows/core-modal-content-sysinfo.html" %}
+{% endif %}
+{% if WebPageAttributes.application_code == 'cassiopeia' %}
+  {% include "modal-windows/core-modal-content-cassiopeia.html" %}
+{% endif %}
+<p> <div  style="font-size:0.8em; color: #051b11; background-color: #bbb; padding: 8px; border-radius: 12px;">
+    <code style="color: #051b11;">
+    ============== code - name ===========================
+    <br>
+    aplication ... {{WebPageAttributes.application_code}} - {{WebPageAttributes.application_name}}
+    <br>
+    module ....... {{WebPageAttributes.module_code}} - {{WebPageAttributes.module_name}}
+    </code></div>
+</p>

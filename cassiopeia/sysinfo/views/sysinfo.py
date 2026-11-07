@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from syscore.views.tools import sysTools
 import datetime
-from syscore.views.tools import sysTools
+from sysinfo.views.base import SysInfoBase
 from syscore.views.web import WebMachine
 
 class SysInfoView(View):
@@ -26,6 +26,8 @@ class SysInfoView(View):
         return tl
     def get(self, request):
         webmain = self.timeline()
+        system_info = SysInfoBase.SysInfoSystem(self)
+        webmain += SysInfoBase.SysInfoToTable(self, system_info)
         # print(self.webdata)
         self.webdata["webmain"] = webmain
         # print(self.webdata)
@@ -37,48 +39,19 @@ class SessionsInfoView(View):
               "application_code": "sysinfo"
             , "application_name": "System Informations"
             , "module_code":      "sessionsinfo"
-            , "module_template":  "sysinfo.html"
+            , "module_template":  "sysinfo-sessionlist.html"
             , "module_name":      "Sessions Info"}
         self.webdata = {}
     def get(self,request):
-        webmain = ""
-
-        for session_key, session_value in request.session.items():
-            webmain = f"{webmain}\n<tr><td>{session_key}</td><td>{session_value}</td><td>EDIT | DELETE</td></tr>"
-            webmain = f"<table><tr><th>key</th><th>value</th><th>add sessions</th></tr>{html_body}</table>"
-
-        if request.method == "GET":
-            webmain = f"""{webmain}
-                                <div>Add session...</div>
-                                <div>
-                                <form action="#" method="POST">
-                                    <label>
-                                        Key:
-                                        <input type="text" name="key">
-                                    </label>
-                                    <label>
-                                        Value:
-                                        <input type="text" name="value">
-                                    </label>
-                                    <input type="submit">
-                                </form>
-                                </div>                            
-                            """
-        elif request.method == "POST":
-            key = request.POST["key"]
-            value = request.POST["value"]
-            if key != "" and value != "":
-                request.session[key] = value
-
-                return redirect(self.webpageattributes)
-
-        else:
-            webmain = f"{webmain}<div>neco je spatne!</div>"
-
-        self.webdata = ["webmain", webmain]
-        return WebMachine.web_renderer(self, request, self.webpageattributes, self.webdata)
-
-
+        self.webdata = {
+            "sessions": dict(request.session.items()),
+        }
+        return WebMachine.web_renderer(
+            self,
+            request,
+            self.webpageattributes,
+            self.webdata,
+        )
 
 class SysInfoUserList(View):
     def __init__(self):

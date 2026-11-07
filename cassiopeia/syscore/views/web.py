@@ -31,7 +31,6 @@ class WebMachine():
         htmlcode = f"{htmlcode}</table>\n"
         return htmlcode
 
-
     def html_table_generator(data):
         iterator = iter(data)
         first = next(iterator, None)
@@ -74,7 +73,27 @@ class WebMachine():
             header,
             body,
         )
-    def web_renderer (self, request, webpageattributes, webdata):
+    def web_message_generator(self, webmessage = None ):
+        wmsg = {
+            "message_type": "standard",
+            "message_alert": "alert-dark", # .alert-success, .alert-info, .alert-warning, .alert-danger, .alert-primary, .alert-secondary, .alert-light or .alert-dark
+            "message_header": "",
+            "message_body": "",
+            "message_html": "",
+        }
+
+        if webmessage is not None:
+            wmsg.update(webmessage)
+
+        if not wmsg["message_html"] and wmsg["message_body"]:
+            wmsg["message_html"] = f' \
+<div class ="alert {wmsg["message_alert"]} alert-dismissible"> \
+    <button type = "button" class ="btn-close" data-bs-dismiss="alert"> </button> \
+        {wmsg["message_body"]} \
+</div>'
+        return wmsg
+
+    def web_renderer (self, request, webpageattributes = None, webdata = None, webmessage = None):
         """
         print('=== WebMachine / web_render =================')
         print('--- webpageattributes -----------------------')
@@ -85,5 +104,17 @@ class WebMachine():
         #    print (key, value)
         print('==============================================')
         """
+        if webpageattributes is None:
+            webpageattributes = self.webpageattributes.copy()
+
+        if webdata is None:
+            webdata = self.webdata.copy()
+
+        if webmessage is None:
+            webmessage = {}
+        else:
+            webmessage = WebMachine.web_message_generator(self, webmessage)
+
+        # ebmessage = self.web_message_generator(webmessage)
         return render(request, webpageattributes["module_template"]
-                      , context={"WebPageAttributes": webpageattributes, "WebData": webdata})
+                      , context={"WebPageAttributes": webpageattributes, "WebMessage": webmessage, "WebData": webdata})

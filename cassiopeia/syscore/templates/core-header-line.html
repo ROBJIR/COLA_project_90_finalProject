@@ -1,32 +1,43 @@
 {% load static %}
 
 
-<div class="row">
-    <div class="col-sm-12">
-        <nav class="navbar rjd-brand-row align-items-start flex-nowrap gap-3">
+<div class="row align-items-center gy-2">
+    <div class="col-12 col-lg">
+        <nav class="navbar rjd-brand-row justify-content-start align-items-start flex-nowrap">
             <a class="navbar-brand rjd-project-name" href="/{{ WebPageAttributes.application_code }}">
                 {{ WebPageAttributes.application_name }}
             </a>
-            <div class="d-flex align-items-center gap-3 flex-shrink-0">
-                <div>
-                    <a class="icon-link rjd-header-action" href="#about{{WebPageAttributes.application_code}}"
-                       role="button" data-bs-toggle="modal" data-bs-target="#about{{WebPageAttributes.application_code}}">
-                        <i class="bi bi-info-circle fs-4" aria-hidden="true"></i>
-                    </a>
-                </div>
-                <div>
-                    <div>
-                        <a class="icon-link rjd-header-action" href="{% url 'syslogin' %}">
-                            <i class="bi bi-person-circle fs-3" aria-hidden="true"></i>
+            <a class="icon-link rjd-header-action" href="#aboutProjectInfo"
+               role="button" data-bs-toggle="modal" data-bs-target="#aboutProjectInfo"
+               aria-label="About project">
+                <i class="bi bi-info-circle fs-5" aria-hidden="true"></i>
+            </a>
 
-                        </a>
-                    </div>
-                    <div>
-                        {{ user.username }}
-                    <div>
-                </div>
-            </div>
         </nav>
+    </div>
+    <div class="col-12 col-lg-auto">
+        <div class="rjd-account">
+        {% if user.is_authenticated %}
+            <div class="rjd-account-details">
+                <a class="rjd-account-profile" href="{% url 'userprofile' %}">
+                    {{ user.first_name }} {{ user.last_name|default:user.username }}<br>
+                    <span class="rjd-account-caption">{{ user.email|default:user.username }}</span>
+                </a>
+            </div>
+            <a class="rjd-account-action" href="{% url 'userlogout' %}"
+               aria-label="Logout" title="Logout">
+                <i class="bi bi-power fs-2" aria-hidden="true"></i>
+            </a>
+        {% else %}
+            <div class="rjd-account-details">
+                <a class="rjd-account-profile" href="{% url 'userlogin' %}">LOGIN</a>
+            </div>
+            <a class="rjd-account-action" href="{% url 'userlogin' %}"
+               aria-label="Login" title="Login">
+                <i class="bi bi-person-circle fs-2" aria-hidden="true"></i>
+            </a>
+        {% endif %}
+        </div>
     </div>
 </div>
 
