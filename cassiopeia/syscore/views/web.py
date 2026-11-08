@@ -1,6 +1,7 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
-from django.utils.html import format_html, format_html_join
+from django.template.loader import render_to_string
+from syscore.views.tools import sysTools
 
 class WebMachine():
     def __init__(self):
@@ -31,49 +32,34 @@ class WebMachine():
         htmlcode = f"{htmlcode}</table>\n"
         return htmlcode
 
+    @staticmethod
+    def dictionary_to_html_table(data):
+        """Render a flat dictionary as an escaped key/value HTML table."""
+        if not isinstance(data, dict):
+            raise TypeError("data must be a dictionary")
+        return WebMachine.html_table_generator(
+            {"key": key, "value": value} for key, value in data.items()
+        )
+
+    @staticmethod
     def html_table_generator(data):
+        """Render dictionaries as a table using the first row's columns."""
         iterator = iter(data)
         first = next(iterator, None)
+        columns = list(first.keys()) if first is not None else []
 
-        if first is None:
-            return format_html("<p>{}</p>", "no records!")
-
-        columns = list(first.keys())
-
-        header = format_html_join(
-            "",
-            '<th scope="col">{}</th>',
-            ((column,) for column in columns),
-        )
-        def create_row(record):
-            cells = format_html_join(
-                "",
-                "<td>{}</td>",
-                (
-                    ("" if record.get(column) is None else record[column],)
-                    for column in columns
-                ),
-            )
-            return format_html("<tr>{}</tr>", cells)
         def rows():
-            yield (create_row(first),)
-            for record in iterator:
-                yield (create_row(record),)
-        body = format_html_join("", "{}", rows())
+            if first is not None:
+                yield [first.get(column) for column in columns]
+                for record in iterator:
+                    yield [record.get(column) for column in columns]
 
-        return format_html(
-            """
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead><tr>{}</tr></thead>
-                    <tbody>{}</tbody>
-                </table>
-            </div>
-            """,
-            header,
-            body,
+        return render_to_string(
+            "syscore/data-table.html",
+            {"columns": columns, "rows": rows(), "has_records": first is not None},
         )
-    def web_message_generator(self, webmessage = None ):
+    @staticmethod
+    def web_message_generator(webmessage = None):
         wmsg = {
             "message_type": "standard",
             "message_alert": "alert-dark", # .alert-success, .alert-info, .alert-warning, .alert-danger, .alert-primary, .alert-secondary, .alert-light or .alert-dark
@@ -86,12 +72,28 @@ class WebMachine():
             wmsg.update(webmessage)
 
         if not wmsg["message_html"] and wmsg["message_body"]:
-            wmsg["message_html"] = f' \
-<div class ="alert {wmsg["message_alert"]} alert-dismissible"> \
-    <button type = "button" class ="btn-close" data-bs-dismiss="alert"> </button> \
-        {wmsg["message_body"]} \
-</div>'
+            wmsg["message_html"] = (f' \
+                <div class="row mt-3"> \
+                    <div class="col-12 col-lg-4"></div> \
+                    <div class="col-12 col-lg-4"> \
+                        <div class ="alert {wmsg["message_alert"]} alert-dismissible"> \
+                            <button type = "button" class ="btn-close" data-bs-dismiss="alert"></button> \
+                                {wmsg["message_body"]} \
+                        </div> \
+                    </div> \
+                    <div class="col-12 col-lg-4"></div> \
+                </div>')
         return wmsg
+
+    @staticmethod
+    def sys_message_set(request, message_alert, message_body):
+        sysTools.session_set(request, 'sys_message',{'message_alert': message_alert, 'message_body': message_body})
+        return sysTools.session_get(request, 'sys_message')
+    @staticmethod
+    def sys_message_get(request):
+        sys_message_value = sysTools.session_get(request, 'sys_message')
+        sysTools.session_clear(request, 'sys_message')
+        return sys_message_value
 
     def web_renderer (self, request, webpageattributes = None, webdata = None, webmessage = None):
         """
@@ -111,10 +113,10 @@ class WebMachine():
             webdata = self.webdata.copy()
 
         if webmessage is None:
-            webmessage = {}
-        else:
-            webmessage = WebMachine.web_message_generator(self, webmessage)
+            webmessage = WebMachine.sys_message_get(request) or {}
 
-        # ebmessage = self.web_message_generator(webmessage)
+        webmessage = WebMachine.web_message_generator(webmessage)
+
         return render(request, webpageattributes["module_template"]
                       , context={"WebPageAttributes": webpageattributes, "WebMessage": webmessage, "WebData": webdata})
+

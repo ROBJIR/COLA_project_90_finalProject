@@ -28,9 +28,7 @@ class SysInfoView(View):
         webmain = self.timeline()
         system_info = SysInfoBase.SysInfoSystem(self)
         webmain += SysInfoBase.SysInfoToTable(self, system_info)
-        # print(self.webdata)
         self.webdata["webmain"] = webmain
-        # print(self.webdata)
         return WebMachine.web_renderer(self, request, self.webpageattributes, self.webdata)
 
 class SessionsInfoView(View):
@@ -39,12 +37,36 @@ class SessionsInfoView(View):
               "application_code": "sysinfo"
             , "application_name": "System Informations"
             , "module_code":      "sessionsinfo"
-            , "module_template":  "sysinfo-sessionlist.html"
+            , "module_template":  "sysinfo-sesscookielist.html"
             , "module_name":      "Sessions Info"}
         self.webdata = {}
     def get(self,request):
+        sessions = dict(request.session.items())
+        data = sysTools.dictionary_to_data(sessions)
         self.webdata = {
-            "sessions": dict(request.session.items()),
+            "html_table": WebMachine.dictionary_to_html_table(data),
+        }
+        return WebMachine.web_renderer(
+            self,
+            request,
+            self.webpageattributes,
+            self.webdata,
+        )
+
+class CookiesInfoView(View):
+    def __init__(self):
+        self.webpageattributes = {
+              "application_code": "sysinfo"
+            , "application_name": "System Informations"
+            , "module_code":      "cookieinfo"
+            , "module_template":  "sysinfo-sesscookielist.html"
+            , "module_name":      "Cookie Info"}
+        self.webdata = {}
+    def get(self,request):
+        cookies = dict(request.COOKIES.items())
+        data = sysTools.dictionary_to_data(cookies)
+        self.webdata = {
+            "html_table": WebMachine.dictionary_to_html_table(data),
         }
         return WebMachine.web_renderer(
             self,
@@ -66,9 +88,4 @@ class SysInfoUserList(View):
         users = User.objects.all().values()
         print(WebMachine.html_table_generator(users))
         self.webdata={"users":users ,"chusers":WebMachine.html_table_generator(users)}
-        """
-        print ("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print (sysTools.showTuple(self,users,0))
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        """
         return WebMachine.web_renderer(self, request, self.webpageattributes, self.webdata)

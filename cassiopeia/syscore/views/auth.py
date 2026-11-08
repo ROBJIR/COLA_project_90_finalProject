@@ -33,7 +33,7 @@ class UserProfile(View):
         self.webdata = {}
     def get(self, request):
         if request.user.is_authenticated:
-            return WebMachine.web_renderer(self, request, self.webpageattributes, self.webdata, webmessage={'message_body':''})
+            return WebMachine.web_renderer(self, request, self.webpageattributes, self.webdata)
         else:
             return redirect("login")
 
@@ -54,37 +54,14 @@ class UserLogin(View):
             login(request, user)
             return redirect("userprofile")
         else:
-            return WebMachine.web_renderer(
-                self,
-                request,
-                self.webpageattributes,
-                self.webdata,
-                webmessage={"message_alert": "alert-danger", "message_body": "Incorrect username or password!"}
-                )
+            WebMachine.sys_message_set(request, "alert-danger", "Incorrect username or password!")
+            return WebMachine.web_renderer(self, request, self.webpageattributes, self.webdata)
 
 class UserLogout(View):
     def get(self, request):
         logout(request)
+        WebMachine.sys_message_set(request, "alert-success", "User has been successfully logged out.")
         return redirect("home")
-
-class UserPasswordChange11111111111111(View):
-    def __init__(self):
-        self.webpageattributes = {
-                "application_code": "cassiopeia"
-                , "application_name": "Cassiopeia Projects"
-                , "module_code": "cassiopeia"
-                , "module_template": "core-main.html"
-                , "module_name": "Cassiopeia Project"}
-        self.webdata = {}
-    def get(self, request):
-        logout(request)
-        self.webpageattributes = {
-                  "application_code": "cassiopeia"
-                , "application_name": "Cassiopeia Projects"
-                , "module_code": "userlogout"
-                , "module_template": "core-.html"
-                , "module_name": "Logout"}
-        return WebMachine.web_renderer(self, request, self.webpageattributes, self.webdata)
 
 class UserPasswordChange(LoginRequiredMixin, View):
     def get(self, request):
@@ -110,16 +87,18 @@ class UserPasswordChange(LoginRequiredMixin, View):
 
             if not request.user.check_password(oldpassword):
                 self.webdata = {"profile_action": "change_password"}
-                return WebMachine.web_renderer(self, request, self.webpageattributes, self.webdata, webmessage={"message_alert": "alert-danger", "message_body": "Incorrect OLD password!"})
+                WebMachine.sys_message_set(request, "alert-danger", "Incorrect OLD password!")
+                return WebMachine.web_renderer(self, request, self.webpageattributes, self.webdata)
 
             if form["newpassword1"] == form["newpassword2"]:
                 request.user.set_password(form["newpassword1"])
                 request.user.save()
                 update_session_auth_hash(request, request.user)
-                return WebMachine.web_renderer(self, request, self.webpageattributes, self.webdata,
-                                               webmessage={"message_alert": "alert-success",
-                                                           "message_body": "Password has been successfully changed."})
+                WebMachine.sys_message_set(request, "alert-success", "Password has been successfully changed.")
+                return WebMachine.web_renderer(self, request, self.webpageattributes, self.webdata)
             else:
-                return WebMachine.web_renderer(self, request, self.webpageattributes, self.webdata, webmessage={"message_alert": "alert-danger", "message_body": "Passwords do not match."})
+                self.webdata = {"profile_action": "change_password"}
+                WebMachine.sys_message_set(request, "alert-danger", "Passwords do not match!")
+                return WebMachine.web_renderer(self, request, self.webpageattributes, self.webdata)
 
 

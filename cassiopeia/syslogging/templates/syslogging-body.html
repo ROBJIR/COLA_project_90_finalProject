@@ -2,7 +2,6 @@
 {% load static %}
 {% block content-l1 %}
 
-	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
 
@@ -10,17 +9,20 @@
 
 			</div>
 		</div>
+
 	</div>
+</header>
 
-	<main class="container py-4 flex-grow-1">
-		<div class="row">
-			<div class="col-sm-12">
+<main class="container py-4 flex-grow-1">
+	<div class="row">
+		<div class="col-sm-12">
+			{% include "core-sys-messages.html" %}
 
-				{% block content-l2 %}
-				{% endblock %}
+			{% block content-l2 %}
+			{% endblock %}
 
-			</div>
 		</div>
-	</main>
+	</div>
+</main>
 
 {% endblock %}
