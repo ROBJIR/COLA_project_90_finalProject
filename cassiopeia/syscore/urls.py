@@ -1,10 +1,10 @@
 from django.urls import path, include
-from .views import UserLogin, UserLogout, UserProfile, UserPasswordChange, CoreView, UserProfile
+from .views import MainView, UserLogin, UserLogout, UserProfile, UserPasswordChange, UserProfile
 
 urlpatterns = [
-    path ('', CoreView.as_view(), name = 'home'),
-    path('cassiopeia', CoreView.as_view(), name='cassiopeia'),
-    path('sysinfo/', include('sysinfo.urls')),
+    path ('', MainView.as_view(), name = 'home'),
+    path('cassiopeia', MainView.as_view(), name='cassiopeia'),
+    path('sysadm', include('sysadm.urls')),
     path('syslogging', include('syslogging.urls')),
     path('whohas',     include('whohas.urls')),
     path('paidyet',     include('paidyet.urls')),

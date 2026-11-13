@@ -13,6 +13,10 @@
     <div class="col-12 col-lg-4">
         <div class="mt-3 bg-body-secondary p-4 border rounded-4">
             <h1>{{WebPageAttributes.module_name}}</h1>
+
+            <!-- web-auth-message: web-messages/web-auth-messages.html -->
+            {% include "web-messages/web-auth-messages.html" %}
+
             <div>
                 <form action="{% url 'userlogin' %}" method="post">
                     {% csrf_token %}

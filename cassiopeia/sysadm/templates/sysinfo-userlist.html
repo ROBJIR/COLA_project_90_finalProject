@@ -1,0 +1,36 @@
+{% extends "sysinfo-body.html" %}
+{% block content-l2 %}
+
+<h1>{{web_page_attributes.module_name}} </h1>
+<div class="table">
+<table class="table"><tr><th>id</th><th class="text-sm-center">superuser</th><th>username</th><th>email</th><th>first name</th>
+    <th>last name</th><th>last login</th><th class="text-sm-center">staff</th><th class="text-sm-center">active</th></tr>
+{% for usrs in web_data.users %}
+    <tr><td>{{ usrs.id }}</td>
+        <td class="text-sm-center">
+            {% if usrs.is_superuser %}
+            <i class="bi bi-check-square"></i>
+            {% else %}
+            <i class="bi bi-x"></i>
+            {% endif %}
+        </td><td>{{ usrs.username }} </td><td> {{ usrs.email }} </td><td>{{usrs.first_name}}</td><td>{{usrs.last_name}}</td><td>{{usrs.last_login  | date:"Y-m-d H:i:s"}}</td>
+        <td class="text-sm-center">
+            {% if usrs.is_staff %}
+            <i class="bi bi-check-square"></i>
+            {% else %}
+            <i class="bi bi-x"></i>
+            {% endif %}
+        </td>
+        <td class="text-sm-center">
+            {% if usrs.is_active %}
+            <i class="bi bi-check-square"></i>
+            {% else %}
+            <i class="bi bi-x"></i>
+            {% endif %}
+        </td></tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}
+
+

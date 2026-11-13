@@ -1,0 +1,10 @@
+{% extends "sysinfo-body.html" %}
+{% block content-l2 %}
+
+<h1>{{web_page_attributes.module_name}} </h1>
+{% if web_data.html_table %}
+{{ web_data.html_table }}
+{% else %}
+<p>ERROR: displaying data outside the expected variable web_data.html_table </p>
+{% endif %}
+{% endblock %}

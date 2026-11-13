@@ -1,0 +1,44 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg rjd-line-menu" aria-label="Main navigation">
+  <div class="container-fluid">
+    <button class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'sysadm' %}">home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'sysadm' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            admin module
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'sysadm-userlist' %}">users</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'sysadm' %}">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'sysadm' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            sessions&cookies
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'sysadm-sessionsinfo' %}">sessions</a></li>
+            <li><a class="dropdown-item" href="{% url 'sysadm-cookiesinfo' %}">cookies</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

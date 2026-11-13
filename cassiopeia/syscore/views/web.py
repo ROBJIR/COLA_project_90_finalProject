@@ -4,14 +4,16 @@ from django.template.loader import render_to_string
 from syscore.views.tools import sysTools
 
 class WebMachine():
+    web_page_attributes_template = {
+        "application_code": "cassiopeia",
+        "application_name": "Cassiopeia Projects",
+        "module_code": "cassiopeia",
+        "module_template": "core-main.html",
+        "module_name": "Cassiopeia Project",
+    }
+    web_page_data_template = {"htmlbody": ""}
     def __init__(self):
-        self.webpageattributes = {
-              "application_code":   "cassiopeia"
-            , "application_name":   "Cassiopeia Projects"
-            , "module_code":        "cassiopeia"
-            , "module_template":    "core-main.html"
-            , "module_name":        "Cassiopeia Project"}
-        self.webdata = {"htmlbody":""}
+        pass
     def table_list_genertor(self, data):
         if len(data) == 0:
             self.message_detail  = self.html_message_set("data was not loaded", "warning")
@@ -58,44 +60,35 @@ class WebMachine():
             "syscore/data-table.html",
             {"columns": columns, "rows": rows(), "has_records": first is not None},
         )
+
+    # Bootstrap alert Categories:
+    # .alert-success, .alert-info, .alert-warning, .alert-danger
+    # .alert-primary, .alert-secondary, .alert-light or .alert-dark
     @staticmethod
-    def web_message_generator(webmessage = None):
-        wmsg = {
-            "message_type": "standard",
-            "message_alert": "alert-dark", # .alert-success, .alert-info, .alert-warning, .alert-danger, .alert-primary, .alert-secondary, .alert-light or .alert-dark
-            "message_header": "",
-            "message_body": "",
-            "message_html": "",
-        }
+    def web_message_set(request, message_body = None,
+                        message_alert = 'alert-secondary', message_type = 'sys_message' ):
 
-        if webmessage is not None:
-            wmsg.update(webmessage)
+        message_type = message_type.lower()
+        if message_type not in ['sys_message', 'auth_message']:
+            message_type = 'sys_message'
 
-        if not wmsg["message_html"] and wmsg["message_body"]:
-            wmsg["message_html"] = (f' \
-                <div class="row mt-3"> \
-                    <div class="col-12 col-lg-4"></div> \
-                    <div class="col-12 col-lg-4"> \
-                        <div class ="alert {wmsg["message_alert"]} alert-dismissible"> \
-                            <button type = "button" class ="btn-close" data-bs-dismiss="alert"></button> \
-                                {wmsg["message_body"]} \
-                        </div> \
-                    </div> \
-                    <div class="col-12 col-lg-4"></div> \
-                </div>')
-        return wmsg
+        sys_msg_value = request.session.get(message_type) or []
+        sys_msg_value.append({'message_alert':message_alert, 'message_body': message_body})
+        request.session[message_type] = sys_msg_value
+
+        return sys_msg_value
 
     @staticmethod
-    def sys_message_set(request, message_alert, message_body):
-        sysTools.session_set(request, 'sys_message',{'message_alert': message_alert, 'message_body': message_body})
-        return sysTools.session_get(request, 'sys_message')
-    @staticmethod
-    def sys_message_get(request):
-        sys_message_value = sysTools.session_get(request, 'sys_message')
-        sysTools.session_clear(request, 'sys_message')
-        return sys_message_value
+    def web_message_get(request, message_type = 'sys_message'):
 
-    def web_renderer (self, request, webpageattributes = None, webdata = None, webmessage = None):
+        sys_msg_value = request.session.get(message_type)
+        sysTools.session_clear(request, message_type)
+        # session clear
+        request.session.pop(message_type, None)
+
+        return sys_msg_value
+
+    def web_renderer (self, request, web_page_attributes = None, web_data = None, web_sys_message = None, web_auth_message = None):
         """
         print('=== WebMachine / web_render =================')
         print('--- webpageattributes -----------------------')
@@ -106,17 +99,40 @@ class WebMachine():
         #    print (key, value)
         print('==============================================')
         """
-        if webpageattributes is None:
-            webpageattributes = self.webpageattributes.copy()
+        web_page_attrib = WebMachine.web_page_attributes_template.copy()
+        web_page_attrib.update(web_page_attributes or {})
 
-        if webdata is None:
-            webdata = self.webdata.copy()
+        web_page_data = WebMachine.web_page_data_template.copy()
+        web_page_data.update(web_data or {})
 
-        if webmessage is None:
-            webmessage = WebMachine.sys_message_get(request) or {}
+        web_sys_msg = WebMachine.web_message_get(request,'sys_message') or []
+        if web_sys_message is not None:
+            web_sys_msg.append(web_sys_message)
 
-        webmessage = WebMachine.web_message_generator(webmessage)
+        web_auth_msg = WebMachine.web_message_get(request,'auth_message') or []
+        if web_auth_message is not None:
+            web_auth_msg.append(web_auth_message)
 
-        return render(request, webpageattributes["module_template"]
-                      , context={"WebPageAttributes": webpageattributes, "WebMessage": webmessage, "WebData": webdata})
+        """
+        print('=== WebMachine / web_render =================')
+        print('--- web_page_attributes -----------------------')
+        print(web_page_attrib)
+        print('--- web_data ---------------------------------')
+        print(web_page_data)
+        print('--- web_sys_message ---------------------------------')
+        print(web_sys_msg)
+        print('--- web_auth_message ---------------------------------')
+        print(web_auth_msg)
+        # for key, value in webdata.items():
+        #    print (key, value)
+        print('==============================================')
+        """
+
+
+        return render(request, web_page_attributes["module_template"]
+                      , context = {  "web_page_attributes": web_page_attrib
+                                    ,"web_sys_message": web_sys_msg
+                                    ,"web_auth_message": web_auth_msg
+                                    ,"web_data": web_page_data  }
+                      )
 

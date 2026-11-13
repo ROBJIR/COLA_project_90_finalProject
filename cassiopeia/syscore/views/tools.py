@@ -50,14 +50,16 @@ class sysTools():
             rows.append(f"{inde}{data}")
         return "\n".join(rows)
 
-    def session_get(request,session_name):
-        session_value = request.session.get(session_name)
-        return session_value
+    @staticmethod
+    def session_get(request, session_name):
+        return request.session.get(session_name)
 
-    def session_set(request,session_name, session_value):
+    @staticmethod
+    def session_set(request, session_name, session_value):
         request.session[session_name] = session_value
         return request.session.get(session_name)
 
-    def session_clear(request,session_name):
+    @staticmethod
+    def session_clear(request, session_name):
         request.session.pop(session_name, None)
         return True
