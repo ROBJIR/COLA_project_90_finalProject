@@ -1,1 +1,0 @@
-from .paidyet import *
