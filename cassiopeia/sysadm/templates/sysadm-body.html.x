@@ -1,0 +1,31 @@
+{% extends "syscor-base.html" %}
+{% load static %}
+{% block content-l1 %}
+
+		<div class="row">
+			<div class="col-sm-12">
+
+				{% include "sysadm-menu-line.html" %}
+
+			</div>
+		</div>
+
+	</div>
+</header>
+
+<main class="container py-4 flex-grow-1">
+
+	<!-- web-message: messages/web-messages.html -->
+	{% include "messages/web-messages.html" %}
+
+	<div class="row">
+		<div class="col-sm-12">
+
+			{% block content-l2 %}
+			{% endblock %}
+
+		</div>
+	</div>
+</main>
+
+{% endblock %}

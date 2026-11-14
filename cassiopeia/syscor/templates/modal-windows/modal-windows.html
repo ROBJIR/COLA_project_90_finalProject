@@ -1,0 +1,49 @@
+{% load static %}
+
+<div class="modal fade"
+     id="aboutProject"
+     tabindex="-1"
+     aria-labelledby="aboutProjectBaseTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-1" id="H2aboutProject">
+                    final project Cassiopeia
+                </h1>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {% include "modal-windows/modal-content-project.html" %}
+                </br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade"
+     id="aboutProjectInfo"
+     tabindex="-1"
+     aria-labelledby="aboutProjectInfo"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-1" id="H2aboutProjectInfo">
+                    {{web_page_attributes.application_name}}
+                </h1>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    {% include "modal-windows/modal-contents.html" %}
+
+            </div>
+        </div>
+    </div>
+</div>

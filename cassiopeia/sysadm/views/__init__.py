@@ -1,1 +1,1 @@
-from .sysinfo import *
+from .sysadm import *

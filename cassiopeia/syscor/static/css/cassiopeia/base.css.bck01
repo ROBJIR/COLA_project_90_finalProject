@@ -1,0 +1,63 @@
+/* Cassiopeia Design - base.css */
+html {
+	/* Base styles go here */
+	font-family: Calibri, Verdana, Arial, sans-serif;
+}
+body {
+	background: #ddd;
+}
+
+footer {
+	font-size: 0.8em;
+    background: #F0F8FF;
+    border-top: 2px solid #ddd;
+}
+
+
+a {
+	color: #333;              /* barva odkazu */
+	text-decoration: none;    /* odstraní podtržení */
+}
+a:link {
+	color: #333;              /* normální (nenavštívený) odkaz */
+	text-decoration: none;
+}
+
+a:visited {
+	color: #333;            /* již navštívený odkaz */
+	text-decoration: none;
+}
+
+a:hover {
+	color: #4682b4;               /* když na něj najedeš myší */
+	text-decoration: none;
+}
+
+a:active {
+	color: #333;             /* při kliknutí */
+}
+
+.cassiopeia-header {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.xcassiopeia-footer {
+	font-size: 0.8em;
+    background: #F0F8FF;
+    border-top: 2px solid #ddd;
+}
+
+.cassiopeia_nav_container { padding: 0; }
+
+.cassiopeia_nav_ul { font-weight: bold;
+                    font-size: 1.2em;
+}
+
+
+.cassiopeia_top_container { padding: 0; }
+
+.cassiopeia_top_ul { font-size: 0	.8em; }
+
+*/

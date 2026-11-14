@@ -1,0 +1,20 @@
+{% load static %}
+
+{% for msg in web_message %}
+
+    {% if msg.message_body is not None %}
+
+        <div class="row mt-3">
+            <div class="col-12 col-lg-2"></div>
+            <div class="col-12 col-lg-8">
+                <div class ="alert {{ msg.message_alert  }} alert-dismissible">
+                    <button type = "button" class ="btn-close" data-bs-dismiss="alert"></button>
+                        {{ msg.message_body | safe }}
+                </div>
+            </div>
+            <div class="col-12 col-lg-2"></div>
+        </div>
+
+    {% endif %}
+
+{% endfor %}

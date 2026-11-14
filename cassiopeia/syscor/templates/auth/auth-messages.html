@@ -1,0 +1,13 @@
+{% load static %}
+
+{% for msg in auth_message %}
+
+    {% if msg.message_body is not None %}
+        <div class ="alert {{ msg.message_alert }} alert-dismissible">
+            <button type = "button" class ="btn-close" data-bs-dismiss="alert"></button>
+                {{ msg.message_body | safe }}
+        </div>
+
+    {% endif %}
+
+{% endfor %}
