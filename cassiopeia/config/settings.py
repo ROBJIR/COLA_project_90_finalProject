@@ -121,3 +121,55 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 LOGIN_URL = "login"
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+
+    "formatters": {
+        "standard": {
+            "format": "{asctime} {levelname} {name}: {message}",
+            "style": "{",
+        },
+    },
+
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "standard",
+        },
+        "file": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": BASE_DIR / "django.log",
+            "maxBytes": 5_000_000,
+            "backupCount": 3,
+            "encoding": "utf-8",
+            "level": "DEBUG",
+            "formatter": "standard",
+        },
+        "database": {
+            "class": "syscor.handlers.DatabaseLogHandler",
+            "level": "DEBUG",
+            "formatter": "standard",
+        },
+    },
+
+    "loggers": {
+        "cassiopeia.database_fallback": {
+            "handlers": ["console", "file"],
+            "level": "WARNING",
+            "propagate": False,
+        },
+        "cassiopeia": {
+            "handlers": ["console", "file", "database"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "django": {
+            "handlers": ["console", "file"],
+            "level": "WARNING",
+            "propagate": False,
+        },
+    },
+}

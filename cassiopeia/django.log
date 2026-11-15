@@ -1,0 +1,12 @@
+2026-11-15 15:14:52,157 INFO cassiopeia.auth: Loggout user 'admin'.
+2026-11-15 15:14:57,815 WARNING cassiopeia.auth: Failed login attempt for username 'dell'.
+2026-11-15 15:15:10,674 WARNING cassiopeia.auth: Failed login attempt for username 'dell'.
+2026-11-15 15:15:25,163 INFO cassiopeia.auth: Logged user 'dell'.
+2026-11-15 15:21:06,230 WARNING django.request: Not Found: /favicon.ico
+2026-11-15 15:21:06,231 WARNING django.server: "GET /favicon.ico HTTP/1.1" 404 11134
+2026-11-15 15:22:07,632 INFO cassiopeia.auth: Loggout user 'admin'.
+2026-11-15 15:36:22,414 INFO cassiopeia.auth: Logged user 'lenovo'.
+2026-11-15 15:37:06,883 INFO cassiopeia.auth: Loggout user 'lenovo'.
+2026-11-15 15:38:19,760 INFO cassiopeia.auth: Logged user 'dell'.
+2026-11-15 16:08:57,292 INFO cassiopeia.auth: Loggout user 'dell'.
+2026-11-15 16:09:13,244 INFO cassiopeia.auth: Logged user 'dell'.

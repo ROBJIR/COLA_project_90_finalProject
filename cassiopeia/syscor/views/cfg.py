@@ -50,6 +50,8 @@ WEB_APPLICATION_MODULES = {
                                                     'module_file_template': 'webloglist.html', },
     'sysloglist': {'application_code': 'syslog',    'module_name':          'SysLog',
                                                     'module_file_template': 'sysloglist.html', },
+    'pythonloglist': {'application_code': 'syslog', 'module_name':          'PythonLog',
+                                                    'module_file_template': 'pythonloglist.html', },
 # ===== whohas =======================================================================================
     'whohas'    :{'application_code': 'whohas',     'module_name':          'Who Has My Stuff?',
                                                     'module_file_template': 'whohas.html',},

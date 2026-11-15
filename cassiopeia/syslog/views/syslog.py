@@ -1,16 +1,19 @@
+# Display permission-protected log summaries and lists and handle log-clearing POST requests.
+# Zobrazuje přehledy a seznamy logů chráněné oprávněními a zpracovává požadavky POST na jejich vymazání.
 # 2026-11-11, robert.jiranek@gmail.com
 # syslog.py - Logging module
 #
-from email.mime import text
-
+from django.shortcuts import redirect
 from django.views import View
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from datetime import timedelta
+from .base import SysLogBase
 from syslog.models import WebLog, SysLog
 from syscor.views import WebMachine
+from syscor.models import PythonLog
 
-class SysLogView(LoginRequiredMixin, PermissionRequiredMixin, View):
-    permission_required = ("syslog.view_syslog", "syslog.view_weblog")
+# Display permitted log summaries.
+# Zobrazuje přehledy logů podle oprávnění.
+class SysLogView(SysLogBase, View):
+    permission_required = ("syslog.view_syslog", "syslog.view_weblog","syscor.view_pythonlog",)
 
     def has_permission(self):
         return any(
@@ -18,107 +21,73 @@ class SysLogView(LoginRequiredMixin, PermissionRequiredMixin, View):
             for permission in self.get_permission_required()
         )
 
-    def handle_no_permission(self):
-        if not self.request.user.is_authenticated:
-            return super().handle_no_permission()
-
-        response = WebMachine.web_renderer(self, self.request, "403")
-        response.status_code = 403
-        return response
-
-    def __init__(self):
-        self.web_data = {}
-
     def get(self, request):
-        self.web_data['weblog_count'] = WebLog.objects.count()
-        self.web_data['syslog_count'] = SysLog.objects.count()
+        self.web_data = {}
+        if request.user.has_perm("syslog.view_syslog"):
+            self.web_data["syslog_count"] = SysLog.objects.count()
 
-        """ -- test SysLog
-        SysLogging.log(request, 'info', None,'syslog', 'SysLog Count', '', 'success'
-                            , None, self.web_data['syslog_count'])
-        SysLogging.log(request, 'info', None, 'syslog', 'WebLog Count','','success'
-                            ,None, self.web_data['weblog_count'])
-        """
+        if request.user.has_perm("syslog.view_weblog"):
+            self.web_data["weblog_count"] = WebLog.objects.count()
+
+        if request.user.has_perm("syscor.view_pythonlog"):
+            self.web_data["pythonlog_count"] = PythonLog.objects.count()
 
         return WebMachine.web_renderer(self, request, 'syslog', self.web_data)
 
-class SysLogging():
-    def log(request, alert_code:str = "info", webmessage_show:str = "", module_code:str = "", action_code:str = ""
-                    , step_code:str = "", status_code:str = "", parameters_value:dict = None, retval_value: str = ""
-                    , error_code: str = "",error_message: str = ""
-                    , webmessage_body: str = ""):
-
-        alert_code = alert_code.lower()
-        if webmessage_show:
-            webmessage_show = webmessage_show.lower()
-
-        web_msg = {}
-        if webmessage_show in ('web', 'auth'):
-            if not webmessage_body:
-                if error_message:
-                    webmessage_body = error_message
-                else:
-                    webmessage_body = retval_value
-            web_msg = {'webmessage_show': webmessage_show, 'webmessage_body': webmessage_body}
-            WebMachine.web_message_set(request, webmessage_body, message_alert=alert_code, message_type=webmessage_show)
-
-        SysLog.objects.create(
-            alert_code = alert_code.lower(),
-            module_code = module_code.lower(),
-            action_code = action_code,
-            step_code = step_code,
-            status_code = status_code.upper(),
-            parameters_value = parameters_value,
-            retval_value=retval_value,
-            error_code=error_code,
-            error_message=error_message,
-            web_message=web_msg
-        )
-        return
-
-class WebLogging():
-    def log(request, module_code:str, module_file_template:str, web_page_attributes:dict, timedelta_render_page:timedelta,timedelta_content_prepare:timedelta ):
-        WebLog.objects.create(
-            module_code=module_code,
-            module_file_template=module_file_template,
-            web_page_attributes=web_page_attributes,
-            timedelta_render_page=timedelta_render_page,
-            timedelta_content_prepare=timedelta_content_prepare,
-        )
-        return
-
-class SysLogListView(LoginRequiredMixin, PermissionRequiredMixin, View):
+# List recent application events.
+# Vypisuje poslední aplikační události.
+class SysLogListView(SysLogBase, View):
     permission_required = "syslog.view_syslog"
-    def __init__(self):
-        self.web_data = {}
-
-    def handle_no_permission(self):
-        if not self.request.user.is_authenticated:
-            return super().handle_no_permission()
-
-        response = WebMachine.web_renderer(self, self.request, "403")
-        response.status_code = 403
-        return response
-
     def get(self, request):
-        log_records = SysLog.objects.order_by('-timestamp')[:1000]
+        log_records = SysLog.objects.order_by("-timestamp", "-id")[:100]
         self.web_data = {'syslogs': log_records}
         return WebMachine.web_renderer(self, request, 'sysloglist', self.web_data)
 
-class WebLogListView(LoginRequiredMixin, PermissionRequiredMixin, View):
+# List recent web rendering records.
+# Vypisuje poslední záznamy vykreslování stránek.
+class WebLogListView(SysLogBase, View):
     permission_required = "syslog.view_weblog"
-    def __init__(self):
-        self.web_data = {}
-
-    def handle_no_permission(self):
-        if not self.request.user.is_authenticated:
-            return super().handle_no_permission()
-
-        response = WebMachine.web_renderer(self, self.request, "403")
-        response.status_code = 403
-        return response
-
     def get(self, request):
-        log_records = WebLog.objects.order_by('-timestamp')[:1000]
+        log_records = WebLog.objects.order_by("-timestamp", "-id")[:100]
         self.web_data = {'weblogs': log_records}
         return WebMachine.web_renderer(self, request, 'webloglist', self.web_data)
+
+# List recent Python log records.
+# Vypisuje poslední záznamy Python logu.
+class PythonLogListView(SysLogBase, View):
+    permission_required = "syscor.view_pythonlog"
+
+    def get(self, request):
+        logs = PythonLog.objects.order_by("-timestamp", "-id")[:100]
+        return WebMachine.web_renderer(
+            self, request, "pythonloglist", {"pythonlogs": logs}
+        )
+
+
+# Clear Python logs after checking delete permission.
+# Maže Python logy po kontrole oprávnění k mazání.
+class PythonLogClearView(SysLogBase, View):
+    permission_required = "syscor.delete_pythonlog"
+
+    def post(self, request):
+        PythonLog.objects.all().delete()
+        return redirect("pythonloglist")
+
+# Clear application logs after checking delete permission.
+# Maže aplikační logy po kontrole oprávnění k mazání.
+class SysLogClearView(SysLogBase, View):
+    permission_required = "syslog.delete_syslog"
+
+    def post(self, request):
+        SysLog.objects.all().delete()
+        return redirect("sysloglist")
+
+# Clear web logs after checking delete permission.
+# Maže webové logy po kontrole oprávnění k mazání.
+class WebLogClearView(SysLogBase, View):
+    permission_required = "syslog.delete_weblog"
+
+    def post(self, request):
+        WebLog.objects.all().delete()
+        return redirect("webloglist")
+

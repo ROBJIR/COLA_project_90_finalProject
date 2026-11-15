@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render, redirect
 from django.views import View
 from django.http import HttpResponse
@@ -16,8 +18,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from .web import WebMachine
-from syslog.views.syslog import SysLogging
+from syslog.views.logging import SysLogging
 
+logger = logging.getLogger("cassiopeia.auth")
 
 class UserProfile(View):
     def __init__(self):
@@ -37,18 +40,37 @@ class UserLogin(View):
         user = authenticate(request, username=request.POST.get("username"), password=request.POST.get("password"))
         if user is not None:
             login(request, user)
+            logger.info("Logged user %r.", user.get_username())
 
-            SysLogging.log(request, 'info',None,  'userLogin', 'login'
-                                    , request.user.username, 'success'
-                                    , {"username":request.user.username,"password":request.POST.get("password")}
-                                    , request.user.username)
+            SysLogging.log(
+                request,
+                alert_code='info',
+                webmessage_show=None,
+                module_code='userLogin',
+                action_code='login',
+                step_code=request.user.username,
+                status_code='success',
+                parameters_value={"username":request.user.username},
+                retval_value=request.user.username,
+            )
 
             return redirect("profile")
         else:
-            SysLogging.log(request, 'danger', 'auth', 'userLogin', 'login'
-                                    , request.POST.get("username"), 'error'
-                                    , {"username":request.POST.get("username"),"password":request.POST.get("password")}
-                                    , request.POST.get("username"), 'error-2010', 'Incorrect username or password!')
+            logger.warning("Failed login attempt for username %r.",request.POST.get("username"),
+            )
+            SysLogging.log(
+                request,
+                alert_code='danger',
+                webmessage_show='auth',
+                module_code='userLogin',
+                action_code='login',
+                step_code=None,
+                status_code='error',
+                parameters_value={"username":request.POST.get("username")},
+                retval_value=request.POST.get("username"),
+                error_code='error-2010',
+                error_message='Incorrect username or password!',
+            )
 
             return WebMachine.web_renderer(self, request, 'userLogin', self.webdata)
 
@@ -56,10 +78,23 @@ class UserLogout(View):
     def get(self, request):
         loged_username=request.user.username
         logout(request)
-        SysLogging.log(request, 'success', 'web', 'userLogout', 'logout'
-                       , loged_username, 'success'
-                       , {'username':loged_username}
-                       , loged_username, None, None,'User has been successfully logged out.')
+
+        logger.info("Loggout user %r.", loged_username)
+
+        SysLogging.log(
+            request,
+            alert_code='success',
+            webmessage_show='web',
+            module_code='userLogout',
+            action_code='logout',
+            step_code=None,
+            status_code='success',
+            parameters_value={'username':loged_username},
+            retval_value=loged_username,
+            error_code=None,
+            error_message=None,
+            webmessage_body='User has been successfully logged out.',
+        )
 
         return redirect("home")
 
@@ -76,10 +111,19 @@ class UserPasswordChange(LoginRequiredMixin, View):
             if not request.user.check_password(oldpassword):
                 self.webdata = {"profile_action": "change_password"}
 
-                SysLogging.log(request, 'danger', 'auth', 'userprofile', 'change_password'
-                               , request.user.username, 'error'
-                               , {"username": request.user.username, "oldpassword": oldpassword}
-                               , request.user.username, 'error-2011', 'Incorrect OLD password!')
+                SysLogging.log(
+                    request,
+                    alert_code='danger',
+                    webmessage_show='auth',
+                    module_code='userprofile',
+                    action_code='change_password',
+                    step_code=None,
+                    status_code='error',
+                    parameters_value={"username": request.user.username},
+                    retval_value=request.user.username,
+                    error_code='error-2011',
+                    error_message='Incorrect OLD password!',
+                )
 
                 return WebMachine.web_renderer(self, request, 'userprofile', self.webdata)
 
@@ -88,19 +132,38 @@ class UserPasswordChange(LoginRequiredMixin, View):
                 request.user.save()
                 update_session_auth_hash(request, request.user)
 
-                SysLogging.log(request, 'success', 'auth', 'userprofile', 'change_password'
-                               , request.user.username, 'success'
-                               , {"username": request.user.username, "newpassword": form["newpassword1"]}
-                               , request.user.username, None, None, 'Password has been successfully changed.')
+                SysLogging.log(
+                    request,
+                    alert_code='success',
+                    webmessage_show='auth',
+                    module_code='userprofile',
+                    action_code='change_password',
+                    step_code=None,
+                    status_code='success',
+                    parameters_value={"username": request.user.username},
+                    retval_value=request.user.username,
+                    error_code=None,
+                    error_message=None,
+                    webmessage_body='Password has been successfully changed.',
+                )
 
                 return WebMachine.web_renderer(self, request, 'userprofile', self.webdata)
             else:
                 self.webdata = {"profile_action": "change_password"}
 
-                SysLogging.log(request, 'danger', 'auth', 'userprofile', 'change_password'
-                               , request.user.username, 'error'
-                               , {"username": request.user.username, "newpassword1": form["newpassword1"], "newpassword2": form["newpassword2"]}
-                               , request.user.username, 'error-2012', 'Passwords do not match!')
+                SysLogging.log(
+                    request,
+                    alert_code='danger',
+                    webmessage_show='auth',
+                    module_code='userprofile',
+                    action_code='change_password',
+                    step_code=None,
+                    status_code='error',
+                    parameters_value={"username": request.user.username},
+                    retval_value=request.user.username,
+                    error_code='error-2012',
+                    error_message='Passwords do not match!',
+                )
 
                 return WebMachine.web_renderer(self, request, 'userprofile', self.webdata)
 

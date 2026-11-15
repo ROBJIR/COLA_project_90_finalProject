@@ -1,6 +1,10 @@
+# Define database models for application events and web rendering measurements.
+# Definuje databázové modely aplikačních událostí a měření vykreslování webových stránek.
 from django.db import models
 
 # Create your models here.
+# Store web rendering timings and page metadata.
+# Uchovává časy vykreslování a metadata stránek.
 class WebLog(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True, db_index=True)
     module_code = models.CharField(max_length=32, null=True, db_index=True)
@@ -9,6 +13,8 @@ class WebLog(models.Model):
     web_page_attributes = models.JSONField(default=dict, null=True)
     module_file_template = models.CharField(max_length=120, null=True)
 
+# Store application events and their details.
+# Uchovává aplikační události a jejich podrobnosti.
 class SysLog(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True, db_index=True)
     alert_code = models.CharField(max_length=12, null=True, db_index=True)

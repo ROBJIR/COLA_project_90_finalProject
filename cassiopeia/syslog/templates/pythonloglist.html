@@ -1,0 +1,67 @@
+{# Display Python log messages and tracebacks with a permission-controlled clear form. #}
+{# Zobrazuje zprávy Python logu a výpisy zásobníku výjimek s formulářem pro vymazání řízeným oprávněními. #}
+{% extends "syscor-body.html" %}
+{% block content-l2 %}
+
+<h1>{{web_page_attributes.module_name}} </h1>
+
+{% if perms.syscor.delete_pythonlog %}
+<div class="d-flex justify-content-end mb-1">
+    <form method="post"
+          action="{% url 'pythonlogclear' %}"
+          onsubmit="return confirm('Really delete all records?');">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-sm">
+            Delete all records
+        </button>
+    </form>
+</div>
+{% endif %}
+
+<div class="table">
+<table class="table">
+    <tr>
+        <th>id</th>
+        <th>timestamp</th>
+        <th>level</th>
+        <th>logger</th>
+        <th>message / traceback</th>
+        <th>file</th>
+        <th>row</th>
+        <th>function</th>
+    </tr>
+
+{% for log in web_data.pythonlogs %}
+
+    <tr>
+        <td>{{ log.id }}</td>
+        <td>{{ log.timestamp|date:"d.m.Y H:i:s" }}</td>
+        <td>
+            <span class="badge {% if log.level == 'CRITICAL' or log.level == 'ERROR' %}bg-danger{% elif log.level == 'WARNING' %}bg-warning text-dark{% elif log.level == 'INFO' %}bg-info text-dark{% else %}bg-secondary{% endif %}">
+                {{ log.level }}
+            </span>
+        </td>
+        <td>{{ log.logger_name }}</td>
+        <td>
+            <pre class="mb-0">{{ log.message }}</pre>
+        </td>
+        <td class="text-break">{{ log.pathname }}</td>
+        <td>{{ log.lineno }}</td>
+        <td>{{ log.func_name }}</td>
+    </tr>
+
+{% empty %}
+
+    <tr>
+        <td colspan="8" class="text-center text-muted">
+            No records in the table.
+        </td>
+    </tr>
+
+{% endfor %}
+
+</table>
+</div>
+{% endblock %}
+
+
