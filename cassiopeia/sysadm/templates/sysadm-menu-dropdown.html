@@ -1,0 +1,50 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg rjd-line-menu" aria-label="Main navigation">
+  <div class="container-fluid">
+    <button class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'sysadm' %}">home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'sysadm' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Django Auth Module
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item {% if not perms.auth.view_user %}disabled{% endif %}"
+                   {% if not perms.auth.view_user %} aria-disabled="true" {% endif %}
+                   href="{% url 'sysadm-userlist' %}">users</a>
+            </li>
+            <li><a class="dropdown-item {% if not perms.auth.view_user %}disabled{% endif %}"
+                   {% if not perms.auth.view_group %} aria-disabled="true" {% endif %}
+                   href="{% url 'sysadm-grouplist' %}">groups</a>
+            </li>
+            <li><a class="dropdown-item {% if not perms.auth.view_user %}disabled{% endif %}"
+                   {% if not perms.auth.view_permission %} aria-disabled="true" {% endif %}
+                   href="{% url 'sysadm-permissionlist' %}">permissions</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'sysadm' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            sessions&cookies
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'sysadm-sessionsinfo' %}">sessions</a></li>
+            <li><a class="dropdown-item" href="{% url 'sysadm-cookiesinfo' %}">cookies</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

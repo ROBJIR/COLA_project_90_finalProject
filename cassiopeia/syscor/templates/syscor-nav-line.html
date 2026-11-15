@@ -1,0 +1,43 @@
+{% load static %}
+
+
+<div class="row align-items-center gy-2">
+    <div class="col-12 col-lg">
+        <nav class="navbar rjd-brand-row justify-content-start align-items-start flex-nowrap">
+            <a class="navbar-brand rjd-project-name" href="/{{ web_page_attributes.application_code }}">
+                {{ web_page_attributes.application_name }}
+            </a>
+            <a class="icon-link rjd-header-action" href="#aboutProjectInfo"
+               role="button" data-bs-toggle="modal" data-bs-target="#aboutProjectInfo"
+               aria-label="About project Cassiopeia">
+                <i class="bi bi-info-circle fs-5" aria-hidden="true"></i>
+            </a>
+
+        </nav>
+    </div>
+    <div class="col-12 col-lg-auto">
+        <div class="rjd-account">
+        {% if user.is_authenticated %}
+            <div class="rjd-account-details">
+                <a class="rjd-account-profile" href="{% url 'profile' %}">
+                    {{ user.first_name }} {{ user.last_name|default:user.username }}<br>
+                    <span class="rjd-account-caption">{{ user.email|default:user.username }}</span>
+                </a>
+            </div>
+            <a class="rjd-account-action" href="{% url 'logout' %}"
+               aria-label="Logout" title="Logout">
+                <i class="bi bi-power fs-2" aria-hidden="true"></i>
+            </a>
+        {% else %}
+            <div class="rjd-account-details">
+                <a class="rjd-account-profile" href="{% url 'login' %}">LOGIN</a>
+            </div>
+            <a class="rjd-account-action" href="{% url 'login' %}"
+               aria-label="Login" title="Login">
+                <i class="bi bi-person-circle fs-2" aria-hidden="true"></i>
+            </a>
+        {% endif %}
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,17 @@
+{% extends "syscor-body.html" %}
+{% load static %}
+{% block content-l2 %}
+
+<div>
+        <h1>SysLogging</h1>
+</div>
+<div>
+<a class="btn btn-primary" {% if not perms.syslog.view_syslog %}disabled{% endif %}"
+{% if not perms.syslog.view_syslog %} aria-disabled="true" {% endif %}
+href="{% url 'sysloglist' %}">Sys Log - rows: {{ web_data.syslog_count }}</a>
+
+<a class="btn btn-primary" {% if not perms.syslog.view_weblog %}disabled{% endif %}"
+{% if not perms.syslog.view_weblog %} aria-disabled="true" {% endif %}
+href="{% url 'webloglist' %}">Web Log - rows: {{ web_data.weblog_count }}</a>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% if var_permissions %}
+    <button type="button"
+            class="btn btn-outline-secondary btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#{{ var_id }}">
+        <i class="bi bi-list-ul me-1"></i>
+        {% if var_name %}<span style="font-size: 1.8em; font-weight: 800">{{ var_name }}</span>{% endif %}  - {{ var_permissions|length }}{% if var_label %}{{ var_label }}{% endif %}
+    </button>
+
+    <div class="modal fade"
+         id="{{ var_id }}"
+         tabindex="-1"
+         aria-labelledby="{{ var_id }}-title"
+         aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content text-start">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="{{ var_id }}-title">
+                        group name: {{ var_name|default:"Permissions" }}
+                    </h2>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <table class="table table-sm table-striped mb-0">
+                        <tbody>
+                            {% for permission in var_permissions %}
+                                <tr>
+                                    <th scope="row" class="text-secondary text-break">
+                                        {{ permission.name }}
+                                    </th>
+                                    <td class="text-break">
+                                        ({{ permission.content_type.app_label }}.{{ permission.codename }})
+                                    </td>
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td>
+                                        This role has no permissions.
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <span class="text-body-secondary">—</span>
+{% endif %}

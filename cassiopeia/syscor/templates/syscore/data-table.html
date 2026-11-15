@@ -1,0 +1,23 @@
+{% load l10n %}
+{% autoescape on %}
+{% if has_records %}
+<div class="table">
+    <table class="table">
+        <thead>
+            <tr>
+                {% for column in columns %}<th scope="col">{{ column }}</th>{% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                {% for value in row %}<td>{{ value|default_if_none:""|unlocalize }}</td>{% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p>Nothing records are available</p>
+{% endif %}
+{% endautoescape %}

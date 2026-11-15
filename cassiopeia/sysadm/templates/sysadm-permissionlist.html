@@ -1,0 +1,27 @@
+{% extends "syscor-body.html" %}
+{% block content-l2 %}
+
+<h1>{{web_page_attributes.module_name}} </h1>
+<div class="table">
+<table class="table"><tr><th>id</th><th>permission name</th><th>code name</th><th>content_type_id</th><th class="text-sm-center">permissions</th></tr>
+{% for perms in web_data.permissions %}
+    <tr><td>{{ perms.id }}</td>
+        <td>{{ perms.name }} </td>
+        <td> {{ perms.codename }} </td>
+        <td> {{ perms.content_type_id }} </td>
+        <td> {{ perms.content_type.app_label }} </td>
+        <td> {{ perms.content_type.model }} </td>
+        <td class="text-sm-center">
+
+            {% with log_id=log.id|stringformat:"s" %}
+                {% include "objects/object-table-dictionary.html" with var_id="sysadm-permissions-"|add:log_id var_label=" permissions" var_dictionary=grps.permissions only %}
+            {% endwith %}
+
+        </td>
+    </tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}
+
+

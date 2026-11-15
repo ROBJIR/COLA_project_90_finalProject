@@ -1,0 +1,47 @@
+{% extends "syscor-body.html" %}
+{% block content-l2 %}
+
+<h1>{{web_page_attributes.module_name}} </h1>
+<div class="table">
+<table class="table">
+    <tr>
+        <th>id</th><th>timestamp</th><th>alert</th><th>module</th>
+        <th>action</th><th>step</th><th class="text-sm-center">status</th><th>return</th>
+        <th class="text-sm-center">parameters</th><th>error code</th><th>error message</th>
+        <th class="text-sm-center">web messages</th>
+    </tr>
+
+{% for log in web_data.syslogs %}
+
+    <tr>
+        <td>{{ log.id }}</td>
+        <td>{{ log.timestamp|date:"d.m.Y H:i:s" }}</td>
+        <td>{{ log.alert_code }} </td>
+        <td>{{ log.module_code }} </td>
+        <td>{{ log.action_code }} </td>
+        <td>{{ log.step_code }} </td>
+        <td class="text-sm-center">{{ log.status_code }} </td>
+        <td>{{ log.retval_value }} </td>
+        <td class="text-sm-center">
+
+            {% with log_id=log.id|stringformat:"s" %}
+                {% include "objects/object-table-dictionary.html" with var_id="syslog-parameters-"|add:log_id var_label="" var_dictionary=log.parameters_value only %}
+            {% endwith %}
+
+        </td>
+        <td>{{ log.error_code }}</td>
+        <td>{{ log.error_message }}</td>
+        <td class="text-sm-center">
+
+            {% with log_id=log.id|stringformat:"s" %}
+                {% include "objects/object-table-dictionary.html" with var_id="syslog-webmessages-"|add:log_id var_label="" var_dictionary=log.web_message only %}
+            {% endwith %}
+
+        </td>
+    </tr>
+
+{% endfor %}
+
+</table>
+</div>
+{% endblock %}

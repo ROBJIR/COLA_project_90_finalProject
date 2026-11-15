@@ -1,0 +1,36 @@
+{% extends "syscor-body.html" %}
+{% load static %}
+{% block content-l2 %}
+
+<div class="row">
+	<div class="col-sm-3">
+
+		<img src="{% static 'img/cassiopeia/logo-casiopeia.png' %}" class="img-fluid" alt="cassiopeia logo" />
+
+	</div>
+	<div class="col-sm-9">
+
+		<h1>Cassiopeia</h1>
+		<div>
+		home page of project Cassiopeia ...
+		</div>
+		<p></p>
+		<div>
+		<a href="{% url 'home' %}">home</a> | <a href="{% url 'whohas' %}">whohas</a> | <a href="{% url 'paidyet' %}">paidyet</a> |
+		</div>
+		<p></p>
+		<div>
+Život tvoří malé, všední okamžiky a tiché chvíle, které mají největší hodnotu, od ranního slunce a vůně kávy až po hřejivý návrat domů.
+Každý z nás v sobě nese svůj příběh a po každé těžké chvíli přichází nové ráno.
+Zastavte se, nadechněte se a pamatujte, že to nejlepší vás teprve čeká.
+		</div>
+
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+
+	</div>
+</div>
+
+{% endblock %}

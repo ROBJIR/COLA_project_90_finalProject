@@ -1,0 +1,44 @@
+{% extends "syscor-body.html" %}
+{% block content-l2 %}
+
+<h1>{{web_page_attributes.module_name}} </h1>
+<div class="table">
+<table class="table">
+    <tr>
+        <th>id</th><th>timestamp</th><th>module code</th>
+        <th class="text-sm-center">collect data</th>
+        <th class="text-sm-center">render html</th><th>template</th><th class="text-sm-center">web attributes</th>
+    </tr>
+
+{% for log in web_data.weblogs %}
+
+    <tr>
+        <td>{{ log.id }}</td>
+        <td>{{ log.timestamp|date:"d.m.Y H:i:s" }}</td>
+        <td>{{ log.module_code }} </td>
+        <td class="text-sm-center">
+
+            {% include "objects/object-list-timedelta.html" with var_timedelta=log.timedelta_content_prepare var_timedelta_icon="database" %}
+
+        </td>
+        <td class="text-sm-center">
+
+            {% include "objects/object-list-timedelta.html" with var_timedelta=log.timedelta_render_page var_timedelta_icon="filetype-html" %}
+        </td>
+        <td>{{ log.module_file_template }}</td>
+        <td class="text-sm-center">
+
+            {% with log_id=log.id|stringformat:"s" %}
+                {% include "objects/object-table-dictionary.html" with var_id="syslog-parameters-"|add:log_id var_label=" attributes" var_dictionary=log.web_page_attributes only %}
+            {% endwith %}
+
+        </td>
+    </tr>
+
+{% endfor %}
+
+</table>
+</div>
+{% endblock %}
+
+
