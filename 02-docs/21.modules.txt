@@ -5,3 +5,20 @@ Author: Robert.Jiranek@gmail.com
 MODULES
 ============================================
 logging ... loguje aktivity nad projektem
+
+
+database PostgreSQL
+
+instalace ovladace:
+python.exe -m pip install "psycopg[binary]"
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "cassiopeiadb",
+        "USER": "cassiopeia",
+        "PASSWORD": "***",
+        "HOST": "192.168.56.1",
+        "PORT": "5432",
+    }
+}

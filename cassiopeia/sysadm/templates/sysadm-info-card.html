@@ -1,0 +1,13 @@
+{# Render a summary dictionary as a reusable card. / Vykresluje slovník přehledu jako sdílenou kartu. #}
+<div class="table border rounded-5 p-2">
+    <table class="table">
+        <caption class="caption-top"><h2>{{ title }}</h2></caption>
+        <tbody>
+        {% for name, value in data.items %}
+            <tr><th scope="row">{{ name }}</th><td>{{ value }}</td></tr>
+        {% empty %}
+            <tr><td colspan="2" class="text-sm-center">No information available.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

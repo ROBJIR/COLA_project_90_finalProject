@@ -30,6 +30,10 @@
             </a>
         {% else %}
             <div class="rjd-account-details">
+                <a class="rjd-account-profile" href="{% url 'registration' %}">REGISTRATION</a>
+            </div>
+            |
+            <div class="rjd-account-details">
                 <a class="rjd-account-profile" href="{% url 'login' %}">LOGIN</a>
             </div>
             <a class="rjd-account-action" href="{% url 'login' %}"

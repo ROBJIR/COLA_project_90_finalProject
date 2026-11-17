@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-i6!b@+5chqehz@xt)=ni8s)+^^g&-05m&_((yawd*!&un3j3_w'
 
-DEBUG = False
+DEBUG = True # False
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "192.168.1.100","10.0.0.30"]
 
 
@@ -76,6 +77,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+# Python Databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -83,6 +85,16 @@ DATABASES = {
     }
 }
 
+#DATABASES = {
+#    "default": {
+#        "ENGINE": "django.db.backends.postgresql",
+#        "NAME": "cassiopeiadb",
+#        "USER": "cassiopeia",
+#        "PASSWORD": "***",
+#        "HOST": "192.168.56.1",
+#        "PORT": "5432",
+#    }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -173,3 +185,5 @@ LOGGING = {
         },
     },
 }
+
+# from .local_settings import DATABASES

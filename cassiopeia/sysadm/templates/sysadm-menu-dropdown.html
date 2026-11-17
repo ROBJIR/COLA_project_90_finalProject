@@ -1,5 +1,4 @@
-{% load static %}
-
+{# Administration template: sysadm-menu-dropdown. / Šablona systémové administrace: sysadm-menu-dropdown. #}
 <nav class="navbar navbar-expand-lg rjd-line-menu" aria-label="Main navigation">
   <div class="container-fluid">
     <button class="navbar-toggler"
@@ -25,11 +24,11 @@
                    {% if not perms.auth.view_user %} aria-disabled="true" {% endif %}
                    href="{% url 'sysadm-userlist' %}">users</a>
             </li>
-            <li><a class="dropdown-item {% if not perms.auth.view_user %}disabled{% endif %}"
+            <li><a class="dropdown-item {% if not perms.auth.view_group %}disabled{% endif %}"
                    {% if not perms.auth.view_group %} aria-disabled="true" {% endif %}
                    href="{% url 'sysadm-grouplist' %}">groups</a>
             </li>
-            <li><a class="dropdown-item {% if not perms.auth.view_user %}disabled{% endif %}"
+            <li><a class="dropdown-item {% if not perms.auth.view_permission %}disabled{% endif %}"
                    {% if not perms.auth.view_permission %} aria-disabled="true" {% endif %}
                    href="{% url 'sysadm-permissionlist' %}">permissions</a>
             </li>
@@ -40,8 +39,14 @@
             sessions&cookies
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{% url 'sysadm-sessionsinfo' %}">sessions</a></li>
-            <li><a class="dropdown-item" href="{% url 'sysadm-cookiesinfo' %}">cookies</a></li>
+            <li><a class="dropdown-item {% if not perms.sysadm.view_sessionlist %}disabled{% endif %}"
+                   {% if not perms.sysadm.view_sessionlist %} aria-disabled="true" {% endif %}
+                   href="{% url 'sysadm-sessionsinfo' %}">sessions</a>
+            </li>
+            <li><a class="dropdown-item {% if not perms.sysadm.view_cookielist %}disabled{% endif %}"
+                   {% if not perms.sysadm.view_cookielist %} aria-disabled="true" {% endif %}
+                   href="{% url 'sysadm-cookiesinfo' %}">cookies</a>
+            </li>
           </ul>
         </li>
       </ul>

@@ -32,7 +32,11 @@
     <tr>
         <td>{{ log.id }}</td>
         <td>{{ log.timestamp|date:"d.m.Y H:i:s" }}</td>
-        <td>{{ log.alert_code }} </td>
+        <td>
+            <span class="badge {% if log.alert_code|upper == 'DANGER' or log.alert_code == 'ERROR' %}bg-danger{% elif log.alert_code|upper == 'SUCCESS' %}bg-success{% elif log.alert_code|upper == 'WARNING' %}bg-warning text-dark{% elif log.alert_code|upper == 'INFO' %}bg-info text-dark{% else %}bg-secondary{% endif %}">
+                {{ log.alert_code }}
+            </span>
+        </td>
         <td>{{ log.module_code }} </td>
         <td>{{ log.action_code }} </td>
         <td>{{ log.step_code }} </td>

@@ -139,21 +139,6 @@ class WebMachine():
         if auth_message is not None:
             web_auth_msg.append(auth_message)
 
-
-        """
-        print('=== WebMachine / web_render =================')
-        print('--- web_page_attributes -----------------------')
-        print(web_page_attrib)
-        print('--- web_data ---------------------------------')
-        print(web_page_data)
-        print('--- web_sys_message ---------------------------------')
-        print(web_sys_msg)
-        print('--- web_auth_message ---------------------------------')
-        print(web_auth_msg)
-        # for key, value in webdata.items():
-        #    print (key, value)
-        print('==============================================')
-        """
         timedelta_content_prepare = timedelta(
             seconds=perf_counter() - request.preparation_started_at
         )

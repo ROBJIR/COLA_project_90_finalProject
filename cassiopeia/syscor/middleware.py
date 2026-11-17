@@ -9,9 +9,4 @@ class SyscorTimingMiddleware:
         duration_seconds = (
             perf_counter() - request.preparation_started_at
         )
-        # Zatím pro kontrolu:
-        print(
-            f'{request.path}: '
-            f'{duration_seconds * 1000:.2f} ms'
-        )
         return response

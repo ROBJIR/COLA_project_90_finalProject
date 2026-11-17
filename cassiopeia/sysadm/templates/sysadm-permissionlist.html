@@ -1,27 +1,14 @@
 {% extends "syscor-body.html" %}
+{# Administration template: sysadm-permissionlist. / Šablona systémové administrace: sysadm-permissionlist. #}
 {% block content-l2 %}
-
-<h1>{{web_page_attributes.module_name}} </h1>
-<div class="table">
-<table class="table"><tr><th>id</th><th>permission name</th><th>code name</th><th>content_type_id</th><th class="text-sm-center">permissions</th></tr>
-{% for perms in web_data.permissions %}
-    <tr><td>{{ perms.id }}</td>
-        <td>{{ perms.name }} </td>
-        <td> {{ perms.codename }} </td>
-        <td> {{ perms.content_type_id }} </td>
-        <td> {{ perms.content_type.app_label }} </td>
-        <td> {{ perms.content_type.model }} </td>
-        <td class="text-sm-center">
-
-            {% with log_id=log.id|stringformat:"s" %}
-                {% include "objects/object-table-dictionary.html" with var_id="sysadm-permissions-"|add:log_id var_label=" permissions" var_dictionary=grps.permissions only %}
-            {% endwith %}
-
-        </td>
-    </tr>
-{% endfor %}
-</table>
-</div>
+<h1>{{ web_page_attributes.module_name }}</h1>
+<div class="table-responsive"><table class="table">
+<thead><tr><th>ID</th><th>Permission name</th><th>Codename</th><th>Application</th><th>Model</th><th>Detail</th></tr></thead>
+<tbody>
+{% for permission in web_data.permissions %}
+<tr><td>{{ permission.pk }}</td><td>{{ permission.name }}</td><td>{{ permission.codename }}</td>
+<td>{{ permission.content_type.app_label }}</td><td>{{ permission.content_type.model }}</td>
+<td><a href="{% url 'sysadm-permissiondet' permission.pk %}" class="btn btn-outline-primary btn-sm">Detail</a></td></tr>
+{% empty %}<tr><td colspan="6">No permissions found.</td></tr>{% endfor %}
+</tbody></table></div>
 {% endblock %}
-
-

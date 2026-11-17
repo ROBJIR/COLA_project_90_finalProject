@@ -1,31 +1,29 @@
 {% extends "syscor-body.html" %}
+{# List account details and link to each user. / Vypisuje údaje účtů a odkazy na uživatele. #}
 {% block content-l2 %}
-
-<h1>{{web_page_attributes.module_name}} </h1>
-<div class="table">
-<table class="table"><tr><th>id</th><th class="text-sm-center">superuser</th><th>username</th><th>email</th><th>first name</th>
-    <th>last name</th><th>last login</th><th class="text-sm-center">staff</th><th class="text-sm-center">active</th></tr>
-{% for usrs in web_data.users %}
-    <tr><td>{{ usrs.id }}</td>
-        <td class="text-sm-center">
-
-            {% include "objects/object-list-true-false.html" with var_boolean=usrs.is_superuser %}
-
-        </td><td>{{ usrs.username }} </td><td> {{ usrs.email }} </td><td>{{usrs.first_name}}</td><td>{{usrs.last_name}}</td><td>{{usrs.last_login  | date:"Y-m-d H:i:s"}}</td>
-        <td class="text-sm-center">
-
-            {% include "objects/object-list-true-false.html" with var_boolean=usrs.is_staff %}
-
-        </td>
-        <td class="text-sm-center">
-
-            {% include "objects/object-list-true-false.html" with var_boolean=usrs.is_active %}
-
-        </td>
+<h1>{{ web_page_attributes.module_name }}</h1>
+<p class="small">Rows: {{ web_data.table_row_count }}</p>
+<div class="table-responsive">
+<table class="table">
+    <thead><tr>
+        <th>ID</th><th>Superuser</th><th>Username</th><th>Email</th>
+        <th>First name</th><th>Last name</th><th>Last login</th><th>Staff</th><th>Active</th>
+    </tr></thead>
+    <tbody>
+    {% for account in web_data.users %}
+    <tr>
+        <td>{{ account.pk }}</td>
+        <td>{% include "objects/object-list-true-false.html" with var_boolean=account.is_superuser only %}</td>
+        <td><a href="{% url 'sysadm-userdet' account.pk %}">{{ account.username }}</a></td>
+        <td>{{ account.email }}</td><td>{{ account.first_name }}</td><td>{{ account.last_name }}</td>
+        <td>{{ account.last_login|date:"Y-m-d H:i:s"|default:"Never" }}</td>
+        <td>{% include "objects/object-list-true-false.html" with var_boolean=account.is_staff only %}</td>
+        <td>{% include "objects/object-list-true-false.html" with var_boolean=account.is_active only %}</td>
     </tr>
-{% endfor %}
+    {% empty %}
+    <tr><td colspan="9" class="text-center">No users found.</td></tr>
+    {% endfor %}
+    </tbody>
 </table>
 </div>
 {% endblock %}
-
-

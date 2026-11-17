@@ -5,14 +5,14 @@
 #
 from django.shortcuts import redirect
 from django.views import View
-from .base import SysLogBase
+from syscor.views import SysAuthNoPermission
 from syslog.models import WebLog, SysLog
 from syscor.views import WebMachine
 from syscor.models import PythonLog
 
 # Display permitted log summaries.
 # Zobrazuje přehledy logů podle oprávnění.
-class SysLogView(SysLogBase, View):
+class SysLogView(SysAuthNoPermission, View):
     permission_required = ("syslog.view_syslog", "syslog.view_weblog","syscor.view_pythonlog",)
 
     def has_permission(self):
@@ -36,7 +36,7 @@ class SysLogView(SysLogBase, View):
 
 # List recent application events.
 # Vypisuje poslední aplikační události.
-class SysLogListView(SysLogBase, View):
+class SysLogListView(SysAuthNoPermission, View):
     permission_required = "syslog.view_syslog"
     def get(self, request):
         log_records = SysLog.objects.order_by("-timestamp", "-id")[:100]
@@ -45,7 +45,7 @@ class SysLogListView(SysLogBase, View):
 
 # List recent web rendering records.
 # Vypisuje poslední záznamy vykreslování stránek.
-class WebLogListView(SysLogBase, View):
+class WebLogListView(SysAuthNoPermission, View):
     permission_required = "syslog.view_weblog"
     def get(self, request):
         log_records = WebLog.objects.order_by("-timestamp", "-id")[:100]
@@ -54,7 +54,7 @@ class WebLogListView(SysLogBase, View):
 
 # List recent Python log records.
 # Vypisuje poslední záznamy Python logu.
-class PythonLogListView(SysLogBase, View):
+class PythonLogListView(SysAuthNoPermission, View):
     permission_required = "syscor.view_pythonlog"
 
     def get(self, request):
@@ -66,7 +66,7 @@ class PythonLogListView(SysLogBase, View):
 
 # Clear Python logs after checking delete permission.
 # Maže Python logy po kontrole oprávnění k mazání.
-class PythonLogClearView(SysLogBase, View):
+class PythonLogClearView(SysAuthNoPermission, View):
     permission_required = "syscor.delete_pythonlog"
 
     def post(self, request):
@@ -75,7 +75,7 @@ class PythonLogClearView(SysLogBase, View):
 
 # Clear application logs after checking delete permission.
 # Maže aplikační logy po kontrole oprávnění k mazání.
-class SysLogClearView(SysLogBase, View):
+class SysLogClearView(SysAuthNoPermission, View):
     permission_required = "syslog.delete_syslog"
 
     def post(self, request):
@@ -84,7 +84,7 @@ class SysLogClearView(SysLogBase, View):
 
 # Clear web logs after checking delete permission.
 # Maže webové logy po kontrole oprávnění k mazání.
-class WebLogClearView(SysLogBase, View):
+class WebLogClearView(SysAuthNoPermission, View):
     permission_required = "syslog.delete_weblog"
 
     def post(self, request):

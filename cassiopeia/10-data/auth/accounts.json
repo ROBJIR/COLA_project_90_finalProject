@@ -1,0 +1,415 @@
+[
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "syslog-viewer",
+    "permissions": [
+      [
+        "view_syslog",
+        "syslog",
+        "syslog"
+      ],
+      [
+        "view_weblog",
+        "syslog",
+        "weblog"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "syslog-admin",
+    "permissions": [
+      [
+        "add_syslog",
+        "syslog",
+        "syslog"
+      ],
+      [
+        "change_syslog",
+        "syslog",
+        "syslog"
+      ],
+      [
+        "delete_syslog",
+        "syslog",
+        "syslog"
+      ],
+      [
+        "view_syslog",
+        "syslog",
+        "syslog"
+      ],
+      [
+        "add_weblog",
+        "syslog",
+        "weblog"
+      ],
+      [
+        "change_weblog",
+        "syslog",
+        "weblog"
+      ],
+      [
+        "delete_weblog",
+        "syslog",
+        "weblog"
+      ],
+      [
+        "view_weblog",
+        "syslog",
+        "weblog"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "sysadm-viewer",
+    "permissions": [
+      [
+        "view_group",
+        "auth",
+        "group"
+      ],
+      [
+        "view_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "view_user",
+        "auth",
+        "user"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "sysadm-admin",
+    "permissions": [
+      [
+        "add_group",
+        "auth",
+        "group"
+      ],
+      [
+        "change_group",
+        "auth",
+        "group"
+      ],
+      [
+        "delete_group",
+        "auth",
+        "group"
+      ],
+      [
+        "view_group",
+        "auth",
+        "group"
+      ],
+      [
+        "add_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "change_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "delete_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "view_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "add_user",
+        "auth",
+        "user"
+      ],
+      [
+        "change_user",
+        "auth",
+        "user"
+      ],
+      [
+        "delete_user",
+        "auth",
+        "user"
+      ],
+      [
+        "view_user",
+        "auth",
+        "user"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "syslog-pythonlog-wiever",
+    "permissions": [
+      [
+        "view_pythonlog",
+        "syscor",
+        "pythonlog"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "syslog-pythonlog-admin",
+    "permissions": [
+      [
+        "add_pythonlog",
+        "syscor",
+        "pythonlog"
+      ],
+      [
+        "change_pythonlog",
+        "syscor",
+        "pythonlog"
+      ],
+      [
+        "delete_pythonlog",
+        "syscor",
+        "pythonlog"
+      ],
+      [
+        "view_pythonlog",
+        "syscor",
+        "pythonlog"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$xKp5IxfLxkTWICPL6IKIaq$SEey/Zzm/M/jph+eaqCBcbE2IH4Q5DuhFgK+BoB7As0=",
+    "last_login": "2026-11-15T17:47:02.136Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "adm",
+    "last_name": "admin",
+    "email": "robert.jiranek@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-10-17T07:55:35Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$Ap60YtrruQLtq8rPIcAjuD$Ivkoh/10j+hx7J4jasonjWX9AHbFut11kap3ualKSY4=",
+    "last_login": "2026-11-14T18:29:00.079Z",
+    "is_superuser": true,
+    "username": "robert",
+    "first_name": "Robert",
+    "last_name": "Jiranek",
+    "email": "robert.jiranek@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-10-17T08:06:56Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$rOulf0lENEitOs8ObyREu4$sCbUWn3DVD141v08Sp8S6/uR9zifOBZj9KLSb4o7qeg=",
+    "last_login": "2026-11-14T21:44:21.934Z",
+    "is_superuser": false,
+    "username": "tester01",
+    "first_name": "tester",
+    "last_name": "01",
+    "email": "tester01@robertjiranek.eu",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-11-01T13:55:26Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$UYWGKRwT6qolFNXVpPYLQD$b3Uc+5rQvV12CEjzjIl14ywm2buimYeyOA300HiKKRI=",
+    "last_login": "2026-11-15T19:30:14.340Z",
+    "is_superuser": false,
+    "username": "dell",
+    "first_name": "notebook",
+    "last_name": "DELL",
+    "email": "ntbkDELL@robertjiranek.eu",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-11-07T20:34:35Z",
+    "groups": [
+      [
+        "syslog-viewer"
+      ],
+      [
+        "syslog-admin"
+      ],
+      [
+        "sysadm-viewer"
+      ],
+      [
+        "sysadm-admin"
+      ],
+      [
+        "syslog-pythonlog-admin"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$SImIZvz2BT9zDtOENat4dc$v6Vm2kMSeswcc7/4qGzDJCI1JZ35sZxiWsIW9f38/zU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "tester02",
+    "first_name": "tester 02",
+    "last_name": "",
+    "email": "tester02@robertjiranek.eu",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-11-08T09:29:13Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$01YxwxtDujAjMF5kUNVdqF$6tVzeJxzkrY+n4Cok1JzeMdLaPjJWEMQc/T+RkyoOl0=",
+    "last_login": "2026-11-15T11:33:02Z",
+    "is_superuser": false,
+    "username": "sysadm-adm-u1",
+    "first_name": "SYSADM",
+    "last_name": "admin",
+    "email": "robert.jiranek@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-11-15T09:05:50Z",
+    "groups": [
+      [
+        "syslog-viewer"
+      ],
+      [
+        "sysadm-admin"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$RPuegJuFQSEAbA4kHcKv4O$7GZxYbzvOvZ4xVmduuFA7RmeuMcOs6Sj29NYV5+BSxY=",
+    "last_login": "2026-11-15T11:45:16.398Z",
+    "is_superuser": false,
+    "username": "sysadm-view-u1",
+    "first_name": "SYSADM",
+    "last_name": "VIEWER",
+    "email": "robert.jiranek@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-11-15T09:07:25Z",
+    "groups": [
+      [
+        "sysadm-viewer"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$f3s0gsg3SW64stB9BQsEsv$Xi+Dw7I/4DQN9pl0Od0k01FsP0dLfPVrxOHN0EPKKXs=",
+    "last_login": "2026-11-15T17:21:42.742Z",
+    "is_superuser": false,
+    "username": "syslog-view-u1",
+    "first_name": "SYSLOG",
+    "last_name": "view",
+    "email": "robert.jiranek@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-11-15T11:01:19Z",
+    "groups": [
+      [
+        "syslog-viewer"
+      ],
+      [
+        "syslog-pythonlog-wiever"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$vmOXjQS9TbvJAu7DKLBymS$17bqBPBtBM6yP1OQzIpgARIHfkm7nX0127Nfj4Hs92I=",
+    "last_login": "2026-11-15T17:25:16.719Z",
+    "is_superuser": false,
+    "username": "syslog-adm-u1",
+    "first_name": "SYSLOG",
+    "last_name": "administrator",
+    "email": "robert.jiranek@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-11-15T11:14:09Z",
+    "groups": [
+      [
+        "syslog-admin"
+      ],
+      [
+        "syslog-pythonlog-admin"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$E5aKPIJusuh9zDZ3KirefV$gaEFtbLoQjSXOtfRFbF58DigOKOdKFUKrUru/y07r/I=",
+    "last_login": "2026-11-15T17:55:49.918Z",
+    "is_superuser": false,
+    "username": "lenovo",
+    "first_name": "LENOVO",
+    "last_name": "ntbk",
+    "email": "robert.jiranek@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-11-15T11:42:36Z",
+    "groups": [
+      [
+        "syslog-viewer"
+      ]
+    ],
+    "user_permissions": []
+  }
+}
+]

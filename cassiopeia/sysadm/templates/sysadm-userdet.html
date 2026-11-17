@@ -1,0 +1,18 @@
+{% extends "sysadm-auth-detail.html" %}
+{# Administration template: sysadm-userdet. / Šablona systémové administrace: sysadm-userdet. #}
+{% block metadata %}
+<p>Last login: <strong>{{ web_data.detail.last_login|date:"Y-m-d H:i:s"|default:"Never" }}</strong><br>
+Account created: <strong>{{ web_data.detail.date_joined|date:"Y-m-d H:i:s" }}</strong></p>
+{% if not request.user.is_superuser %}
+<p>Staff: {{ web_data.detail.is_staff|yesno:"Yes,No" }} · Superuser: {{ web_data.detail.is_superuser|yesno:"Yes,No" }}</p>
+<p>Direct permissions: {% for permission in web_data.detail.user_permissions.all %}{{ permission }}{% if not forloop.last %}, {% endif %}{% empty %}None{% endfor %}</p>
+{% endif %}
+<h2 class="h5">Assigned groups</h2>
+<ul class="mb-4">
+{% for group in web_data.detail.groups.all %}
+    <li>{% if perms.auth.view_group %}<a href="{% url 'sysadm-groupdet' group.pk %}">{{ group.name }}</a>{% else %}{{ group.name }}{% endif %}</li>
+{% empty %}
+    <li>No groups assigned.</li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,16 @@
+# 2026-11-15, robert.jiranek@gmail.com
+# Local setting for Django settings for cassiopeia project.
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "cassiopeiadb",
+        "USER": "cassiopeia",
+        "PASSWORD": "central",
+        "HOST": "192.168.56.1",
+        "PORT": "5432",
+        "OPTIONS": {
+            "options": "-c search_path=cassiopeia_schema",
+        },
+    }
+}

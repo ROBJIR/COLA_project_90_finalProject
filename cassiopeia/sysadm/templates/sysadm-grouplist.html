@@ -1,24 +1,15 @@
 {% extends "syscor-body.html" %}
+{# Administration template: sysadm-grouplist. / Šablona systémové administrace: sysadm-grouplist. #}
 {% block content-l2 %}
-
-<h1>{{web_page_attributes.module_name}} </h1>
-<div class="table">
-<table class="table"><tr><th>id</th><th>group name</th><th>permissions</th><th class="text-sm-center">permissions</th></tr>
-{% for grps in web_data.groups %}
-    <tr><td>{{ grps.id }}</td>
-        <td>{{ grps.name }} </td>
-        <td> {{ grps.permissions }} </td>
-        <td class="text-sm-center">
-
-            {% with log_id=log.id|stringformat:"s" %}
-                {% include "objects/object-table-dictionary.html" with var_id="sysadm-permissions-"|add:log_id var_label=" permissions" var_dictionary=grps.permissions only %}
-            {% endwith %}
-
-        </td>
-    </tr>
-{% endfor %}
-</table>
-</div>
+<h1>{{ web_page_attributes.module_name }}</h1>
+<div class="table-responsive"><table class="table">
+<thead><tr><th>ID</th><th>Group name</th><th>Permissions</th><th>Members</th><th>Detail</th></tr></thead>
+<tbody>
+{% for group in web_data.groups %}
+<tr><td>{{ group.pk }}</td><td>{{ group.name }}</td>
+<td>{% for permission in group.permissions.all %}{{ permission }}{% if not forloop.last %}<br>{% endif %}{% empty %}None{% endfor %}</td>
+<td>{{ group.member_count }}</td>
+<td><a href="{% url 'sysadm-groupdet' group.pk %}" class="btn btn-outline-primary btn-sm">Detail</a></td></tr>
+{% empty %}<tr><td colspan="5">No groups found.</td></tr>{% endfor %}
+</tbody></table></div>
 {% endblock %}
-
-

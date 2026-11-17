@@ -1,0 +1,35 @@
+{% extends "syscor-body.html" %}
+{# Administration template: sysadm-auth-detail. / Šablona systémové administrace: sysadm-auth-detail. #}
+{% block content-l2 %}
+<h1>{{ web_page_attributes.module_name }}</h1>
+<p>ID: <strong>{{ web_data.detail.pk }}</strong> — {{ web_data.detail }}</p>
+{% if web_data.saved %}<div class="alert alert-success" role="status">Changes saved.</div>{% endif %}
+{% if web_data.form_enabled %}
+<form method="post" action="{% url web_data.detail_url web_data.detail.pk %}">
+{% csrf_token %}
+{% endif %}
+<div class="card bg-body-secondary p-4 mb-3">
+    {{ web_data.form.non_field_errors }}
+    {% for field in web_data.form %}
+    <div class="mb-3">
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.help_text %}<div class="form-text">{{ field.help_text }}</div>{% endif %}
+        {% for error in field.errors %}<div class="text-danger" role="alert">{{ error }}</div>{% endfor %}
+    </div>
+    {% endfor %}
+</div>
+{% block metadata %}{% endblock %}
+<div class="d-flex gap-2 mb-4">
+{% if web_data.form_enabled %}
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="{% url web_data.detail_url web_data.detail.pk %}" class="btn btn-secondary">Cancel</a>
+{% else %}
+    {% if web_data.can_edit %}
+    <a href="{% url web_data.detail_url web_data.detail.pk %}?edit=1" class="btn btn-primary">Edit</a>
+    {% endif %}
+    <a href="{% url web_data.list_url %}" class="btn btn-secondary">Back to list</a>
+{% endif %}
+</div>
+{% if web_data.form_enabled %}</form>{% endif %}
+{% endblock %}

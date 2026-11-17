@@ -1,7 +1,16 @@
 {% extends "syscor-body.html" %}
+{# Administration template: sysadm. / Šablona systémové administrace: sysadm. #}
 {% block content-l2 %}
-
-{{web_data.webmain | safe}}
-
+<h1>{{ web_page_attributes.module_name }}</h1>
+<div class="row mt-3">
+    <div class="col-12 col-lg-4">
+        {% include "sysadm-info-card.html" with title="Web info" data=web_data.webinfo only %}
+        {% include "sysadm-info-card.html" with title="Versions" data=web_data.sysinfo only %}
+        {% include "sysadm-info-card.html" with title="Users" data=web_data.usersinfo only %}
+    </div>
+    <div class="col-12 col-lg-8">
+        {% include "sysadm-info-card.html" with title="Messages from last day" data=web_data.errors24h only %}
+        {% include "sysadm-info-card.html" with title="Database" data=web_data.dbsinfo only %}
+    </div>
+</div>
 {% endblock %}
-
