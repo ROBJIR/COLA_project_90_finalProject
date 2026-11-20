@@ -7,6 +7,8 @@ from django.db import migrations
 
 # Define schema changes and migration dependencies.
 # Definuje změny schématu a závislosti migrace.
+# Renames the web log field for content preparation time.
+# Přejmenovává pole protokolu vykreslování pro dobu přípravy obsahu.
 class Migration(migrations.Migration):
 
     dependencies = [

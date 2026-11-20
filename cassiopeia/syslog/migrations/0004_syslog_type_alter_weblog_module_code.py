@@ -7,6 +7,8 @@ from django.db import migrations, models
 
 # Define schema changes and migration dependencies.
 # Definuje změny schématu a závislosti migrace.
+# Adds an event type and updates the web log module code field.
+# Přidává typ události a upravuje pole kódu modulu v protokolu vykreslování.
 class Migration(migrations.Migration):
 
     dependencies = [

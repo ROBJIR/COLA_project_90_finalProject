@@ -5,14 +5,11 @@ Django Auth settings
 
 01 / export
 --------------
-python3 manage.py dumpdata auth.group --natural-foreign --natural-primary --indent 2 --output groups.json
-python3 manage.py dumpdata auth.group auth.user --natural-foreign --natural-primary --indent 2 --output accounts.json
+python3 manage.py dumpdata auth.group auth.user --natural-foreign --natural-primary --indent 2 --output auth.json
 
 02 / import
 -------------
- - after commnd:
-python3 manage.py createsuperuser
+ - after commnd: python3 manage.py createsuperuser
 
  - run this command:
-python3 manage.py loaddata groups.json
-python3 manage.py loaddata accounts.json
+python3 manage.py loaddata auth.json

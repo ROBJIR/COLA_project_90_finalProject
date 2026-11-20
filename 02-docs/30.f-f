@@ -9,30 +9,30 @@ Python DJANGO / závěrečný projekt
 Požadavky:
 ============
 OK	It should be a web application, written in Django.
---	It must have a minimum of 5 models.
---	It must have a PostgreSQL database.
---	There should be at least 3 tables and 2 relationships between tables in the database.
---	The project must use at least one-to-many and many-to-many relationships.
---	There should be at least 5 views in the application.
+OK	It must have a minimum of 5 models.
+OK	It must have a PostgreSQL database.
+OK	There should be at least 3 tables and 2 relationships between tables in the database.
+OK	The project must use at least one-to-many and many-to-many relationships.
+OK	There should be at least 5 views in the application.
 OK	The application should have at least one view available only to the logged-in user (using Django Auth system).
---	The application should have at least one form handled by the POST method.
+OK	The application should have at least one form handled by the POST method.
 --	Main application functionalities should be covered by tests (at least 3 unit tests written using pytest). There should be at least two tests for each view.
---	Each class and function should have at least a one-line documentation.
+XX	Each class and function should have at least a one-line documentation.
 
 
 
 OK	Projekt musí být aplikace napsaná v Djangu.
---	Projekt musí mít alespoň 5 modelů.
---	Projekt musí používat databázi PostgreSQL.
---	V databázi by měly být alespoň 3 tabulky a dvě relace (tabulky automaticky vytvořené Django se sem nepočítají).
+OK	Projekt musí mít alespoň 5 modelů.
+OK	Projekt musí používat databázi PostgreSQL.
+OK	V databázi by měly být alespoň 3 tabulky a dvě relace (tabulky automaticky vytvořené Django se sem nepočítají).
     Projekt používá vztahy 1:many a many:many.
---	V aplikaci by mělo být alespoň 5 zobrazení (podporovaných různými URL adresami).
+OK	V aplikaci by mělo být alespoň 5 zobrazení (podporovaných různými URL adresami).
 OK	V aplikaci by měl být alespoň jeden pohled dostupný pouze pro přihlášeného uživatele
     (můžete použít autorizační systém Django).
---	Žádost by měla mít alespoň jeden formulář (zpracovaný metodou POST).
+OK	Žádost by měla mít alespoň jeden formulář (zpracovaný metodou POST).
 --	V aplikaci by měly být alespoň 3 testy napsané pomocí frameworku pytest, které pokrývají klíčové funkce aplikace.
     Pro každý pohled by měly být alespoň dva testy.
---	Každá třída a funkce by měla mít alespoň jednořádkovou dokumentaci
+xx	Každá třída a funkce by měla mít alespoň jednořádkovou dokumentaci
 
 
 Otazky

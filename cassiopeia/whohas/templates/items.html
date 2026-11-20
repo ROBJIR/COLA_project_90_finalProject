@@ -1,0 +1,50 @@
+{% extends "syscor-body.html" %}
+{% comment %}Lists tracked items and available actions.
+Vypisuje evidované předměty a dostupné akce.{% endcomment %}
+{% block content-l2 %}
+
+<h1>{{ web_page_attributes.module_name }}</h1>
+{% if perms.whohas.add_items %}
+<a href="{% url 'itemcreate' %}" class="btn btn-primary mb-3">Create Item</a>
+{% endif %}
+
+<div class="row-cols-sm-3">
+    <div>rows: {{ web_data.table_rows_count }}</div>
+</div>
+
+<div class="table-responsive">
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th><th>type</th><th>name</th><th>description</th><th>categories</th><th>Owner</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in web_data.items %}
+    <tr>
+        <td>
+            {{ item.id }}
+        </td>
+        <td>
+            {{ item.item_type.name }}
+        </td>
+        <td>
+            <a href="{% url 'itemdetail' item.pk %}">{{ item.name }}</a>
+        </td>
+        <td>
+            {{ item.description }}
+        </td>
+        <td>
+            {% for category in item.item_categories.all %}
+                {{ category.item_category_name }},
+            {% endfor %}
+        </td>
+        <td>{% include "details/owner-slim.html" with owner=item.owner only %}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="6" class="text-center">No records found.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

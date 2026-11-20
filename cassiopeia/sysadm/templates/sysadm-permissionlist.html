@@ -1,5 +1,6 @@
 {% extends "syscor-body.html" %}
-{# Administration template: sysadm-permissionlist. / Šablona systémové administrace: sysadm-permissionlist. #}
+{% comment %}Lists permissions with their associated applications and models.
+Vypisuje oprávnění a související aplikace a modely.{% endcomment %}
 {% block content-l2 %}
 <h1>{{ web_page_attributes.module_name }}</h1>
 <div class="table-responsive"><table class="table">

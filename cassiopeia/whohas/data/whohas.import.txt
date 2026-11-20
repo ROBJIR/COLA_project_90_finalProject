@@ -1,0 +1,6 @@
+
+data:
+management/commands/import_whohas_books.py
+
+run:
+python3.exe manage.py import_whohas_books --replace

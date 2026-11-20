@@ -1,0 +1,2 @@
+{% comment %}Displays a compact item owner label.
+Zobrazuje stručné označení vlastníka předmětu.{% endcomment %}{% if owner %}{{ owner.get_full_name|default:owner.get_username }}{% else %}Unassigned{% endif %}

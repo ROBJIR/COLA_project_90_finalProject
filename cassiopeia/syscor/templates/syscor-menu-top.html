@@ -1,4 +1,5 @@
-{% load static %}
+{% comment %}Renders the main navigation bar.
+Vykresluje hlavní navigační lištu.{% endcomment %}{% load static %}
 
 
 <div class="row align-items-start gy-2">
@@ -17,21 +18,26 @@
         <li class="nav-item">
           <a class="nav-link
                 {% if request.resolver_match.url_name == 'whohas' %}active{% endif %}
-            " href="{% url 'whohas' %}"
-                {% if request.resolver_match.url_name == 'whohas' %}aria-current="page"{% endif %}>
+                {% if not perms.whohas.view_whohashomepage %}disabled{% endif %}"
+             href="{% url 'whohas' %}"
+                {% if request.resolver_match.url_name == 'whohas' %}aria-current="page"{% endif %}
+                {% if not perms.whohas.view_whohashomepage %} aria-disabled="true" {% endif %}>
               Who Has My Stuff?</a>
         </li>
+        {% if not perms.paidyet.view_paidyethomepage %}
         <li class="nav-item">
           <a class="nav-link
                 {% if request.resolver_match.url_name == 'paidyet' %}active{% endif %}
-            " href="{% url 'paidyet' %}"
-                {% if request.resolver_match.url_name == 'paidyet' %}aria-current="page"{% endif %}>
+                {% if not perms.paidyet.view_paidyethomepage %}disabled{% endif %}"
+             href="{% url 'paidyet' %}"
+                {% if request.resolver_match.url_name == 'paidyet' %}aria-current="page"{% endif %}
+                {% if not perms.paidyet.view_paidyethomepage %} aria-disabled="true" {% endif %}>
             Paid yet?
           </a>
         </li>
+        {% endif %}
       </ul>
     </div>
-
     <div class="col-auto">
         <div class="dropdown">
           <a class="btn rjd-top-menu-button dropdown-toggle d-inline-flex align-items-center gap-2 bi bi-gear" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Administration">
@@ -45,18 +51,18 @@
           </ul>
         </div>
     </div>
-
+    {% comment %}
     <div class="col-auto">
         <div class="dropdown">
           <a class="btn rjd-top-menu-button dropdown-toggle d-inline-flex align-items-center gap-2 bi bi-globe-americas-fill" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Change language">
                 EN
           </a>
-
           <ul class="dropdown-menu rjd-dropdown-menu">
             <li><a class="dropdown-item" href="#">CS</a></li>
             <li><a class="dropdown-item" href="#">EN</a></li>
           </ul>
         </div>
     </div>
+    {% endcomment %}
 </div>
 

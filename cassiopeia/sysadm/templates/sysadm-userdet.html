@@ -1,5 +1,6 @@
 {% extends "sysadm-auth-detail.html" %}
-{# Administration template: sysadm-userdet. / Šablona systémové administrace: sysadm-userdet. #}
+{% comment %}Displays the details of a user account.
+Zobrazuje detail uživatelského účtu.{% endcomment %}
 {% block metadata %}
 <p>Last login: <strong>{{ web_data.detail.last_login|date:"Y-m-d H:i:s"|default:"Never" }}</strong><br>
 Account created: <strong>{{ web_data.detail.date_joined|date:"Y-m-d H:i:s" }}</strong></p>

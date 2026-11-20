@@ -1,7 +1,11 @@
 from django.views import View
-from .web import WebMachine
+from .web import WebRenderMixin
 
-class MainView(View):
+# Shows the Cassiopeia landing page.
+# Zobrazuje úvodní stránku Cassiopeji.
+class MainView(WebRenderMixin, View):
+    # Initializes page attributes and context.
+    # Inicializuje atributy a kontext stránky.
     def __init__(self):
         self.web_page_attributes = {
                   "application_code": "cassiopeia"
@@ -10,5 +14,7 @@ class MainView(View):
                 , "module_template": "syscor-main.html"
                 , "module_name": "Cassiopeia Project"}
         self.web_data = {}
+    # Renders the Cassiopeia home page.
+    # Vykresluje úvodní stránku Cassiopeji.
     def get(self, request):
-        return WebMachine.web_renderer(self, request, 'cassiopeia', self.web_data)
+        return self.page_render(request, 'cassiopeia', self.web_data)

@@ -1,4 +1,5 @@
-{% load static %}
+{% comment %}Supplies content for the information dialogs.
+Dodává obsah informačních dialogových oken.{% endcomment %}{% load static %}
 
 {% if web_page_attributes.application_code == 'paidyet' %}
   {% include "modal-windows/modal-content-paidyet.html" %}
@@ -12,6 +13,8 @@
 {% if web_page_attributes.application_code == 'cassiopeia' %}
   {% include "modal-windows/modal-content-cassiopeia.html" %}
 {% endif %}
+
+{% comment %}
 <p> <div  style="font-size:0.8em; color: #051b11; background-color: #bbb; padding: 8px; border-radius: 12px;">
     <code style="color: #051b11;">
     ============== codes & names ===========================
@@ -29,3 +32,4 @@
     ========================================================
     </code></div>
 </p>
+{% endcomment %}

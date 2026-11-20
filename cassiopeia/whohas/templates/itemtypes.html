@@ -1,0 +1,50 @@
+{% extends "syscor-body.html" %}
+{% comment %}Lists item types and their assigned items.
+Vypisuje typy předmětů a přiřazené předměty.{% endcomment %}
+{% block content-l2 %}
+
+<h1>{{ web_page_attributes.module_name }}</h1>
+{% comment %}
+{% if perms.whohas.add_itemtypes %}
+<a href="{% url 'itemtypecreate' %}" class="btn btn-primary mb-3">Create Item Type</a>
+{% endif %}
+{% endcomment %}
+
+<div class="row-cols-sm-3">
+    <div>rows: {{ web_data.table_rows_count }}</div>
+</div>
+
+<div class="table-responsive">
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th><th>name</th><th>items</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for type in web_data.types %}
+    <tr>
+        <td>
+            {{ type.id }}
+        </td>
+        <td>
+            {% comment %}
+            <a href="{% url 'itemtypedetail' type.pk %}">{{ type.name }}</a>
+            {% endcomment %}
+            {{ type.name }}
+        </td>
+        <td>
+            {% for item in type.items.all %}
+                {% if perms.whohas.view_items %}<a href="{% url 'itemdetail' item.pk %}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}{% if not forloop.last %}, {% endif %}
+            {% empty %}
+                No items assigned.
+            {% endfor %}
+        </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="3" class="text-center">No records found.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

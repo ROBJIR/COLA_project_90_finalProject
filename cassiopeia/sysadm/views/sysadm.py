@@ -17,7 +17,8 @@ from syscor.views.web import WebMachine
 
 # Display the system administration dashboard.
 # Zobrazuje přehled systémové administrace.
-class SysAdmView(View):
+class SysAdmView(SysAuthNoPermission, View):
+    permission_required = "sysadm.view_dashboard"
 
     # Prepare page data and render the requested administration view.
     # Připravuje data stránky a vykresluje požadovaný pohled administrace.
@@ -29,7 +30,7 @@ class SysAdmView(View):
             "errors24h": SysInfoBase.SysInfoErrors(),
             "webinfo": SysInfoBase.SysInfoWeb(),
         }
-        return WebMachine.web_renderer(self, request, 'sysadm', data)
+        return self.page_render(request, 'sysadm', data)
 
 # Inspect the current request session after permission checks.
 # Po kontrole oprávnění zobrazuje session aktuálního požadavku.
@@ -44,8 +45,7 @@ class SessionsInfoView(SysAuthNoPermission, View):
         web_data = {
             "html_table": WebMachine.dictionary_to_html_table(data),
         }
-        return WebMachine.web_renderer(
-            self,
+        return self.page_render(
             request,
             'sessionsinfo',
             web_data,
@@ -64,8 +64,7 @@ class CookiesInfoView(SysAuthNoPermission, View):
         web_data = {
             "html_table": WebMachine.dictionary_to_html_table(data),
         }
-        return WebMachine.web_renderer(
-            self,
+        return self.page_render(
             request,
             'cookieinfo',
             web_data,
@@ -82,7 +81,7 @@ class SysInfoUserList(SysAuthNoPermission, View):
         users = list(User.objects.order_by("username"))
         table_row_count = len(users)
         web_data = {"users": users, "table_row_count": table_row_count}
-        return WebMachine.web_renderer(self, request, 'sysadm-userlist', web_data)
+        return self.page_render(request, 'sysadm-userlist', web_data)
 
 
 # Share read-only display, authorized editing, and atomic saving.
@@ -105,7 +104,7 @@ class AuthDetailView(SysAuthNoPermission, View):
     # Navazuje modelová data a předává správce formuláři uživatele.
     def get_form(self, request, obj, data=None):
         kwargs = {'instance': obj, 'data': data}
-        if self.model is User:
+        if self.model in (User, Group):
             kwargs['actor'] = request.user
         return self.form_class(**kwargs)
 
@@ -131,7 +130,7 @@ class AuthDetailView(SysAuthNoPermission, View):
             'saved': request.GET.get('saved') == '1',
         }
         data.update(self.get_related_data(request, obj))
-        response = WebMachine.web_renderer(self, request, self.module_code, data)
+        response = self.page_render(request, self.module_code, data)
         response.status_code = status
         return response
 
@@ -201,6 +200,11 @@ class SysInfoPermissionDet(AuthDetailView):
     module_code = detail_url = 'sysadm-permissiondet'
     list_url = 'sysadm-permissionlist'
 
+    # Reserve changes to permission definitions for superusers.
+    # Vyhrazuje změny definic oprávnění superuživatelům.
+    def can_edit(self, request, obj):
+        return request.user.is_superuser and super().can_edit(request, obj)
+
 # List groups with permissions and member counts.
 # Vypisuje skupiny, jejich oprávnění a počty členů.
 class SysInfoGroupList(SysAuthNoPermission, View):
@@ -213,7 +217,7 @@ class SysInfoGroupList(SysAuthNoPermission, View):
             Prefetch('permissions', queryset=Permission.objects.select_related('content_type')),
         ).annotate(member_count=Count('user')).order_by("name")
         web_data = {"groups": groups}
-        return WebMachine.web_renderer(self, request, 'sysadm-grouplist', web_data)
+        return self.page_render(request, 'sysadm-grouplist', web_data)
 
 # List permissions together with their application and model.
 # Vypisuje oprávnění společně s aplikací a modelem.
@@ -225,4 +229,4 @@ class SysInfoPermissionList(SysAuthNoPermission, View):
     def get(self, request):
         permissions = Permission.objects.select_related('content_type').order_by('content_type__app_label', 'codename')
         web_data = {"permissions": permissions}
-        return WebMachine.web_renderer(self, request, 'sysadm-permissionlist', web_data)
+        return self.page_render(request, 'sysadm-permissionlist', web_data)

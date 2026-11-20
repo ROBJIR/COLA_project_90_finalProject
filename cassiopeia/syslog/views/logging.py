@@ -14,6 +14,8 @@ logger = logging.getLogger("cassiopeia.database_fallback")
 # Write application events with database error fallback.
 # Zapisuje aplikační události s náhradním logováním při chybě databáze.
 class SysLogging:
+    # Records an application event and any accompanying user message.
+    # Zaznamenává aplikační událost a případnou zprávu pro uživatele.
     @staticmethod
     def log(
         request,
@@ -68,6 +70,8 @@ class SysLogging:
 # Write rendering metrics with database error fallback.
 # Zapisuje měření vykreslování s náhradním logováním při chybě databáze.
 class WebLogging:
+    # Records web page preparation and rendering times.
+    # Zaznamenává dobu přípravy a vykreslování webové stránky.
     @staticmethod
     def log(
         request,

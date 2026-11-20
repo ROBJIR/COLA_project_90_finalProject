@@ -1,0 +1,48 @@
+{% extends "syscor-body.html" %}
+{% comment %}Lists loans and links to their details.
+Vypisuje výpůjčky a odkazuje na jejich detaily.{% endcomment %}
+{% block content-l2 %}
+
+<h1>{{ web_page_attributes.module_name }}</h1>
+
+<div class="row-cols-sm-3">
+    <div>rows: {{ web_data.table_rows_count }}</div>
+</div>
+
+<div class="table-responsive">
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th><th>item</th><th>status</th><th>borrower</th><th>memo</th><th>description</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for loan in web_data.loans %}
+    <tr>
+        <td>
+            <a href="{% url 'loandetail' loan.pk %}">{{ loan.pk }}</a>
+        </td>
+        <td>
+            {{ loan.item.name }}
+        </td>
+        <td>
+            {{ loan.status.name }}
+        </td>
+        <td>
+            {{ loan.borrower.username }}
+        </td>
+
+        <td>
+            {{ loan.name }}
+        </td>
+        <td>
+            {{ loan.description }}
+        </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="6" class="text-center">No records found.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

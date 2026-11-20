@@ -1,5 +1,6 @@
 {% extends "sysadm-auth-detail.html" %}
-{# Administration template: sysadm-groupdet. / Šablona systémové administrace: sysadm-groupdet. #}
+{% comment %}Displays group details and related accounts.
+Zobrazuje detail skupiny a související účty.{% endcomment %}
 {% block metadata %}
 <h2 class="h5">Users in this group</h2>
 {% if perms.auth.view_user %}

@@ -8,6 +8,11 @@ from django.db import models
 class SessionList(models.Model):
     boolean = models.BooleanField(default=False)
 
+    # Declares the permission used by the system dashboard.
+    # Definuje oprávnění pro systémový přehled.
+    class Meta:
+        permissions = [("view_dashboard", "Can view system administration dashboard")]
+
 
 # Provide Django permissions for viewing cookie diagnostics.
 # Poskytuje Django oprávnění k prohlížení diagnostiky cookies.

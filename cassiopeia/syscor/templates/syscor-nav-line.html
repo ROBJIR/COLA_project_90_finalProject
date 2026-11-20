@@ -1,4 +1,5 @@
-{% load static %}
+{% comment %}Displays the project brand and account navigation.
+Zobrazuje značku projektu a navigaci k uživatelskému účtu.{% endcomment %}{% load static %}
 
 
 <div class="row align-items-center gy-2">
@@ -24,10 +25,12 @@
                     <span class="rjd-account-caption">{{ user.email|default:user.username }}</span>
                 </a>
             </div>
-            <a class="rjd-account-action" href="{% url 'logout' %}"
-               aria-label="Logout" title="Logout">
-                <i class="bi bi-power fs-2" aria-hidden="true"></i>
-            </a>
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button class="rjd-account-action" type="submit" aria-label="Logout" title="Logout">
+                    <i class="bi bi-power fs-2" aria-hidden="true"></i>
+                </button>
+            </form>
         {% else %}
             <div class="rjd-account-details">
                 <a class="rjd-account-profile" href="{% url 'registration' %}">REGISTRATION</a>

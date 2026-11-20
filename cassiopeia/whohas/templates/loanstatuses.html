@@ -1,0 +1,59 @@
+{% extends "syscor-body.html" %}
+{% comment %}Lists loan statuses and associated loans.
+Vypisuje stavy výpůjček a související výpůjčky.{% endcomment %}
+{% block content-l2 %}
+
+<h1>{{ web_page_attributes.module_name }}</h1>
+{% comment %}
+{% if perms.whohas.add_itemtypes %}
+<a href="{% url 'itemtypecreate' %}" class="btn btn-primary mb-3">Create Item Type</a>
+{% endif %}
+{% endcomment %}
+
+<div class="row-cols-sm-3">
+    <div>rows: {{ web_data.table_rows_count }}</div>
+</div>
+
+<div class="table-responsive">
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th><th>name</th><th class="text-sm-center">format</th>
+        {% if perms.whohas.view_loans %}<th>loans</th>{% endif %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for lstatus in web_data.loanstatuses %}
+    <tr>
+        <td>
+            {{ lstatus.id }}
+        </td>
+        <td>
+            <span class="badge fs-5 p-2 {% if lstatus.format.bgcolor %}bg-{{lstatus.format.bgcolor|default:'transparent'}}{% endif %}
+                        {% if lstatus.format.color %}text-{{lstatus.format.color|default:'white'}}{% endif %}">
+                {{ lstatus.name }}
+            </span>
+        </td>
+        <td class="text-sm-center">
+
+            {% with status_id=lstatus.id|stringformat:"s" %}
+                {% include "objects/object-table-dictionary.html" with var_id="whohas-status-fotmat-"|add:status_id var_label=" status format" var_dictionary=lstatus.format only %}
+            {% endwith %}
+        </td>
+        {% if perms.whohas.view_loans %}
+        <td>
+            {% for loan in lstatus.loans.all %}
+                {{ loan.name }}{% if not forloop.last %}, {% endif %}
+            {% empty %}
+                No loans assigned.
+            {% endfor %}
+        </td>
+        {% endif %}
+    </tr>
+    {% empty %}
+    <tr><td colspan="{% if perms.whohas.view_loans %}4{% else %}3{% endif %}" class="text-center">No records found.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

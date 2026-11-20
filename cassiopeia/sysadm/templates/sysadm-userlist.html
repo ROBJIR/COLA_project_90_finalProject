@@ -1,5 +1,6 @@
 {% extends "syscor-body.html" %}
-{# List account details and link to each user. / Vypisuje údaje účtů a odkazy na uživatele. #}
+{% comment %}Lists user accounts and links to their details.
+Vypisuje uživatelské účty a odkazuje na jejich detaily.{% endcomment %}
 {% block content-l2 %}
 <h1>{{ web_page_attributes.module_name }}</h1>
 <p class="small">Rows: {{ web_data.table_row_count }}</p>

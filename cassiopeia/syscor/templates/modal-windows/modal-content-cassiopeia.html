@@ -1,7 +1,15 @@
-{% load static %}
+{% comment %}Introduces Cassiopeia in its information dialog.
+Představuje Cassiopeiu v jejím informačním dialogu.{% endcomment %}{% load static %}
 <p>
-Cassiopeia zastřešuje všechny plugin projekty.
+Cassiopeia is easy to spot in the night sky thanks to five bright stars that form the letter <strong>W</strong>.
+    As the constellation appears to turn around Polaris over the course of the night, it can also look like an <strong>M</strong>.
+    Named after a queen from Greek mythology, Cassiopeia was where Danish astronomer Tycho Brahe observed
+    a supernova in 1572 that was bright enough to see even in daylight.
+    Near the middle star of the W lies a nebula nicknamed the <strong>Ghost of Cassiopeia</strong>,
+    whose gas glows under the star’s ultraviolet light.
+    <p>
+    <small>NASA – The Ghost of Cassiopeia · Martz-Kohl Observatory – Cassiopeia</small
 </p>
 <p>
-Nabízí jednotnou konfiuraci a administraci v modulu <a href="{% url 'sysadm' %}">{{web_page_attributes.application_name}}</a>.
+<a href="{% url 'cassiopeia' %}">{{web_page_attributes.application_name}}</a>.
 </p>

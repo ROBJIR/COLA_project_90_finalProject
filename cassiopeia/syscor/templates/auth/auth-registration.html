@@ -1,4 +1,6 @@
 {% extends "syscor-body.html" %}
+{% comment %}Renders the current step of account registration.
+Vykresluje aktuální krok registrace účtu.{% endcomment %}
 {% load static %}
 {% block content-l2 %}
 
@@ -14,6 +16,9 @@
             <!-- web-auth-message: web-messages/web-auth-messages.html -->
             {% include "auth/auth-messages.html" %}
 
+            {% if web_data.registration_error %}
+            <div class="alert alert-danger" role="alert">{{ web_data.registration_error }}</div>
+            {% endif %}
             {% if web_data.registration_step == '(step 1/2)' %}
             <div>
                 <form action="{% url 'registration' %}" method="post">

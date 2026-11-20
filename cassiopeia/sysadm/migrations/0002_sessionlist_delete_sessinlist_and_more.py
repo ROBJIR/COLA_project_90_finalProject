@@ -3,6 +3,8 @@
 from django.db import migrations, models
 
 
+# Replaces the session model and renames a cookie field.
+# Nahrazuje model relací a přejmenovává pole modelu cookies.
 class Migration(migrations.Migration):
 
     dependencies = [

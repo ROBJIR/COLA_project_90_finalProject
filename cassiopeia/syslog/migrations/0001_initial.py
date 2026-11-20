@@ -7,6 +7,8 @@ from django.db import migrations, models
 
 # Define schema changes and migration dependencies.
 # Definuje změny schématu a závislosti migrace.
+# Creates models for application events and web rendering logs.
+# Vytváří modely aplikačních událostí a protokolů vykreslování.
 class Migration(migrations.Migration):
 
     initial = True

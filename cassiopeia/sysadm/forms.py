@@ -29,11 +29,14 @@ class UserDetailForm(forms.ModelForm):
 # Validate group names and assigned permissions.
 # Ověřuje názvy skupin a přiřazená oprávnění.
 class GroupDetailForm(forms.ModelForm):
-    # Load content types with permissions to avoid a query for each option label.
-    # Načítá typy obsahu společně s oprávněními bez dotazu pro každý popisek volby.
-    def __init__(self, *args, **kwargs):
+    # Restrict permission assignments to superusers and preload permission labels.
+    # Omezuje přiřazování oprávnění na superuživatele a předem načítá popisky.
+    def __init__(self, *args, actor, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['permissions'].queryset = Permission.objects.select_related('content_type')
+        if actor.is_superuser:
+            self.fields['permissions'].queryset = Permission.objects.select_related('content_type')
+        else:
+            del self.fields['permissions']
 
     # Configure model fields and their form help text.
     # Nastavuje modelová pole a jejich nápovědu ve formuláři.

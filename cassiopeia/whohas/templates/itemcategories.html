@@ -1,0 +1,50 @@
+{% extends "syscor-body.html" %}
+{% comment %}Lists item categories and their assigned items.
+Vypisuje kategorie předmětů a přiřazené předměty.{% endcomment %}
+{% block content-l2 %}
+
+<h1>{{ web_page_attributes.module_name }}</h1>
+{% comment %}
+{% if perms.whohas.add_itemcategories %}
+<a href="{% url 'itemcategorycreate' %}" class="btn btn-primary mb-3">Create category</a>
+{% endif %}
+{% endcomment %}
+
+<div class="row-cols-sm-3">
+    <div>rows: {{ web_data.table_rows_count }}</div>
+</div>
+
+<div class="table-responsive">
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th><th>name</th><th>items</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for category in web_data.categories %}
+    <tr>
+        <td>
+            {{ category.id }}
+        </td>
+        <td>
+            {% comment %}
+            <a href="{% url 'itemcategorydetail' category.pk %}">{{ category.name }}</a>
+            {% endcomment %}
+            {{ category.item_category_name|default:"—" }}
+        </td>
+        <td>
+            {% for item in category.items.all %}
+                {% if perms.whohas.view_items %}<a href="{% url 'itemdetail' item.pk %}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}{% if not forloop.last %}, {% endif %}
+            {% empty %}
+                No items assigned.
+            {% endfor %}
+        </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="3" class="text-center">No records found.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

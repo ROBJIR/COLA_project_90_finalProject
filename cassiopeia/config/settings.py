@@ -21,9 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-i6!b@+5chqehz@xt)=ni8s)+^^g&-05m&_((yawd*!&un3j3_w'
 
-DEBUG = True # False
+DEBUG = os.environ.get("CASSIOPEIA_DEBUG", "").lower() in {"1", "true"}
+# Use a stable development key unless a deployment provides its own.
+# Používá stálý vývojový klíč, pokud nasazení neposkytne vlastní.
+CASSIOPEIA_SECRET_KEY = "django-insecure-cassiopeia-local-development-key-only"
+SECRET_KEY = os.environ.get("CASSIOPEIA_SECRET_KEY") or CASSIOPEIA_SECRET_KEY
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "192.168.1.100","10.0.0.30"]
 
 

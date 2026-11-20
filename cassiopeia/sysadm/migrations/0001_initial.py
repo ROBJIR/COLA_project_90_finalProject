@@ -3,6 +3,8 @@
 from django.db import migrations, models
 
 
+# Creates the initial cookie and session models.
+# Vytváří počáteční modely cookies a relací.
 class Migration(migrations.Migration):
 
     initial = True

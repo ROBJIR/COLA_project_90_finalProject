@@ -3,6 +3,8 @@
 from django.db import migrations, models
 
 
+# Creates the initial Python log model.
+# Vytváří počáteční model protokolu Pythonu.
 class Migration(migrations.Migration):
 
     initial = True

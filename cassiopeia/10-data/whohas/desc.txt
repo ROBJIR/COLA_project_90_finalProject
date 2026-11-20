@@ -1,0 +1,19 @@
+
+
+python manage.py shell
+
+Get-Content -Raw .\whohas\data\10_WhohasHomePage_Model_data.py | python manage.py shell
+
+Get-Content -Raw .\whohas\data\10_WhohasHomePage_Model_data.py | python manage.py shell
+
+
+python manage.py seed_whohas
+
+cola_project_90_finalProject\cassiopeia\whohas\management\commands\seed_whohas.py
+
+
+
+model LoanStatuses
+=======================
+cola_project_90_finalProject\cassiopeia\whohas\fixtures\whohas_loan_statuses.json
+python3 manage.py loaddata whohas_loan_statuses

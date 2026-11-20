@@ -7,6 +7,8 @@ from django.db import migrations, models
 
 # Define schema changes and migration dependencies.
 # Definuje změny schématu a závislosti migrace.
+# Adds rendering duration and updates the preparation duration field.
+# Přidává dobu vykreslování a upravuje pole doby přípravy.
 class Migration(migrations.Migration):
 
     dependencies = [

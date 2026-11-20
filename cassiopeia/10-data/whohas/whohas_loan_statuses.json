@@ -1,0 +1,18 @@
+[
+    {
+        "model": "whohas.loanstatuses",
+        "fields": {"name": "planned"}
+    },
+    {
+        "model": "whohas.loanstatuses",
+        "fields": {"name": "borrowed"}
+    },
+    {
+        "model": "whohas.loanstatuses",
+        "fields": {"name": "returned"}
+    },
+    {
+        "model": "whohas.loanstatuses",
+        "fields": {"name": "success"}
+    }
+]

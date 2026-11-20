@@ -8,10 +8,6 @@ PLAN
 
 21/ importy dat
 
-15/ dedicnost def -> web_render
-
-
-
 70/ uklid v modulech
 
 80/ python testy modulu

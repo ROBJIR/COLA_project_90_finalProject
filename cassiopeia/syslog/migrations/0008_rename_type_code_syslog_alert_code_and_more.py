@@ -7,6 +7,8 @@ from django.db import migrations, models
 
 # Define schema changes and migration dependencies.
 # Definuje změny schématu a závislosti migrace.
+# Renames the alert code and adds a web message flag.
+# Přejmenovává kód upozornění a přidává příznak webové zprávy.
 class Migration(migrations.Migration):
 
     dependencies = [

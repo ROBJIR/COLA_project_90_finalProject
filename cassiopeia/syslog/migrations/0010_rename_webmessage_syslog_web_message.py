@@ -7,6 +7,8 @@ from django.db import migrations
 
 # Define schema changes and migration dependencies.
 # Definuje změny schématu a závislosti migrace.
+# Renames the stored web message field.
+# Přejmenovává pole uložené webové zprávy.
 class Migration(migrations.Migration):
 
     dependencies = [

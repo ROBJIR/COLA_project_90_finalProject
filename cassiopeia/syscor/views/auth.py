@@ -1,48 +1,64 @@
 import logging
 
-from django.contrib.auth.password_validation import validate_password
-from django.core.exceptions import ValidationError
-from django.contrib.auth import update_session_auth_hash
-from django.shortcuts import render, redirect
-from django.views import View
-from django.contrib.auth.models import Group
-from django.db import transaction
+from django import forms
+from django.contrib.auth import login, logout, update_session_auth_hash
+from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth import authenticate, login, logout
-from .web import WebMachine
+from django.contrib.auth.models import Group, User
+from django.db import transaction
+from django.shortcuts import redirect
+from django.views import View
+
 from syslog.views.logging import SysLogging
 
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import Permission
-from django.contrib.auth.decorators import permission_required
+from .web import WebRenderMixin
 
 logger = logging.getLogger("cassiopeia.auth")
 
-class UserProfile(View):
+# Displays the current user profile.
+# Zobrazuje profil aktuálního uživatele.
+class UserProfile(WebRenderMixin, View):
+    # Initializes the profile context.
+    # Inicializuje kontext profilu.
     def __init__(self):
         self.web_data = {}
+    # Renders the profile or redirects an anonymous request.
+    # Vykresluje profil nebo přesměrovává nepřihlášeného uživatele.
     def get(self, request):
         if request.user.is_authenticated:
-            return WebMachine.web_renderer(self, request, 'userprofile', self.web_data)
+            return self.page_render(request, 'userprofile', self.web_data)
         else:
             return redirect("login")
 
-class UserRegistration(View):
+# Validates the optional profile details in the second registration step.
+# Ověřuje nepovinné údaje profilu ve druhém kroku registrace.
+class RegistrationDetailsForm(forms.Form):
+    first_name = forms.CharField(max_length=150, required=False)
+    last_name = forms.CharField(max_length=150, required=False)
+    email = forms.EmailField(max_length=254, required=False)
+
+
+# Handles the two-step account registration flow.
+# Obsluhuje dvoukrokovou registraci účtu.
+class UserRegistration(WebRenderMixin, View):
+    # Initializes the registration context.
+    # Inicializuje kontext registrace.
     def __init__(self):
         self.web_data = {}
+    # Renders the first registration step or the current profile.
+    # Vykresluje první krok registrace nebo aktuální profil.
     def get(self, request):
         if request.user.is_authenticated:
-            return WebMachine.web_renderer(self, request, 'userprofile', self.web_data)
+            return self.page_render(request, 'userprofile', self.web_data)
         else:
             self.web_data = {'registration_step':'(step 1/2)'}
-            return WebMachine.web_renderer(self, request, 'userregistration', self.web_data)
+            return self.page_render(request, 'userregistration', self.web_data)
 
+    # Validates credentials or saves account details for the submitted step.
+    # Podle odeslaného kroku ověřuje přihlašovací údaje nebo ukládá údaje účtu.
     def post(self, request):
         if request.user.is_authenticated:
-            return WebMachine.web_renderer(self, request, 'userprofile', self.web_data)
+            return self.page_render(request, 'userprofile', self.web_data)
         else:
             if request.POST.get("registration_step") == '(step 1/2)':
                 form = UserCreationForm(data={
@@ -68,7 +84,7 @@ class UserRegistration(View):
                         error_message=None,
                         webmessage_body=msg)
                     self.web_data = {'registration_step': '(step 2/2)'}
-                    return WebMachine.web_renderer(self, request, 'userregistration', self.web_data)
+                    return self.page_render(request, 'userregistration', self.web_data)
 
                 SysLogging.log(
                     request,
@@ -86,22 +102,39 @@ class UserRegistration(View):
                                                   for error in errors)
                 )
                 self.web_data = {'registration_step': '(step 1/2)'}
-                return WebMachine.web_renderer(self, request, 'userregistration', self.web_data)
+                return self.page_render(request, 'userregistration', self.web_data)
 
 
             if request.POST.get("registration_step") == '(step 2/2)':
-                form = request.POST
-                with transaction.atomic():
-                    user_id = request.session["registration_user_id"]
+                user_id = request.session.get("registration_user_id")
+                user = User.objects.filter(pk=user_id).first() if user_id is not None else None
+                if user is None:
                     request.session.pop("registration_user_id", None)
+                    self.web_data = {
+                        "registration_step": "(step 1/2)",
+                        "registration_error": "Your registration session has expired. Start again.",
+                    }
+                    return self.page_render(request, "userregistration", self.web_data)
 
-                    user = User.objects.get(pk=user_id)
-                    user.first_name = request.POST.get("first_name", "").strip()
-                    user.last_name = request.POST.get("last_name", "").strip()
-                    user.email = request.POST.get("email", "").strip()
-                    user.save()
-                    public_group = Group.objects.get(name="public")
-                    user.groups.add(public_group)
+                form = RegistrationDetailsForm(request.POST)
+                if not form.is_valid():
+                    self.web_data = {
+                        "registration_step": "(step 2/2)",
+                        "registration_error": " ".join(
+                            error for errors in form.errors.values() for error in errors
+                        ),
+                    }
+                    return self.page_render(request, "userregistration", self.web_data)
+
+                with transaction.atomic():
+                    user.first_name = form.cleaned_data["first_name"]
+                    user.last_name = form.cleaned_data["last_name"]
+                    user.email = form.cleaned_data["email"]
+                    user.save(update_fields=["first_name", "last_name", "email"])
+                    public_group = Group.objects.filter(name="public").first()
+                    if public_group is not None:
+                        user.groups.add(public_group)
+                request.session.pop("registration_user_id", None)
 
                 SysLogging.log(
                     request,
@@ -117,17 +150,30 @@ class UserRegistration(View):
                     error_message=None,
                     webmessage_body='User saved successfully. Now you have to log in!'
                 )
-                return WebMachine.web_renderer(self, request, 'userlogin', self.web_data)
+                return redirect("login")
+
+        self.web_data = {"registration_step": "(step 1/2)"}
+        return self.page_render(request, "userregistration", self.web_data)
 
 
-class UserLogin(View):
+# Handles the login form and authentication.
+# Obsluhuje přihlašovací formulář a ověřuje totožnost uživatele.
+class UserLogin(WebRenderMixin, View):
+    # Initializes the login context.
+    # Inicializuje kontext přihlášení.
     def __init__(self):
         self.web_data = {}
+    # Renders the login form.
+    # Vykresluje přihlašovací formulář.
     def get(self, request):
-        return WebMachine.web_renderer(self, request, 'userlogin', self.web_data)
+        return self.page_render(request, 'userlogin', self.web_data)
+    # Authenticates the submitted credentials and returns the corresponding response.
+    # Ověřuje odeslané přihlašovací údaje a vrací odpovídající odpověď.
     def post(self, request):
-        user = authenticate(request, username=request.POST.get("username").lower(), password=request.POST.get("password"))
-        if user is not None:
+        username = request.POST.get("username", "").strip().lower()
+        form = AuthenticationForm(request, data={"username": username, "password": request.POST.get("password", "")})
+        if form.is_valid():
+            user = form.get_user()
             login(request, user)
             logger.info("Logged user %r.", user.get_username())
 
@@ -161,14 +207,18 @@ class UserLogin(View):
                 error_message='Incorrect username or password!',
             )
 
-            return WebMachine.web_renderer(self, request, 'userLogin', self.web_data)
+            return self.page_render(request, 'userLogin', self.web_data)
 
-class UserLogout(View):
-    def get(self, request):
-        loged_username=request.user.username
+# Ends the current authenticated session.
+# Ukončuje aktuální přihlášenou relaci.
+class UserLogout(LoginRequiredMixin, View):
+    # Signs the user out and redirects to the next page.
+    # Odhlašuje uživatele a přesměrovává na další stránku.
+    def post(self, request):
+        username = request.user.get_username()
         logout(request)
 
-        logger.info("Loggout user %r.", loged_username)
+        logger.info("Logged out user %r.", username)
 
         SysLogging.log(
             request,
@@ -178,8 +228,8 @@ class UserLogout(View):
             action_code='logout',
             step_code=None,
             status_code='success',
-            parameters_value={'username':loged_username},
-            retval_value=loged_username,
+            parameters_value={'username':username},
+            retval_value=username,
             error_code=None,
             error_message=None,
             webmessage_body='User has been successfully logged out.',
@@ -187,97 +237,41 @@ class UserLogout(View):
 
         return redirect("home")
 
-class UserPasswordChange(LoginRequiredMixin, View):
+# Handles password changes for signed-in users.
+# Obsluhuje změnu hesla přihlášených uživatelů.
+class UserPasswordChange(LoginRequiredMixin, WebRenderMixin, View):
+    # Renders the password change form in the profile.
+    # Vykresluje formulář pro změnu hesla v profilu.
     def get(self, request):
         self.webdata = {"profile_action": "change_password"}
-        return WebMachine.web_renderer(self, request, 'userprofile', self.webdata)
+        return self.page_render(request, 'userprofile', self.webdata)
+    # Validates the password change and reports the result.
+    # Ověřuje změnu hesla a oznamuje výsledek.
     def post(self, request):
-        self.webdata = {}
-        form = request.POST
-        if form:
-            oldpassword = form["oldpassword"]
+        self.webdata = {"profile_action": "change_password"}
+        form = PasswordChangeForm(request.user, data={
+            "old_password": request.POST.get("oldpassword", ""),
+            "new_password1": request.POST.get("newpassword1", ""),
+            "new_password2": request.POST.get("newpassword2", ""),
+        })
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            SysLogging.log(
+                request, alert_code="success", webmessage_show="auth", module_code="userprofile",
+                action_code="change_password", status_code="success",
+                parameters_value={"username": user.get_username()},
+                webmessage_body="Password has been successfully changed.",
+            )
+            return redirect("profile")
 
-            if not request.user.check_password(oldpassword):
-                self.webdata = {"profile_action": "change_password"}
-
-                SysLogging.log(
-                    request,
-                    alert_code='danger',
-                    webmessage_show='auth',
-                    module_code='userprofile',
-                    action_code='change_password',
-                    step_code=None,
-                    status_code='error',
-                    parameters_value={"username": request.user.username},
-                    retval_value=request.user.username,
-                    error_code='error-2011',
-                    error_message='Incorrect OLD password!',
-                )
-
-                return WebMachine.web_renderer(self, request, 'userprofile', self.webdata)
-
-            if form["newpassword1"] == form["newpassword2"]:
-                new_password = form["newpassword1"]
-
-                try:
-                    validate_password(new_password, user=request.user)
-                except ValidationError as error:
-                    self.webdata = {"profile_action": "change_password"}
-
-                    SysLogging.log(
-                        request,
-                        alert_code="danger",
-                        webmessage_show="auth",
-                        module_code="userprofile",
-                        action_code="change_password",
-                        step_code=None,
-                        status_code="error",
-                        parameters_value={"username": request.user.username},
-                        retval_value=request.user.username,
-                        error_message=" ".join(error.messages),
-                    )
-
-                    return WebMachine.web_renderer(
-                        self, request, "userprofile", self.webdata
-                    )
-
-                request.user.set_password(new_password)
-                request.user.save()
-                update_session_auth_hash(request, request.user)
-                
-                SysLogging.log(
-                    request,
-                    alert_code='success',
-                    webmessage_show='auth',
-                    module_code='userprofile',
-                    action_code='change_password',
-                    step_code=None,
-                    status_code='success',
-                    parameters_value={"username": request.user.username},
-                    retval_value=request.user.username,
-                    error_code=None,
-                    error_message=None,
-                    webmessage_body='Password has been successfully changed.',
-                )
-
-                return WebMachine.web_renderer(self, request, 'userprofile', self.webdata)
-            else:
-                self.webdata = {"profile_action": "change_password"}
-
-                SysLogging.log(
-                    request,
-                    alert_code='danger',
-                    webmessage_show='auth',
-                    module_code='userprofile',
-                    action_code='change_password',
-                    step_code=None,
-                    status_code='error',
-                    parameters_value={"username": request.user.username},
-                    retval_value=request.user.username,
-                    error_code='error-2012',
-                    error_message='Passwords do not match!',
-                )
-
-                return WebMachine.web_renderer(self, request, 'userprofile', self.webdata)
-
-
+        self.webdata["password_error"] = " ".join(
+            error for errors in form.errors.values() for error in errors
+        )
+        SysLogging.log(
+            request, alert_code="danger", module_code="userprofile",
+            action_code="change_password", status_code="error",
+            parameters_value={"username": request.user.get_username()},
+            error_message="Password change validation failed.",
+        )
+        return self.page_render(request, "userprofile", self.webdata)

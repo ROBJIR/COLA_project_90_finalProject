@@ -6,6 +6,8 @@ from django.template.loader import render_to_string
 from syscor.views.cfg import *
 from syscor.views.tools import sysTools
 
+# Provides page configuration, messages, and HTML table helpers.
+# Poskytuje konfiguraci stránek, správu zpráv a pomocné nástroje pro tabulky HTML.
 class WebMachine():
     web_page_attributes_template = {
         "application_code": "",
@@ -17,8 +19,12 @@ class WebMachine():
         "application_file_menu": "",
     }
     web_page_data_template = {"htmlbody": ""}
+    # Initializes the helper without instance data.
+    # Inicializuje pomocnou třídu bez vlastních dat instance.
     def __init__(self):
         pass
+    # Builds an HTML table from a list of dictionaries.
+    # Vytváří tabulku HTML ze seznamu slovníků.
     def table_list_genertor(self, data):
         if len(data) == 0:
             self.message_detail  = self.html_message_set("data was not loaded", "warning")
@@ -39,6 +45,8 @@ class WebMachine():
         htmlcode = f"{htmlcode}</table>\n"
         return htmlcode
 
+    # Renders dictionary keys and values in an HTML table.
+    # Vykresluje klíče a hodnoty slovníku v tabulce HTML.
     @staticmethod
     def dictionary_to_html_table(data):
         """Render a flat dictionary as an escaped key/value HTML table."""
@@ -48,6 +56,8 @@ class WebMachine():
             {"key": key, "value": value} for key, value in data.items()
         )
 
+    # Uses the first record to choose columns for the HTML table.
+    # Podle prvního záznamu určuje sloupce tabulky HTML.
     @staticmethod
     def html_table_generator(data):
         """Render dictionaries as a table using the first row's columns."""
@@ -55,6 +65,8 @@ class WebMachine():
         first = next(iterator, None)
         columns = list(first.keys()) if first is not None else []
 
+        # Yields cell values in column order.
+        # Postupně vrací hodnoty buněk v pořadí sloupců.
         def rows():
             if first is not None:
                 yield [first.get(column) for column in columns]
@@ -66,7 +78,8 @@ class WebMachine():
             {"columns": columns, "rows": rows(), "has_records": first is not None},
         )
 
-    # Get Application Attributes for WEB_RENDER
+    # Returns the application configuration or one of its attributes.
+    # Vrací konfiguraci aplikace nebo jeden její atribut.
     @staticmethod
     def web_application_attribute_get(application_code: str = 'cassiopeia', application_attribut: str = None) -> dict[str, str] | str:
         application_code = application_code.lower()
@@ -79,7 +92,8 @@ class WebMachine():
             application_attribut = application_attribut.lower()
             return attribs[application_attribut]
 
-    # Get Module Attributes for WEB_RENDER
+    # Returns the module configuration or one of its attributes.
+    # Vrací konfiguraci modulu nebo jeden jeho atribut.
     @staticmethod
     def web_application_module_attribute_get(module_code: str = 'cassiopeia', module_attribut: str = None) -> dict[str, str] | str:
         module_code = module_code.lower()
@@ -92,6 +106,8 @@ class WebMachine():
             module_attribut = module_attribut.lower()
             return attribs[module_attribut]
 
+    # Queues an alert in the session.
+    # Přidává upozornění do fronty v relaci.
     @staticmethod
     def web_message_set(request, message_body = None,
                         message_alert = 'secondary', message_type = 'web' ):
@@ -111,6 +127,8 @@ class WebMachine():
 
         return sys_msg_value
 
+    # Reads and clears queued messages of the requested type.
+    # Načítá a odstraňuje čekající zprávy požadovaného typu.
     @staticmethod
     def web_message_get(request, message_type = 'web_message'):
 
@@ -121,6 +139,8 @@ class WebMachine():
 
         return sys_msg_value
 
+    # Renders a configured page and records preparation and rendering times.
+    # Vykresluje nakonfigurovanou stránku a zaznamenává dobu přípravy a vykreslení.
     def web_renderer (self, request, module_code = 'cassiopeia', web_data = None, web_message = None, auth_message = None):
         from syslog.views import WebLogging, SysLogging
 
@@ -154,4 +174,48 @@ class WebMachine():
         timedelta_render_page = timedelta(seconds=perf_counter() - web_render_start_time)
         WebLogging.log(request, web_page_attrib["module_code"], web_page_attrib["module_file_template"], web_page_attrib, timedelta_render_page, timedelta_content_prepare )
 
+        return response
+
+# Adds shared page rendering to class-based views.
+# Přidává společné vykreslování stránek do třídních pohledů.
+class WebRenderMixin:
+    # Renders the configured template with page data and records timing.
+    # Vykresluje nastavenou šablonu s daty stránky a zaznamenává dobu zpracování.
+    def page_render(
+        self, request, module_code="cassiopeia", web_data=None,
+        web_message=None, auth_message=None,):
+
+        from syslog.views import WebLogging
+
+        page_attributes = WebMachine.web_page_attributes_template.copy()
+        page_attributes.update(WebMachine.web_application_module_attribute_get(module_code))
+        page_attributes.update(
+            WebMachine.web_application_attribute_get(page_attributes["application_code"])
+        )
+
+        page_data = WebMachine.web_page_data_template.copy()
+        page_data.update(web_data or {})
+
+        web_messages = WebMachine.web_message_get(request, "web") or []
+        if web_message is not None:
+            web_messages.append(web_message)
+
+        auth_messages = WebMachine.web_message_get(request, "auth") or []
+        if auth_message is not None:
+            auth_messages.append(auth_message)
+
+        preparation_duration = timedelta(seconds=perf_counter() - request.preparation_started_at)
+        render_started_at = perf_counter()
+        template_name = page_attributes["module_file_template"]
+        response = render(request, template_name, context={
+            "web_page_attributes": page_attributes,
+            "web_message": web_messages,
+            "auth_message": auth_messages,
+            "web_data": page_data,
+        })
+        render_duration = timedelta(seconds=perf_counter() - render_started_at)
+        WebLogging.log(
+            request, page_attributes["module_code"], template_name, page_attributes,
+            render_duration, preparation_duration,
+        )
         return response

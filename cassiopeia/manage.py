@@ -4,6 +4,8 @@ import os
 import sys
 
 
+# Runs the Django management command supplied on the command line.
+# Spouští příkaz správy Django zadaný na příkazové řádce.
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')

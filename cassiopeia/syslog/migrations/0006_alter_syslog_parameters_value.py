@@ -7,6 +7,8 @@ from django.db import migrations, models
 
 # Define schema changes and migration dependencies.
 # Definuje změny schématu a závislosti migrace.
+# Updates the field that stores event parameters.
+# Upravuje pole pro ukládání parametrů události.
 class Migration(migrations.Migration):
 
     dependencies = [

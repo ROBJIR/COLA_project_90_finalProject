@@ -7,6 +7,8 @@ from django.db import migrations, models
 
 # Define schema changes and migration dependencies.
 # Definuje změny schématu a závislosti migrace.
+# Replaces the event type with separate type and status codes.
+# Nahrazuje typ události samostatnými kódy typu a stavu.
 class Migration(migrations.Migration):
 
     dependencies = [

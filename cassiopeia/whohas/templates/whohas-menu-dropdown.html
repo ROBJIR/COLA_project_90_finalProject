@@ -1,4 +1,5 @@
-{% load static %}
+{% comment %}Renders the Whohas navigation menu.
+Vykresluje navigační nabídku Whohas.{% endcomment %}{% load static %}
 
 <nav class="navbar navbar-expand-lg rjd-line-menu" aria-label="Main navigation">
   <div class="container-fluid">
@@ -16,22 +17,36 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'whohas' %}">home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'whohas' %}">Link</a>
+        <li class="nav-item {% if not perms.whohas.view_loans %}disabled{% endif %}">
+          {% if not perms.whohas.view_loans %} aria-disabled="true" {% endif %}
+          <a class="nav-link" href="{% url 'loans' %}">loans</a>
+        </li>
+        <li class="nav-item {% if not perms.whohas.view_items %}disabled{% endif %}">
+          {% if not perms.whohas.view_items %} aria-disabled="true" {% endif %}
+          <a class="nav-link" href="{% url 'items' %}">items</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="{% url 'whohas' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            lists
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{% url 'whohas' %}">Action</a></li>
-            <li><a class="dropdown-item" href="{% url 'whohas' %}">Another action</a></li>
+            <li>
+              <a class="dropdown-item {% if not perms.whohas.view_itemcategories %}disabled{% endif %}"
+                   {% if not perms.whohas.view_itemcategories %} aria-disabled="true" {% endif %}
+                   href="{% url 'itemcategories' %}">item categories</a>
+            </li>
+            <li>
+              <a class="dropdown-item {% if not perms.whohas.view_itemtypes %}disabled{% endif %}"
+                   {% if not perms.whohas.view_itemtypes %} aria-disabled="true" {% endif %}
+                   href="{% url 'itemtypes' %}">item types</a>
+            </li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'whohas' %}">Something else here</a></li>
+            <li>
+              <a class="dropdown-item {% if not perms.whohas.view_loanstatuses %}disabled{% endif %}"
+                   {% if not perms.whohas.view_loanstatuses %} aria-disabled="true" {% endif %}
+                   href="{% url 'loanstatuses' %}">loan statuses</a>
+            </li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li>
       </ul>
     </div>

@@ -7,6 +7,8 @@ from django.db import migrations, models
 
 # Define schema changes and migration dependencies.
 # Definuje změny schématu a závislosti migrace.
+# Replaces the web message flag with a message field.
+# Nahrazuje příznak webové zprávy polem zprávy.
 class Migration(migrations.Migration):
 
     dependencies = [

@@ -1,4 +1,6 @@
 {% extends "syscor-body.html" %}
+{% comment %}Displays account details and the password change form.
+Zobrazuje údaje účtu a formulář pro změnu hesla.{% endcomment %}
 {% load static %}
 {% block content-l2 %}
 
@@ -38,6 +40,9 @@
                     <div>
                         <form action="{% url 'changepassword' %}" method="post">
                             {% csrf_token %}
+                            {% if web_data.password_error %}
+                            <div class="alert alert-danger" role="alert">{{ web_data.password_error }}</div>
+                            {% endif %}
                             <div class="form-floating mb-3">
                               <input type="password" class="form-control" id="oldpassword" name="oldpassword" placeholder="oldpassword">
                               <label for="oldpassword">Old Password</label>
@@ -129,9 +134,12 @@
         </div>
 
         <div class="col-12 text-center mt-4">
-            <a class="btn btn-light w-100 py-3 fs-5" href="{% url 'logout' %}" aria-label="Logout" aria-hidden="true">
-                <i class="bi bi-power fs-2" aria-hidden="true"></i>logout
-            </a>
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button class="btn btn-light w-100 py-3 fs-5" type="submit">
+                    <i class="bi bi-power fs-2" aria-hidden="true"></i>logout
+                </button>
+            </form>
         </div>
 
     </div>

@@ -1,0 +1,27 @@
+{% extends "syscor-body.html" %}
+{# Displays a single loan with its dates and event history. #}
+{# Zobrazuje jednu výpůjčku s termíny a historií událostí. #}
+{% block content-l2 %}
+{% with loan=web_data.loan %}
+<h1>{{ loan.name }}</h1>
+<p><a href="{% url 'loans' %}">Back to loans</a></p>
+<dl>
+    <dt>Item</dt><dd>{{ loan.item|default_if_none:"-" }}</dd>
+    <dt>Status</dt><dd>{{ loan.status|default_if_none:"-" }}</dd>
+    <dt>Borrower</dt><dd>{{ loan.borrower }}</dd>
+    <dt>Planned start</dt><dd>{{ loan.tstamp_planned_start }}</dd>
+    <dt>Planned end</dt><dd>{{ loan.tstamp_planned_end|default_if_none:"-" }}</dd>
+    <dt>Actual start</dt><dd>{{ loan.tstamp_real_start|default_if_none:"-" }}</dd>
+    <dt>Actual end</dt><dd>{{ loan.tstamp_real_end|default_if_none:"-" }}</dd>
+    <dt>Description</dt><dd>{{ loan.description|default:"-" }}</dd>
+</dl>
+<h2>History</h2>
+<ul>
+    {% for event in web_data.events %}
+    <li>{{ event.tstamp }} | {{ event.author }} | {{ event.description }}</li>
+    {% empty %}
+    <li>No events recorded.</li>
+    {% endfor %}
+</ul>
+{% endwith %}
+{% endblock %}

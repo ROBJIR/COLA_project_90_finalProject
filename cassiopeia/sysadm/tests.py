@@ -117,6 +117,25 @@ class AuthDetailTests(TestCase):
         data['codename'] = 'duplicate_test'
         self.assertEqual(self.client.post(url, data).status_code, 400)
 
+    # Prevent group editors from modifying their inherited permissions.
+    # Brání správcům skupin měnit vlastní zděděná oprávnění.
+    def test_group_editor_cannot_change_permission_assignments(self):
+        self.editor.groups.add(self.group)
+        self.group.permissions.add(self.permission)
+        self.editor.user_permissions.add(*Permission.objects.filter(
+            content_type__app_label='auth',
+            codename__in=['view_group', 'change_group', 'view_permission', 'change_permission'],
+        ))
+        self.client.force_login(self.editor)
+        url = reverse('sysadm-groupdet', args=[self.group.pk])
+        self.assertNotContains(self.client.get(url + '?edit=1'), 'name="permissions"')
+        self.assertEqual(self.client.post(url, {'name': 'renamed', 'permissions': []}).status_code, 302)
+        self.group.refresh_from_db()
+        self.assertEqual(self.group.name, 'renamed')
+        self.assertTrue(self.group.permissions.filter(pk=self.permission.pk).exists())
+        perm_url = reverse('sysadm-permissiondet', args=[self.permission.pk])
+        self.assertEqual(self.client.post(perm_url, {'codename': 'changed'}).status_code, 403)
+
     # Verify non superuser cannot escalate or edit admin.
     # Ověřuje zákaz zvýšení práv a editace správce běžným uživatelem.
     def test_non_superuser_cannot_escalate_or_edit_admin(self):
@@ -231,7 +250,16 @@ class DashboardTests(TestCase):
     # Render the dashboard and permission-protected session and cookie pages.
     # Vykresluje přehled a stránky sessions a cookies chráněné oprávněním.
     def test_dashboard_and_diagnostic_pages(self):
-        self.assertContains(self.client.get(reverse('sysadm')), 'Versions')
+        dashboard = reverse('sysadm')
+        self.assertEqual(self.client.get(dashboard).status_code, 302)
+        reader = User.objects.create_user('dashboard_reader')
+        self.client.force_login(reader)
+        self.assertEqual(self.client.get(dashboard).status_code, 403)
+        reader.user_permissions.add(Permission.objects.get(
+            content_type__app_label='sysadm', codename='view_dashboard',
+        ))
+        self.assertContains(self.client.get(dashboard), 'Versions')
+        self.client.logout()
         admin = User.objects.create_superuser('dashboard_admin', '', 'test-password')
         for name in ['sysadm-sessionsinfo', 'sysadm-cookiesinfo']:
             self.assertEqual(self.client.get(reverse(name)).status_code, 302)

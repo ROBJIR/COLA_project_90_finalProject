@@ -1,5 +1,6 @@
 {% extends "syscor-body.html" %}
-{# Administration template: sysadm-auth-detail. / Šablona systémové administrace: sysadm-auth-detail. #}
+{% comment %}Provides a shared layout for account, group, and permission details.
+Poskytuje společné rozložení detailu účtu, skupiny a oprávnění.{% endcomment %}
 {% block content-l2 %}
 <h1>{{ web_page_attributes.module_name }}</h1>
 <p>ID: <strong>{{ web_data.detail.pk }}</strong> — {{ web_data.detail }}</p>

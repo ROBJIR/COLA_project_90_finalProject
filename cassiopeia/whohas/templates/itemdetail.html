@@ -1,0 +1,41 @@
+{% extends "syscor-body.html" %}
+{% comment %}Displays an item, its form, or its deletion confirmation.
+Zobrazuje předmět, jeho formulář nebo potvrzení smazání.{% endcomment %}
+{% block content-l2 %}
+<h1>{% if web_data.creating %}Create item{% elif web_data.deleting %}Delete item{% else %}Item detail{% endif %}</h1>
+{% if web_data.item %}<p>ID: {{ web_data.item.pk }} — {{ web_data.item.name }}</p>{% endif %}
+{% if web_data.saved %}<div class="alert alert-success" role="status">Changes saved.</div>{% endif %}
+{% if web_data.editing %}
+<form method="post" action="{% if web_data.creating %}{% url 'itemcreate' %}{% else %}{% url 'itemdetail' web_data.item.pk %}{% endif %}">
+{% csrf_token %}
+{% endif %}
+<div class="card bg-body-secondary p-4 mb-3">
+{% if web_data.item and not web_data.editing %}
+<p>Owner: {% include "details/owner-slim.html" with owner=web_data.item.owner only %}</p>
+{% endif %}
+{{ web_data.form.non_field_errors }}
+{% for field in web_data.form %}
+<div class="mb-3">
+{{ field.label_tag }} {{ field }}
+{% if field.help_text %}<div class="form-text">{{ field.help_text }}</div>{% endif %}
+{% for error in field.errors %}<div class="text-danger" role="alert">{{ error }}</div>{% endfor %}
+</div>
+{% endfor %}
+</div>
+{% if web_data.editing %}
+<button type="submit" class="btn btn-primary">Save</button>
+<a class="btn btn-secondary" href="{% if web_data.creating %}{% url 'items' %}{% else %}{% url 'itemdetail' web_data.item.pk %}{% endif %}">Cancel</a>
+</form>
+{% elif web_data.deleting %}
+<div class="alert alert-danger">Really delete “{{ web_data.item.name }}”? This action cannot be undone.</div>
+<form method="post" action="{% url 'itemdelete' web_data.item.pk %}">
+{% csrf_token %}
+<button type="submit" name="confirm" value="yes" class="btn btn-danger">Confirm delete</button>
+<a href="{% url 'itemdetail' web_data.item.pk %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% else %}
+{% if perms.whohas.change_items %}<a href="{% url 'itemdetail' web_data.item.pk %}?edit=1" class="btn btn-primary">Edit</a>{% endif %}
+{% if perms.whohas.delete_items %}<a href="{% url 'itemdelete' web_data.item.pk %}" class="btn btn-danger">Delete</a>{% endif %}
+<a href="{% url 'items' %}" class="btn btn-secondary">Back to list</a>
+{% endif %}
+{% endblock %}
