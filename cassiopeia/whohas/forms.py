@@ -1,7 +1,7 @@
 # Validate editable item fields and their catalogue relationships.
 # Ověřuje upravitelné údaje předmětu a vazby na číselníky.
 from django import forms
-from whohas.models import Items
+from whohas.models import Items, Loans
 
 
 # Defines the shared model form for items.
@@ -47,3 +47,32 @@ class ItemWriteForm(ItemForm):
     # Vrací vybraného vlastníka nebo aktuálního uživatele.
     def clean_owner(self):
         return self.cleaned_data['owner'] or self.current_user
+
+
+class LoanForm(forms.ModelForm):
+    class Meta:
+        model = Loans
+        fields = (
+            'item', 'status', 'borrower',
+            'tstamp_planned_start', 'tstamp_planned_end',
+            'tstamp_real_start', 'tstamp_real_end', 'description',
+        )
+        labels = {
+            'tstamp_planned_start': 'Planned start',
+            'tstamp_planned_end': 'Planned end',
+            'tstamp_real_start': 'Actual start',
+            'tstamp_real_end': 'Actual end',
+        }
+        widgets = {'description': forms.Textarea(attrs={'rows': 4})}
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            if isinstance(field, forms.DateTimeField):
+                field.widget = forms.DateTimeInput(
+                    format='%Y-%m-%dT%H:%M:%S',
+                    attrs={'type': 'datetime-local', 'step': '1'},
+                )
+            field.widget.attrs['class'] = (
+                'form-select' if isinstance(field.widget, forms.Select) else 'form-control'
+            )

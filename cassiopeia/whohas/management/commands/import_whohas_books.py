@@ -11,28 +11,30 @@ from whohas.models import Events, ItemCategories, Items, ItemTypes, Loans, LoanS
 
 
 BOOKS = (
-    ("Hobit", "Fantasy román J. R. R. Tolkiena.", "Pevná vazba", ("Fantasy", "Klasika")),
-    ("Malý princ", "Příběh Antoina de Saint-Exupéryho.", "Pevná vazba", ("Klasika", "Pro děti")),
-    ("Babička", "Obrazy venkovského života od Boženy Němcové.", "Brožovaná kniha", ("Klasika", "Česká literatura")),
-    ("R.U.R.", "Divadelní hra Karla Čapka o robotech.", "Brožovaná kniha", ("Sci-fi", "Česká literatura")),
-    ("Duna", "Sci-fi román Franka Herberta z pouštní planety Arrakis.", "Pevná vazba", ("Sci-fi",)),
-    ("Stručná historie času", "Populárně-naučná kniha Stephena Hawkinga o vesmíru.", "Brožovaná kniha", ("Populární věda",)),
+    ("Pavel Tomeš, Až na ten konec dobrý", "", "book", ("novel", "satire")),
+    ("Miroslav Hlaučo, Letnice", "2024, Přejít po vodě suchou nohou, lámat kámen hvízdáním, rozmlouvat \
+                                 s anděly a se sochami svatých – to všechno jsou pro obyvatele zapadlého \
+                                 městečka Svatý Jiří naprosto běžné věci. Na začátku 20. století žijí úplně \
+                                 odtrženě od světa, ale začínají pomalu tušit, že se přiblížila doba velkých \
+                                technických zázraků, které nahradí ty jejich tradiční.", "book", ("novel", "Czech")),
+    ("Božena Němcová, Babička", "Obrazy venkovského života.", "book", ("novel", "Czech")),
+    ("Stephen Hawking, Stručná historie času", "Populárně-naučná kniha o vesmíru.", "book", ("science","universe",)),
 )
 
 # Each loan uses day offsets relative to the import date.
 # Každá výpůjčka používá posuny ve dnech vůči datu importu.
 LOAN_EXAMPLES = (
-    ("Hobit", "Vrácená výpůjčka", "returned", -21, -7, -21, -9, (
+    ("Pavel Tomeš, Až na ten konec dobrý", "Vrácená výpůjčka", "returned", -21, -7, -21, -9, (
         (-21, "Kniha byla předána čtenářce."),
         (-9, "Čtenářka vrátila knihu v pořádku."),
     )),
-    ("Malý princ", "Výpůjčka na čtenářský klub", "borrowed", -3, 11, -3, None, (
+    ("Miroslav Hlaučo, Letnice", "Výpůjčka na čtenářský klub", "borrowed", -3, 11, -3, None, (
         (-3, "Kniha byla vyzvednuta před setkáním čtenářského klubu."),
     )),
-    ("Babička", "Rezervace k maturitě", "planned", 4, 18, None, None, (
+    ("Božena Němcová, Babička", "Rezervace k maturitě", "planned", 4, 18, None, None, (
         (0, "Čtenářka si rezervovala knihu na příští týden."),
     )),
-    ("R.U.R.", "Ukončená výpůjčka ke čtenářskému deníku", "success", -35, -21, -34, -22, (
+    ("Stephen Hawking, Stručná historie času", "Ukončená výpůjčka ke čtenářskému deníku", "success", -35, -21, -34, -22, (
         (-35, "Termín výpůjčky byl domluven."),
         (-34, "Kniha byla předána o den později."),
         (-22, "Vrácení bylo potvrzeno a výpůjčka uzavřena."),
@@ -70,8 +72,8 @@ class Command(BaseCommand):
         if not options["replace"]:
             raise CommandError("Pro nahrazení stávajících dat Whohas přidejte --replace.")
 
-        owner = self.demo_user("whohas-demo-knihovnik", "Jan", "Knihovník")
-        borrower = self.demo_user("whohas-demo-ctenarka", "Eva", "Čtenářka")
+        owner = self.demo_user("bob", "Bob", "Owner")
+        borrower = self.demo_user("denisa", "Denisa", "Borrower")
 
         for model in (Events, Loans, Items, LoanStatuses, ItemCategories, ItemTypes, WhohasHomePage):
             model.objects.all().delete()
@@ -89,7 +91,7 @@ class Command(BaseCommand):
 
         types = {
             name: ItemTypes.objects.create(name=name)
-            for name in ("Pevná vazba", "Brožovaná kniha")
+            for name in ("book", "electronics","tool")
         }
         categories = {
             name: ItemCategories.objects.create(item_category_name=name)
@@ -115,7 +117,6 @@ class Command(BaseCommand):
         events = []
         for title, label, status, planned_start, planned_end, real_start, real_end, history in LOAN_EXAMPLES:
             loan = Loans.objects.create(
-                name=label,
                 description=f"Ukázková výpůjčka knihy {title}.",
                 item=books[title],
                 borrower=borrower,

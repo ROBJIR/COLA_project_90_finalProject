@@ -3,7 +3,11 @@
 Vypisuje výpůjčky a odkazuje na jejich detaily.{% endcomment %}
 {% block content-l2 %}
 
-<h1>{{ web_page_attributes.module_name }}</h1>
+<h1>{{ web_data.title }}</h1>
+<p>
+    <a href="{% url 'loans' %}">All loans</a> |
+    <a href="{% url 'overdue_loans' %}">Overdue loans</a>
+</p>
 
 <div class="row-cols-sm-3">
     <div>rows: {{ web_data.table_rows_count }}</div>
@@ -13,7 +17,8 @@ Vypisuje výpůjčky a odkazuje na jejich detaily.{% endcomment %}
 <table class="table">
     <thead>
     <tr>
-        <th>ID</th><th>item</th><th>status</th><th>borrower</th><th>memo</th><th>description</th>
+        <th>ID</th><th>item type<br>item</th><th>status</th><th>planned: start - end<br>real: start - end</th>
+        <th>borrower</th><th>events</th><th>description</th>
     </tr>
     </thead>
     <tbody>
@@ -23,24 +28,30 @@ Vypisuje výpůjčky a odkazuje na jejich detaily.{% endcomment %}
             <a href="{% url 'loandetail' loan.pk %}">{{ loan.pk }}</a>
         </td>
         <td>
-            {{ loan.item.name }}
+            {{ loan.item.item_type }}<br>{{ loan.item.name }}
         </td>
         <td>
-            {{ loan.status.name }}
+            {% include "objects/object-loan-status.html" with var_status_name=loan.status.name var_format_bgcolor=loan.status.format.bgcolor var_format_color=loan.status.format.color only %}
+        </td>
+        <td>
+            {{ loan.tstamp_planned_start|date:"d.m.Y H:i" }} - {{ loan.tstamp_planned_end|date:"d.m.Y H:i" }}
+            <br>
+            {{ loan.tstamp_real_start|date:"d.m.Y H:i" }} - {{ loan.tstamp_real_end|date:"d.m.Y H:i" }}
         </td>
         <td>
             {{ loan.borrower.username }}
         </td>
-
         <td>
-            {{ loan.name }}
+                {% with loan_id=loan.pk|stringformat:"s" %}
+                    {% include "objects/object-events.html" with var_id="loan-events-"|add:loan_id var_label=" events" var_dictionary=loan.loan.all only %}
+                {% endwith %}
         </td>
         <td>
             {{ loan.description }}
         </td>
     </tr>
     {% empty %}
-    <tr><td colspan="6" class="text-center">No records found.</td></tr>
+    <tr><td colspan="7" class="text-center">No records found.</td></tr>
     {% endfor %}
     </tbody>
 </table>

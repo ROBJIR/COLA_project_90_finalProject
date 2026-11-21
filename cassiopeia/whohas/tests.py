@@ -8,8 +8,33 @@ from django.contrib.auth.models import Permission, User
 from django.core.management.base import CommandError
 from django.test import Client
 from django.urls import reverse
+from django.utils import timezone
 
 from whohas.models import Events, ItemCategories, Items, ItemTypes, Loans, LoanStatuses, WhohasHomePage
+from whohas.views.whohas import WhohasView
+
+
+class WhohasAvailabilityTests(TestCase):
+    def test_home_lists_items_without_an_unreturned_loan(self):
+        reader = User.objects.create_user('availability-reader')
+        reader.user_permissions.add(Permission.objects.get(
+            content_type__app_label='whohas', codename='view_whohashomepage',
+        ))
+        item_type = ItemTypes.objects.create(name='Test item type')
+        never_loaned = Items.objects.create(name='Never loaned', item_type=item_type)
+        returned = Items.objects.create(name='Returned item')
+        loaned = Items.objects.create(name='Currently loaned')
+        for item in (returned, loaned):
+            Loans.objects.create(item=item, borrower=reader, tstamp_real_end=timezone.now())
+        Loans.objects.create(item=loaned, borrower=reader, tstamp_real_start=timezone.now())
+
+        self.assertQuerySetEqual(WhohasView.itemfree(), [never_loaned, returned])
+        self.client.force_login(reader)
+        response = self.client.get(reverse('whohas'))
+        self.assertContains(response, never_loaned.name)
+        self.assertContains(response, item_type.name)
+        self.assertContains(response, returned.name)
+        self.assertNotContains(response, loaned.name)
 
 
 # Tests replacement of Whohas records by the sample library command.
@@ -26,9 +51,9 @@ class ImportWhohasBooksTests(TestCase):
         for _ in range(2):
             call_command('import_whohas_books', replace=True, stdout=StringIO())
             models = (WhohasHomePage, ItemTypes, ItemCategories, Items, LoanStatuses, Loans, Events)
-            self.assertEqual(tuple(model.objects.count() for model in models), (2, 2, 6, 6, 4, 4, 7))
+            self.assertEqual(tuple(model.objects.count() for model in models), (2, 3, 5, 4, 4, 4, 7))
             self.assertFalse(Items.objects.filter(name='Original record').exists())
-            loan = Loans.objects.get(item__name='Hobit')
+            loan = Loans.objects.get(item__name='Pavel Tomeš, Až na ten konec dobrý')
             self.assertEqual(loan.item.item_categories.count(), 2)
             self.assertEqual(loan.status.name, 'returned')
             self.assertEqual(loan.loan.count(), 2)
@@ -44,21 +69,76 @@ class ImportWhohasBooksTests(TestCase):
         self.assertEqual(list(Items.objects.values_list('pk', flat=True)), [book.pk])
         self.assertFalse(User.objects.filter(username__startswith='whohas-demo-').exists())
 
+class LoanDetailTests(TestCase):
     # Checks that the list and detail show sample loan information.
     # Ověřuje zobrazení údajů o ukázkové výpůjčce v seznamu i detailu.
     def test_loan_list_and_detail(self):
-        call_command('import_whohas_books', replace=True, stdout=StringIO())
         reader = User.objects.create_user('loan-reader')
         reader.user_permissions.add(Permission.objects.get(
             content_type__app_label='whohas', codename='view_loans',
         ))
         self.client.force_login(reader)
-        loan = Loans.objects.get(item__name='Hobit')
+        loan = Loans.objects.create(borrower=reader, description='Sample loan')
+        Events.objects.create(loan=loan, author=reader, description='Sample event')
         self.assertContains(self.client.get(reverse('loans')), loan.description)
         detail = self.client.get(reverse('loandetail', args=[loan.pk]))
-        self.assertContains(detail, loan.name)
+        self.assertContains(detail, f"Loan #{loan.pk}")
         self.assertContains(detail, loan.loan.first().description)
         self.assertEqual(self.client.get(reverse('loandetail', args=[999999])).status_code, 404)
+        url = reverse('loandetail', args=[loan.pk])
+        self.assertEqual(self.client.get(url, {'edit': '1'}).status_code, 403)
+        self.assertEqual(self.client.post(url).status_code, 403)
+
+    def test_loan_edit_validates_and_saves_fields_and_relationships(self):
+        editor = User.objects.create_user('loan-editor')
+        editor.user_permissions.add(*Permission.objects.filter(
+            content_type__app_label='whohas', codename__in=['view_loans', 'change_loans'],
+        ))
+        borrower = User.objects.create_user('new-borrower')
+        item = Items.objects.create(name='New item')
+        status = LoanStatuses.objects.create(name='active')
+        loan = Loans.objects.create(borrower=editor, description='Original')
+        url = reverse('loandetail', args=[loan.pk])
+        self.client.force_login(editor)
+        self.assertContains(self.client.get(url, {'edit': '1'}), 'type="datetime-local"')
+
+        data = {
+            'item': item.pk, 'status': status.pk, 'borrower': borrower.pk,
+            'tstamp_planned_start': '2026-11-21T09:00',
+            'tstamp_planned_end': '2026-11-22T09:00',
+            'tstamp_real_start': '2026-11-21T09:05:30',
+            'tstamp_real_end': '',
+            'description': 'Updated',
+        }
+        self.assertEqual(self.client.post(url, {**data, 'borrower': ''}).status_code, 400)
+        loan.refresh_from_db()
+        self.assertEqual(loan.description, 'Original')
+        self.assertRedirects(self.client.post(url, data), url)
+        loan.refresh_from_db()
+        self.assertEqual((loan.item_id, loan.status_id, loan.borrower_id), (item.pk, status.pk, borrower.pk))
+        self.assertEqual(loan.description, 'Updated')
+        self.assertEqual(loan.tstamp_planned_start.hour, 9)
+        self.assertEqual(loan.tstamp_planned_end.day, 22)
+        self.assertEqual(loan.tstamp_real_start.second, 30)
+        self.assertIsNone(loan.tstamp_real_end)
+
+    def test_overdue_list_shows_only_loans_with_success_status(self):
+        reader = User.objects.create_user('overdue-reader')
+        reader.user_permissions.add(Permission.objects.get(
+            content_type__app_label='whohas', codename='view_loans',
+        ))
+        success = LoanStatuses.objects.create(name='success')
+        borrowed = LoanStatuses.objects.create(name='borrowed')
+        matching = Loans.objects.create(
+            borrower=reader, status=success, description='Success example',
+        )
+        for status in (borrowed, None):
+            Loans.objects.create(borrower=reader, status=status, description='Excluded example')
+        self.assertQuerySetEqual(WhohasView.overdue_loans(), [matching])
+        self.client.force_login(reader)
+        response = self.client.get(reverse('overdue_loans'))
+        self.assertContains(response, matching.description)
+        self.assertNotContains(response, 'Excluded example')
 
 
 # Tests item forms, persistence, and access control.
@@ -201,7 +281,7 @@ class ItemCrudTests(TestCase):
     # Ověřuje, že výpůjčka brání smazání svého předmětu.
     def test_delete_is_blocked_when_item_has_a_loan(self):
         self.client.force_login(self.admin)
-        loan = Loans.objects.create(name='Book loan', item=self.item, borrower=self.reader)
+        loan = Loans.objects.create(item=self.item, borrower=self.reader)
         url = reverse('itemdelete', args=[self.item.pk])
         detail = reverse('itemdetail', args=[self.item.pk])
 

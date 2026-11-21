@@ -1,0 +1,14 @@
+{% comment %}Renders summary values in a reusable card.
+Vykresluje přehledové údaje ve sdílené kartě.{% endcomment %}
+<div class="table border rounded-5 p-2 shadow">
+    <table class="table">
+        <caption class="caption-top"><h2>{{ title }}</h2></caption>
+        <tbody>
+        {% for item in data %}
+            <tr><th scope="row">{{ item.name }}</th><td>{{ item.item_type.name|default:"–" }}</td></tr>
+        {% empty %}
+            <tr><td colspan="2" class="text-sm-center">No information available.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

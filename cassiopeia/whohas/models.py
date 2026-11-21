@@ -51,7 +51,6 @@ class LoanStatuses(models.Model):
 # Stores a loan, including its item, dates, and status.
 # Ukládá výpůjčku včetně předmětu, dat a stavu.
 class Loans(models.Model):
-     name = models.CharField(max_length=120, null=False, db_index=True)
      tstamp_planned_start = models.DateTimeField(default=timezone.now)
      tstamp_planned_end = models.DateTimeField(null=True, blank=True,)
      tstamp_real_start = models.DateTimeField(null=True, blank=True,)

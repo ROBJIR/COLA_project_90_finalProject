@@ -83,12 +83,12 @@ class LoanStatusesAdmin(admin.ModelAdmin):
 @admin.register(Loans)
 class LoansAdmin(admin.ModelAdmin):
     list_display = (
-        "name", "item", "borrower", "status", "tstamp_planned_start",
+        "item", "borrower", "status", "tstamp_planned_start",
         "tstamp_planned_end", "tstamp_real_start", "tstamp_real_end",
     )
     list_select_related = ("item", "borrower", "status")
     list_filter = ("status", "tstamp_planned_start")
-    search_fields = ("name", "description", "item__name")
+    search_fields = ("description", "item__name")
     ordering = ("-tstamp_planned_start", "-pk")
 
 

@@ -19,7 +19,6 @@ Vykresluje navigační nabídku Cassiopeji.{% endcomment %}{% load static %}
           containing these stars:
           </a>
         </li>
-        {% if not perms.paidyet.view_whohashomepage %}
         <li class="nav-item">
           <a class="nav-link bi bi-star
                 {% if request.resolver_match.url_name == 'whohas' %}active{% endif %}
@@ -29,8 +28,7 @@ Vykresluje navigační nabídku Cassiopeji.{% endcomment %}{% load static %}
                 {% if not perms.whohas.view_whohashomepage %} aria-disabled="true" {% endif %}>
               Who Has My Stuff?</a>
         </li>
-        {% endif %}
-        {% if not perms.paidyet.view_paidyethomepage %}
+        {% comment %}
         <li class="nav-item">
           <a class="nav-link bi bi-star
                 {% if request.resolver_match.url_name == 'paidyet' %}active{% endif %}
@@ -41,19 +39,17 @@ Vykresluje navigační nabídku Cassiopeji.{% endcomment %}{% load static %}
             Paid yet?
           </a>
         </li>
-        {% endif %}
-        {% if not perms.paidyet.view_meta %}
+        {% endcomment %}
         <li class="nav-item">
           <a class="nav-link bi bi-star
                 {% if request.resolver_match.url_name == 'meta' %}active{% endif %}
                 {% if not perms.paidyet.view_meta %}disabled{% endif %}"
-             href="{% url 'paidyet' %}"
+             href="{% url 'meta' %}"
                 {% if request.resolver_match.url_name == 'meta' %}aria-current="page"{% endif %}
-                {% if not perms.paidyet.view_meta %} aria-disabled="true" {% endif %}>
+                {% if not perms.meta.view_meta %} aria-disabled="true" {% endif %}>
             Meta
           </a>
         </li>
-        {% endif %}
       </ul>
     </div>
   </div>

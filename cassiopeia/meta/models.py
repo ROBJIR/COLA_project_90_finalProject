@@ -8,7 +8,7 @@ class Meta(models.Model):
      article_code = models.CharField(max_length=24, null=True)
      article_sequence = models.PositiveIntegerField(null=False)
      aticle_content = models.TextField(null=True)
-     format = models.JSONField(default=dict, null=True)
+     format = models.JSONField(default=dict, null=True, blank=True)
 
 class DatabaseType(models.Model):
     database_type = models.CharField(max_length=16, unique=True)

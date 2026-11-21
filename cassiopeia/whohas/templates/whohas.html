@@ -1,12 +1,15 @@
 {% extends "syscor-body.html" %}
 {% comment %}Shows the Whohas home page.
 Zobrazuje úvodní stránku Whohas.{% endcomment %}
-{% load static %}
 {% block content-l2 %}
+<h1>{{ web_page_attributes.module_name }}</h1>
+<div class="row mt-3">
 
-
-        Who Has My Stuff?
-
-
+    <div class="col-12 col-lg-8">
+        {% include "info/info-items.html" with title="Free Items" data=web_data.itemsfree only %}
+        {% include "info/info-loans.html" with title="Loans Overdue" data=web_data.loansover only %}
+    </div>
+    <div class="col-12 col-lg-4">
+    </div>
+</div>
 {% endblock %}
-

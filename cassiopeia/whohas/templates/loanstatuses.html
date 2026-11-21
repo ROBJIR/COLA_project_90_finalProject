@@ -29,10 +29,7 @@ Vypisuje stavy výpůjček a související výpůjčky.{% endcomment %}
             {{ lstatus.id }}
         </td>
         <td>
-            <span class="badge fs-5 p-2 {% if lstatus.format.bgcolor %}bg-{{lstatus.format.bgcolor|default:'transparent'}}{% endif %}
-                        {% if lstatus.format.color %}text-{{lstatus.format.color|default:'white'}}{% endif %}">
-                {{ lstatus.name }}
-            </span>
+            {% include "objects/object-loan-status.html" with var_status_name=lstatus.name var_format_bgcolor=lstatus.format.bgcolor var_format_color=lstatus.format.color only %}
         </td>
         <td class="text-sm-center">
 

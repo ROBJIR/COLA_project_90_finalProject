@@ -1,0 +1,23 @@
+{% comment %}Renders summary values in a reusable card.
+Vykresluje přehledové údaje ve sdílené kartě.{% endcomment %}
+<div class="table border rounded-5 p-2 shadow">
+    <table class="table">
+        <caption class="caption-top"><h2>{{ title }}</h2></caption>
+                <th>planned end</th>
+                <th>status</th>
+                <th>item</th>
+                <th>borrower</th>
+        <tbody>
+        {% for loan in data %}
+            <tr>
+                <td >{{ loan.tstamp_planned_end|date:"d.m.Y H:i" }}</td>
+                <td>{{ loan.status.name|default:"–" }}</td>
+                <td>{{ loan.item.item_type.name|default:"–" }}: {{ loan.item.name|default:"–" }}</td>
+                <td>{{ loan.borrower.username|default:"–" }}</td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="2" class="text-sm-center">No information available.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

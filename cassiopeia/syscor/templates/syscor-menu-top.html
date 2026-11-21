@@ -15,7 +15,6 @@ Vykresluje hlavní navigační lištu.{% endcomment %}{% load static %}
             Cassiopeia project
           </a>
         </li>
-        {% if not perms.paidyet.view_whohashomepage %}
         <li class="nav-item">
           <a class="nav-link
                 {% if request.resolver_match.url_name == 'whohas' %}active{% endif %}
@@ -25,8 +24,7 @@ Vykresluje hlavní navigační lištu.{% endcomment %}{% load static %}
                 {% if not perms.whohas.view_whohashomepage %} aria-disabled="true" {% endif %}>
               Who Has My Stuff?</a>
         </li>
-        {% endif %}
-        {% if not perms.paidyet.view_paidyethomepage %}
+        {% comment %}
         <li class="nav-item">
           <a class="nav-link
                 {% if request.resolver_match.url_name == 'paidyet' %}active{% endif %}
@@ -37,19 +35,17 @@ Vykresluje hlavní navigační lištu.{% endcomment %}{% load static %}
             Paid yet?
           </a>
         </li>
-        {% endif %}
-        {% if not perms.meta.view_meta %}
+        {% endcomment %}
         <li class="nav-item">
           <a class="nav-link
                 {% if request.resolver_match.url_name == 'meta' %}active{% endif %}
-                {% if not perms.paidyet.view_meta %}disabled{% endif %}"
+                {% if not perms.meta.view_meta %}disabled{% endif %}"
              href="{% url 'meta' %}"
                 {% if request.resolver_match.url_name == 'meta' %}aria-current="page"{% endif %}
-                {% if not perms.paidyet.view_meta %} aria-disabled="true" {% endif %}>
+                {% if not perms.meta.view_meta %} aria-disabled="true" {% endif %}>
             Meta
           </a>
         </li>
-        {% endif %}
       </ul>
     </div>
     <div class="col-auto">

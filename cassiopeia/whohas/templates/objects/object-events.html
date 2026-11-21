@@ -1,0 +1,51 @@
+{% comment %}Renders dictionary keys and values in a table.
+Vykresluje klíče a hodnoty slovníku v tabulce.{% endcomment %}
+{% if var_dictionary %}
+    <button type="button"
+            class="btn btn-outline-secondary btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#{{ var_id }}">
+        <i class="bi bi-list-ul me-1"></i>
+        [{{ var_dictionary|length }}] {% if var_label %}<strong>{{ var_label }}</strong>{% endif %}
+    </button>
+
+    <div class="modal fade"
+         id="{{ var_id }}"
+         tabindex="-1"
+         aria-labelledby="{{ var_id }}-title"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content text-start">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="{{ var_id }}-title">
+                        {{ var_label|default:"---" }}
+                    </h2>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <table class="table table-sm table-striped mb-0">
+                        <tbody>
+                            {% for event in var_dictionary %}
+                                <tr>
+                                    <td class="text-break">
+                                        {{ event.tstamp|date:"d.m.Y H:i" }}<br>
+                                        {{ event.author.username|default_if_none:"—" }}
+                                    </td>
+                                    <td class="text-break">
+                                        {{ event.description|default_if_none:"—" }}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <span class="text-body-secondary">—</span>
+{% endif %}

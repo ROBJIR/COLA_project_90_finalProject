@@ -75,7 +75,7 @@ class Command(BaseCommand):
         Meta.objects.bulk_create([
             Meta(
                 article_code="01", article_sequence=10,
-                aticle_content="<strong>Datababses</strong> ...",
+                aticle_content='<a class="nav-link" href="{% url \'databases\' %}">databases</a> ...',
             ),
             Meta(
                 article_code="02", article_sequence=20,

@@ -4127,3 +4127,1353 @@ django.template.exceptions.TemplateSyntaxError: Template: D:\60-projects\Gdisk\C
 2026-11-21 19:57:12,142 INFO cassiopeia.auth: Logged out user 'admin'.
 2026-11-21 20:14:00,045 INFO cassiopeia.auth: Logged user 'admin'.
 2026-11-21 20:16:23,053 INFO cassiopeia.auth: Logged out user 'admin'.
+2026-11-21 20:24:57,949 INFO cassiopeia.auth: Logged user 'admin'.
+2026-11-21 20:27:34,099 WARNING django.request: Not Found: /favicon.ico
+2026-11-21 20:27:34,100 WARNING django.server: "GET /favicon.ico HTTP/1.1" 404 9573
+2026-11-21 20:33:33,822 INFO cassiopeia.auth: Logged out user 'admin'.
+2026-11-21 20:35:32,660 WARNING cassiopeia.auth: Failed login attempt for username 'robert'.
+2026-11-21 20:35:44,629 INFO cassiopeia.auth: Logged user 'robert'.
+2026-11-21 20:48:49,199 WARNING django.request: Not Found: /meta/{% url 'databases' %}
+2026-11-21 20:48:49,200 WARNING django.server: "GET /meta/%7B%%20url%20'databases'%20%%7D HTTP/1.1" 404 10395
+2026-11-21 20:49:15,098 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:49:15,099 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:49:15,109 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+2026-11-21 20:49:15,110 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 10395
+2026-11-21 20:49:15,169 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:49:15,173 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:49:20,492 WARNING django.request: Not Found: /meta/{% url 'databases' %}
+2026-11-21 20:49:20,493 WARNING django.server: "GET /meta/%7B%%20url%20'databases'%20%%7D HTTP/1.1" 404 10395
+2026-11-21 20:49:20,552 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:49:20,553 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:49:20,616 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+2026-11-21 20:49:20,617 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 10395
+2026-11-21 20:49:20,643 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:49:20,645 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:49:22,651 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+2026-11-21 20:49:22,653 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 10395
+2026-11-21 20:49:22,677 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:49:22,678 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:49:22,687 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:49:22,688 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:49:22,729 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:49:22,730 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:49:22,755 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:49:22,756 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:53:19,195 WARNING django.request: Not Found: /meta/{% url 'databases' %}
+2026-11-21 20:53:19,196 WARNING django.server: "GET /meta/%7B%%20url%20'databases'%20%%7D HTTP/1.1" 404 10395
+2026-11-21 20:53:19,243 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:53:19,244 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:53:19,328 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:53:19,330 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:53:19,336 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+2026-11-21 20:53:19,340 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 10395
+2026-11-21 20:53:54,168 WARNING django.request: Not Found: /favicon.ico
+2026-11-21 20:53:54,168 WARNING django.server: "GET /favicon.ico HTTP/1.1" 404 10395
+2026-11-21 20:54:34,600 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:54:34,601 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:54:34,680 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+2026-11-21 20:54:34,680 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 10395
+2026-11-21 20:54:34,702 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:54:34,703 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:54:36,704 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:54:36,706 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:54:36,742 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+2026-11-21 20:54:36,743 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 10395
+2026-11-21 20:54:36,799 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:54:36,800 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:54:38,363 WARNING django.request: Not Found: /meta/{% url 'databases' %}
+2026-11-21 20:54:38,363 WARNING django.server: "GET /meta/%7B%%20url%20'databases'%20%%7D HTTP/1.1" 404 10395
+2026-11-21 20:54:38,419 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:54:38,419 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:54:38,467 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+2026-11-21 20:54:38,469 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 10395
+2026-11-21 20:54:38,486 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:54:38,488 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:54:40,258 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:54:40,259 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:54:40,271 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+2026-11-21 20:54:40,272 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 10395
+2026-11-21 20:54:40,291 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:54:40,292 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:54:40,321 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:54:40,322 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:54:40,373 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:54:40,373 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:54:48,130 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:54:48,131 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:54:48,168 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+2026-11-21 20:54:48,169 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 10395
+2026-11-21 20:54:48,221 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:54:48,222 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:55:40,753 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:55:40,754 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:55:40,824 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+2026-11-21 20:55:40,840 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:55:40,851 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 10395
+2026-11-21 20:55:40,865 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:55:49,173 WARNING django.request: Not Found: /meta/{% url 'databases' %}
+2026-11-21 20:55:49,174 WARNING django.server: "GET /meta/%7B%%20url%20'databases'%20%%7D HTTP/1.1" 404 10395
+2026-11-21 20:55:49,235 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:55:49,235 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:55:49,272 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+2026-11-21 20:55:49,272 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 10395
+2026-11-21 20:55:49,305 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:55:49,306 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:55:53,331 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:55:53,332 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:55:53,347 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+2026-11-21 20:55:53,348 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 10395
+2026-11-21 20:55:53,364 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:55:53,365 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:55:53,443 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:55:53,444 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 20:55:53,478 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:55:53,479 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:59:53,140 WARNING django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-11-21 20:59:53,141 WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10395
+2026-11-21 20:59:53,189 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+2026-11-21 20:59:53,190 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 10395
+2026-11-21 20:59:53,201 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css.map
+2026-11-21 20:59:53,204 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 10395
+2026-11-21 21:11:34,039 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:11:34,041 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:11:34,071 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:11:34,072 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:11:34,087 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:11:34,088 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:11:34,102 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:11:34,102 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:11:34,118 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:11:34,119 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:11:34,135 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:11:34,135 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:11:34,178 WARNING django.request: Not Found: /static/favicon.ico
+2026-11-21 21:11:34,179 WARNING django.server: "GET /static/favicon.ico HTTP/1.1" 404 10395
+2026-11-21 21:11:40,261 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:11:40,261 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:11:40,279 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:11:40,279 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:11:40,293 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:11:40,294 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:11:40,309 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:11:40,310 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:11:40,326 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:11:40,327 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:11:40,342 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:11:40,342 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:11:40,368 WARNING django.request: Not Found: /static/favicon.ico
+2026-11-21 21:11:40,369 WARNING django.server: "GET /static/favicon.ico HTTP/1.1" 404 10395
+2026-11-21 21:11:41,072 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:11:41,073 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:11:41,108 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:11:41,109 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:11:41,119 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:11:41,120 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:11:41,134 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:11:41,135 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:11:41,150 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:11:41,151 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:11:41,166 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:11:41,166 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:11:41,192 WARNING django.request: Not Found: /static/favicon.ico
+2026-11-21 21:11:41,193 WARNING django.server: "GET /static/favicon.ico HTTP/1.1" 404 10395
+2026-11-21 21:11:41,385 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:11:41,386 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:11:41,406 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:11:41,407 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:11:41,418 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:11:41,418 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:11:41,433 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:11:41,434 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:11:41,449 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:11:41,449 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:11:41,464 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:11:41,465 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:11:41,487 WARNING django.request: Not Found: /static/favicon.ico
+2026-11-21 21:11:41,488 WARNING django.server: "GET /static/favicon.ico HTTP/1.1" 404 10395
+2026-11-21 21:11:58,702 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:11:58,703 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:11:58,733 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:11:58,733 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:11:58,747 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:11:58,748 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:11:58,764 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:11:58,765 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:11:58,778 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:11:58,779 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:11:58,795 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:11:58,796 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:11:59,622 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:11:59,623 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:11:59,653 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:11:59,653 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:11:59,675 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:11:59,675 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:11:59,686 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:11:59,689 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:11:59,700 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:11:59,701 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:11:59,716 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:11:59,717 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:12:12,986 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:12:12,987 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:12:12,994 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:12:12,995 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:12:13,011 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:12:13,017 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:12:13,029 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:12:13,030 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:12:13,044 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:12:13,045 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:12:13,060 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:12:13,061 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:12:16,007 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:12:16,007 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:12:16,026 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:12:16,027 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:12:16,039 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:12:16,040 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:12:16,056 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:12:16,056 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:12:16,072 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:12:16,073 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:12:16,090 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:12:16,091 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:12:50,499 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:12:50,501 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:12:50,516 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:12:50,517 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:12:50,546 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:12:50,547 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:12:50,567 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:12:50,568 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:12:50,577 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:12:50,578 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:12:50,594 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:12:50,594 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:13:00,418 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:13:00,419 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:13:00,436 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:13:00,437 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:13:00,452 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:13:00,453 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:13:00,468 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:13:00,469 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:13:00,483 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:13:00,484 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:13:00,498 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:13:00,499 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:13:00,979 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:13:00,979 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:13:01,010 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:13:01,011 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:13:01,027 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:13:01,027 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:13:01,043 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:13:01,044 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:13:01,058 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:13:01,058 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:13:01,074 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:13:01,075 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:13:01,201 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:13:01,201 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:13:01,220 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:13:01,220 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:13:01,234 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:13:01,234 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:13:01,250 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:13:01,250 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:13:01,263 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:13:01,264 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:13:01,281 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:13:01,281 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:16:10,680 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:16:10,680 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:16:10,709 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:16:10,710 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:16:10,728 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:16:10,729 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:16:10,742 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:16:10,744 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:16:10,757 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:16:10,758 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:16:10,773 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:16:10,773 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:20:22,941 WARNING django.request: Not Found: /static/vendor/bootstrap/css/bootstrap.min.css
+2026-11-21 21:20:22,943 WARNING django.server: "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 404 10395
+2026-11-21 21:20:22,991 WARNING django.request: Not Found: /static/css/cassiopeia/base.css
+2026-11-21 21:20:22,992 WARNING django.server: "GET /static/css/cassiopeia/base.css HTTP/1.1" 404 10395
+2026-11-21 21:20:23,049 WARNING django.request: Not Found: /static/vendor/bootstrap/icons/bootstrap-icons.min.css
+2026-11-21 21:20:23,050 WARNING django.server: "GET /static/vendor/bootstrap/icons/bootstrap-icons.min.css HTTP/1.1" 404 10395
+2026-11-21 21:20:23,119 WARNING django.request: Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-11-21 21:20:23,120 WARNING django.server: "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 404 10395
+2026-11-21 21:20:23,198 WARNING django.request: Not Found: /static/img/cassiopeia/logo-casiopeia.png
+2026-11-21 21:20:23,202 WARNING django.server: "GET /static/img/cassiopeia/logo-casiopeia.png HTTP/1.1" 404 10395
+2026-11-21 21:20:23,221 WARNING django.request: Not Found: /static/css/cassiopeia/body.css
+2026-11-21 21:20:23,221 WARNING django.server: "GET /static/css/cassiopeia/body.css HTTP/1.1" 404 10395
+2026-11-21 21:20:24,461 WARNING django.request: Not Found: /static/favicon.ico
+2026-11-21 21:20:24,462 WARNING django.server: "GET /static/favicon.ico HTTP/1.1" 404 10395
+2026-11-21 21:35:30,185 ERROR django.request: Internal Server Error: /whohas/loans
+Traceback (most recent call last):
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 581, in render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.select_template(template_name)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\engine.py", line 234, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: object-events.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 110, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\whohas\views\loans.py", line 22, in get
+    return self.page_render(request, "loans", web_data)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\syscor\views\web.py", line 210, in page_render
+    response = render(request, template_name, context={
+        "web_page_attributes": page_attributes,
+    ...<2 lines>...
+        "web_data": page_data,
+    })
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\shortcuts.py", line 27, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: object-events.html
+2026-11-21 21:35:30,205 ERROR django.server: "GET /whohas/loans HTTP/1.1" 500 145
+2026-11-21 21:35:30,307 WARNING django.request: Not Found: /favicon.ico
+2026-11-21 21:35:30,308 WARNING django.server: "GET /favicon.ico HTTP/1.1" 404 10395
+2026-11-21 21:36:05,494 ERROR django.request: Internal Server Error: /whohas/loans
+Traceback (most recent call last):
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 581, in render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.select_template(template_name)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\engine.py", line 234, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: object-events.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 110, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\whohas\views\loans.py", line 22, in get
+    return self.page_render(request, "loans", web_data)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\syscor\views\web.py", line 210, in page_render
+    response = render(request, template_name, context={
+        "web_page_attributes": page_attributes,
+    ...<2 lines>...
+        "web_data": page_data,
+    })
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\shortcuts.py", line 27, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: object-events.html
+2026-11-21 21:36:05,499 ERROR django.server: "GET /whohas/loans HTTP/1.1" 500 145
+2026-11-21 21:36:26,181 ERROR django.request: Internal Server Error: /whohas/loans
+Traceback (most recent call last):
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 110, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\whohas\views\loans.py", line 22, in get
+    return self.page_render(request, "loans", web_data)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\syscor\views\web.py", line 210, in page_render
+    response = render(request, template_name, context={
+        "web_page_attributes": page_attributes,
+    ...<2 lines>...
+        "web_data": page_data,
+    })
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\shortcuts.py", line 27, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 581, in render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.select_template(template_name)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\engine.py", line 228, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 602, in parse
+    raise self.error(token, e)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 600, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 994, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 602, in parse
+    raise self.error(token, e)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 600, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 556, in parse
+    raise self.error(token, e)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 693, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 793, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\whohas\templates\objects\object-events.html, Could not parse the remainder: ':"d.m.Y H:i' from 'event.tstamp|date:"d.m.Y H:i'
+2026-11-21 21:36:26,200 ERROR django.server: "GET /whohas/loans HTTP/1.1" 500 145
+2026-11-21 22:03:35,593 ERROR django.request: Internal Server Error: /whohas/loanstatuses
+Traceback (most recent call last):
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 110, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\whohas\views\lists.py", line 72, in get
+    return self.page_render(request, "loanstatuses", web_data)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\syscor\views\web.py", line 210, in page_render
+    response = render(request, template_name, context={
+        "web_page_attributes": page_attributes,
+    ...<2 lines>...
+        "web_data": page_data,
+    })
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\shortcuts.py", line 27, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 602, in parse
+    raise self.error(token, e)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 600, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 602, in parse
+    raise self.error(token, e)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 600, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 602, in parse
+    raise self.error(token, e)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 600, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 602, in parse
+    raise self.error(token, e)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 600, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 349, in do_include
+    raise TemplateSyntaxError(
+        '"with" in %r tag needs at least one keyword argument.' % bits[0]
+    )
+django.template.exceptions.TemplateSyntaxError: Template: D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\whohas\templates\loanstatuses.html, "with" in 'include' tag needs at least one keyword argument.
+2026-11-21 22:03:35,601 ERROR django.server: "GET /whohas/loanstatuses HTTP/1.1" 500 145
+2026-11-21 22:14:37,934 WARNING django.request: Forbidden: /whohas/itemtypes
+2026-11-21 22:14:40,686 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 22:14:40,690 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 22:14:40,696 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 22:14:40,701 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 22:14:40,708 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/items/create
+2026-11-21 22:14:40,710 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1
+2026-11-21 22:14:40,712 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1/delete
+2026-11-21 22:14:40,742 WARNING django.request: Bad Request: /whohas/itemdetail/1/delete
+2026-11-21 22:14:40,805 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:14:40,836 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:14:40,847 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:14:40,859 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:14:40,873 WARNING django.request: Bad Request: /whohas/items/create
+2026-11-21 22:14:40,892 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 22:14:40,906 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 22:14:40,983 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 22:14:40,988 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 22:14:40,994 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 22:14:41,000 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 22:14:41,005 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 22:14:41,011 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 22:15:10,780 WARNING django.request: Bad Request: /whohas/loandetail/1
+2026-11-21 22:15:10,834 WARNING django.request: Not Found: /whohas/loandetail/999999
+2026-11-21 22:15:10,840 WARNING django.request: Forbidden: /whohas/loandetail/1
+2026-11-21 22:15:10,845 WARNING django.request: Forbidden: /whohas/loandetail/1
+2026-11-21 22:15:20,460 WARNING django.request: Forbidden: /whohas/itemtypes
+2026-11-21 22:15:23,067 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 22:15:23,071 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 22:15:23,075 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 22:15:23,080 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 22:15:23,086 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/items/create
+2026-11-21 22:15:23,087 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1
+2026-11-21 22:15:23,089 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1/delete
+2026-11-21 22:15:23,124 WARNING django.request: Bad Request: /whohas/itemdetail/1/delete
+2026-11-21 22:15:23,200 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:15:23,236 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:15:23,250 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:15:23,264 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:15:23,278 WARNING django.request: Bad Request: /whohas/items/create
+2026-11-21 22:15:23,297 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 22:15:23,312 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 22:15:23,392 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 22:15:23,397 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 22:15:23,402 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 22:15:23,408 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 22:15:23,414 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 22:15:23,419 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 22:15:23,551 WARNING django.request: Bad Request: /whohas/loandetail/1
+2026-11-21 22:15:23,601 WARNING django.request: Not Found: /whohas/loandetail/999999
+2026-11-21 22:15:23,607 WARNING django.request: Forbidden: /whohas/loandetail/1
+2026-11-21 22:15:23,613 WARNING django.request: Forbidden: /whohas/loandetail/1
+2026-11-21 22:17:55,684 WARNING django.request: Forbidden: /whohas/itemtypes
+2026-11-21 22:17:58,743 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 22:17:58,748 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 22:17:58,752 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 22:17:58,756 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 22:17:58,764 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/items/create
+2026-11-21 22:17:58,765 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1
+2026-11-21 22:17:58,767 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1/delete
+2026-11-21 22:17:58,811 WARNING django.request: Bad Request: /whohas/itemdetail/1/delete
+2026-11-21 22:17:58,881 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:17:58,916 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:17:58,930 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:17:58,944 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:17:58,955 WARNING django.request: Bad Request: /whohas/items/create
+2026-11-21 22:17:58,974 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 22:17:58,987 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 22:17:59,064 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 22:17:59,070 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 22:17:59,075 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 22:17:59,080 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 22:17:59,085 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 22:17:59,091 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 22:17:59,210 WARNING django.request: Bad Request: /whohas/loandetail/1
+2026-11-21 22:17:59,261 WARNING django.request: Not Found: /whohas/loandetail/999999
+2026-11-21 22:17:59,266 WARNING django.request: Forbidden: /whohas/loandetail/1
+2026-11-21 22:17:59,271 WARNING django.request: Forbidden: /whohas/loandetail/1
+2026-11-21 22:19:20,103 WARNING django.request: Not Found: /whohas/loansdetail
+2026-11-21 22:19:20,104 WARNING django.server: "GET /whohas/loansdetail HTTP/1.1" 404 10395
+2026-11-21 22:43:35,785 WARNING django.request: Forbidden: /whohas/itemtypes
+2026-11-21 22:43:39,623 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 22:43:39,634 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 22:43:39,643 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 22:43:39,652 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 22:43:39,665 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/items/create
+2026-11-21 22:43:39,668 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1
+2026-11-21 22:43:39,671 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1/delete
+2026-11-21 22:43:39,762 WARNING django.request: Bad Request: /whohas/itemdetail/1/delete
+2026-11-21 22:43:39,877 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:43:39,930 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:43:39,949 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:43:39,969 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 22:43:39,988 WARNING django.request: Bad Request: /whohas/items/create
+2026-11-21 22:43:40,017 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 22:43:40,036 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 22:43:40,166 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 22:43:40,175 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 22:43:40,183 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 22:43:40,194 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 22:43:40,205 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 22:43:40,216 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 22:43:40,405 WARNING django.request: Bad Request: /whohas/loandetail/1
+2026-11-21 22:43:40,480 WARNING django.request: Not Found: /whohas/loandetail/999999
+2026-11-21 22:43:40,487 WARNING django.request: Forbidden: /whohas/loandetail/1
+2026-11-21 22:43:40,495 WARNING django.request: Forbidden: /whohas/loandetail/1
+2026-11-21 22:53:53,883 ERROR django.request: Internal Server Error: /whohas/
+Traceback (most recent call last):
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 110, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\whohas\views\whohas.py", line 17, in get
+    return self.page_render(request, "whohas", web_data)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\syscor\views\web.py", line 210, in page_render
+    response = render(request, template_name, context={
+        "web_page_attributes": page_attributes,
+    ...<2 lines>...
+        "web_data": page_data,
+    })
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\shortcuts.py", line 27, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 602, in parse
+    raise self.error(token, e)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 600, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 602, in parse
+    raise self.error(token, e)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 600, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 602, in parse
+    raise self.error(token, e)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 600, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 229, in do_block
+    raise TemplateSyntaxError(
+        "'%s' tag with name '%s' appears more than once" % (bits[0], block_name)
+    )
+django.template.exceptions.TemplateSyntaxError: Template: D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\whohas\templates\whohas.html, 'block' tag with name 'content-l2' appears more than once
+2026-11-21 22:53:53,893 ERROR django.server: "GET /whohas/ HTTP/1.1" 500 145
+2026-11-21 22:53:54,021 WARNING django.request: Not Found: /favicon.ico
+2026-11-21 22:53:54,022 WARNING django.server: "GET /favicon.ico HTTP/1.1" 404 10395
+2026-11-21 22:54:11,266 ERROR django.request: Internal Server Error: /whohas/
+Traceback (most recent call last):
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 110, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\whohas\views\whohas.py", line 17, in get
+    return self.page_render(request, "whohas", web_data)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\syscor\views\web.py", line 210, in page_render
+    response = render(request, template_name, context={
+        "web_page_attributes": page_attributes,
+    ...<2 lines>...
+        "web_data": page_data,
+    })
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\shortcuts.py", line 27, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.select_template(template_name)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\engine.py", line 228, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 602, in parse
+    raise self.error(token, e)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 600, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 889, in do_for
+    raise TemplateSyntaxError(
+        "'for' tag received an invalid argument: %s" % token.contents
+    )
+django.template.exceptions.TemplateSyntaxError: Template: D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\whohas\templates\info\info-itemsfree.html, 'for' tag received an invalid argument: for name, in data.itemsfree
+2026-11-21 22:54:11,273 ERROR django.server: "GET /whohas/ HTTP/1.1" 500 145
+2026-11-21 22:56:13,268 ERROR django.request: Internal Server Error: /whohas/
+Traceback (most recent call last):
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 110, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\whohas\views\whohas.py", line 17, in get
+    return self.page_render(request, "whohas", web_data)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\syscor\views\web.py", line 210, in page_render
+    response = render(request, template_name, context={
+        "web_page_attributes": page_attributes,
+    ...<2 lines>...
+        "web_data": page_data,
+    })
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\shortcuts.py", line 27, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 209, in render
+    return template.render(context.new(values))
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 237, in render
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: Need 2 values to unpack in for loop; got 1. 
+2026-11-21 22:56:13,273 ERROR django.server: "GET /whohas/ HTTP/1.1" 500 145
+2026-11-21 23:04:31,641 WARNING django.request: Forbidden: /whohas/itemtypes
+2026-11-21 23:04:35,009 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 23:04:35,015 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 23:04:35,020 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 23:04:35,025 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 23:04:35,032 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/items/create
+2026-11-21 23:04:35,035 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1
+2026-11-21 23:04:35,037 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1/delete
+2026-11-21 23:04:35,086 WARNING django.request: Bad Request: /whohas/itemdetail/1/delete
+2026-11-21 23:04:35,162 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 23:04:35,200 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 23:04:35,215 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 23:04:35,229 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 23:04:35,243 WARNING django.request: Bad Request: /whohas/items/create
+2026-11-21 23:04:35,263 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 23:04:35,278 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 23:04:35,366 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 23:04:35,373 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 23:04:35,380 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 23:04:35,387 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 23:04:35,395 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 23:04:35,401 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 23:04:35,569 WARNING django.request: Bad Request: /whohas/loandetail/1
+2026-11-21 23:04:35,654 WARNING django.request: Not Found: /whohas/loandetail/999999
+2026-11-21 23:04:35,665 WARNING django.request: Forbidden: /whohas/loandetail/1
+2026-11-21 23:04:35,674 WARNING django.request: Forbidden: /whohas/loandetail/1
+2026-11-21 23:09:47,358 WARNING django.request: Forbidden: /whohas/itemtypes
+2026-11-21 23:09:50,598 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 23:09:50,604 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 23:09:50,611 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 23:09:50,616 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 23:09:50,624 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/items/create
+2026-11-21 23:09:50,626 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1
+2026-11-21 23:09:50,629 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1/delete
+2026-11-21 23:09:50,686 WARNING django.request: Bad Request: /whohas/itemdetail/1/delete
+2026-11-21 23:09:50,773 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 23:09:50,815 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 23:09:50,831 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 23:09:50,848 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 23:09:50,866 WARNING django.request: Bad Request: /whohas/items/create
+2026-11-21 23:09:50,888 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 23:09:50,906 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 23:09:51,008 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 23:09:51,014 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 23:09:51,022 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 23:09:51,030 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 23:09:51,037 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 23:09:51,045 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 23:09:51,212 WARNING django.request: Bad Request: /whohas/loandetail/1
+2026-11-21 23:09:51,284 WARNING django.request: Not Found: /whohas/loandetail/999999
+2026-11-21 23:09:51,292 WARNING django.request: Forbidden: /whohas/loandetail/1
+2026-11-21 23:09:51,300 WARNING django.request: Forbidden: /whohas/loandetail/1
+2026-11-21 23:15:31,494 ERROR django.request: Internal Server Error: /whohas/
+Traceback (most recent call last):
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1107, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\base.py", line 1068, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.select_template(template_name)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\engine.py", line 234, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: info/info-itemsfree.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 110, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\whohas\views\whohas.py", line 19, in get
+    return self.page_render(request, "whohas", web_data)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\cassiopeia\syscor\views\web.py", line 210, in page_render
+    response = render(request, template_name, context={
+        "web_page_attributes": page_attributes,
+    ...<2 lines>...
+        "web_data": page_data,
+    })
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\shortcuts.py", line 27, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\60-projects\Gdisk\COLA-CodersLab\ONL_PYT_W_6358\projects\cola_project_90_finalProject\.venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: info/info-itemsfree.html
+2026-11-21 23:15:31,504 ERROR django.server: "GET /whohas/ HTTP/1.1" 500 145
+2026-11-21 23:22:22,984 WARNING django.request: Forbidden: /whohas/itemtypes
+2026-11-21 23:22:28,288 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 23:22:28,297 WARNING django.request: Not Found: /whohas/itemdetail/999999
+2026-11-21 23:22:28,304 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 23:22:28,312 WARNING django.request: Not Found: /whohas/itemdetail/999999/delete
+2026-11-21 23:22:28,324 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/items/create
+2026-11-21 23:22:28,330 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1
+2026-11-21 23:22:28,334 WARNING django.security.csrf: Forbidden (CSRF cookie not set.): /whohas/itemdetail/1/delete
+2026-11-21 23:22:28,412 WARNING django.request: Bad Request: /whohas/itemdetail/1/delete
+2026-11-21 23:22:28,522 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 23:22:28,577 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 23:22:28,600 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 23:22:28,620 WARNING django.request: Bad Request: /whohas/itemdetail/1
+2026-11-21 23:22:28,639 WARNING django.request: Bad Request: /whohas/items/create
+2026-11-21 23:22:28,667 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 23:22:28,686 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 23:22:28,797 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 23:22:28,805 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 23:22:28,812 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 23:22:28,821 WARNING django.request: Forbidden: /whohas/itemdetail/1
+2026-11-21 23:22:28,829 WARNING django.request: Forbidden: /whohas/itemdetail/1/delete
+2026-11-21 23:22:28,836 WARNING django.request: Forbidden: /whohas/items/create
+2026-11-21 23:22:29,007 WARNING django.request: Bad Request: /whohas/loandetail/1
+2026-11-21 23:22:29,080 WARNING django.request: Not Found: /whohas/loandetail/999999
+2026-11-21 23:22:29,087 WARNING django.request: Forbidden: /whohas/loandetail/1
+2026-11-21 23:22:29,096 WARNING django.request: Forbidden: /whohas/loandetail/1
