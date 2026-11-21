@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'syslog',
     'whohas',
     'paidyet',
+    'meta',
 ]
 
 MIDDLEWARE = [

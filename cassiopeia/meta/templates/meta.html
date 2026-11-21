@@ -1,0 +1,12 @@
+{% extends "syscor-body.html" %}
+{% load static %}
+{% block content-l2 %}
+
+    {% for record in web_data.records %}
+        <p>{{ record.aticle_content|default_if_none:""|safe }}</p>
+    {% empty %}
+        <p>No records found.</p>
+    {% endfor %}
+
+{% endblock %}
+

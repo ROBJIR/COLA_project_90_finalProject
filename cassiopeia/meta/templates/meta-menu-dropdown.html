@@ -1,0 +1,54 @@
+{% comment %}Renders the Whohas navigation menu.
+Vykresluje navigační nabídku Whohas.{% endcomment %}{% load static %}
+
+<nav class="navbar navbar-expand-lg rjd-line-menu" aria-label="Main navigation">
+  <div class="container-fluid">
+    <button class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'whohas' %}">home</a>
+        </li>
+        <li class="nav-item {% if not perms.whohas.view_loans %}disabled{% endif %}">
+          {% if not perms.whohas.view_loans %} aria-disabled="true" {% endif %}
+          <a class="nav-link" href="{% url 'loans' %}">loans</a>
+        </li>
+        <li class="nav-item {% if not perms.whohas.view_items %}disabled{% endif %}">
+          {% if not perms.whohas.view_items %} aria-disabled="true" {% endif %}
+          <a class="nav-link" href="{% url 'items' %}">items</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'whohas' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            lists
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item {% if not perms.whohas.view_itemcategories %}disabled{% endif %}"
+                   {% if not perms.whohas.view_itemcategories %} aria-disabled="true" {% endif %}
+                   href="{% url 'itemcategories' %}">item categories</a>
+            </li>
+            <li>
+              <a class="dropdown-item {% if not perms.whohas.view_itemtypes %}disabled{% endif %}"
+                   {% if not perms.whohas.view_itemtypes %} aria-disabled="true" {% endif %}
+                   href="{% url 'itemtypes' %}">item types</a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item {% if not perms.whohas.view_loanstatuses %}disabled{% endif %}"
+                   {% if not perms.whohas.view_loanstatuses %} aria-disabled="true" {% endif %}
+                   href="{% url 'loanstatuses' %}">loan statuses</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

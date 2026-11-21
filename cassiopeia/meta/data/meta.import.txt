@@ -1,0 +1,6 @@
+
+data:
+meta/management/commands/import_meta_demo
+
+run:
+python3 manage.py import_meta_demo --replace

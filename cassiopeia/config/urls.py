@@ -21,5 +21,6 @@ handler404 = "syscor.views.errors.page_not_found"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('meta/', include('meta.urls')),
     path ('', include('syscor.urls')),
 ]
